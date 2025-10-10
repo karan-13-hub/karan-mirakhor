@@ -1,0 +1,48 @@
+name: Deploy Portfolio to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '12'
+        
+    - name: Install React dependencies
+      run: |
+        cd react-portfolio
+        npm install
+        
+    - name: Build React portfolio
+      run: |
+        cd react-portfolio
+        npm run build
+        
+    - name: Setup Vue dependencies
+      run: |
+        cd vue-portfolio
+        npm install
+        
+    - name: Build Vue portfolio
+      run: |
+        cd vue-portfolio
+        npm run build
+        
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./simple-portfolio
+        cname: # Add your custom domain here if you have one

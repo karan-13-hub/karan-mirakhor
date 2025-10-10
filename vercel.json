@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "react-portfolio/package.json",
+      "use": "@vercel/next",
+      "config": {
+        "distDir": ".next"
+      }
+    },
+    {
+      "src": "vue-portfolio/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/react/(.*)",
+      "dest": "/react-portfolio/$1"
+    },
+    {
+      "src": "/vue/(.*)",
+      "dest": "/vue-portfolio/$1"
+    },
+    {
+      "src": "/",
+      "dest": "/react-portfolio"
+    }
+  ]
+}
