@@ -157,3 +157,4 @@ npx vercel
 - **Google Scholar**: [Profile](https://scholar.google.com/citations?user=wpeFm64AAAAJ&hl=en)
 - **GitHub**: [karan-13-hub](https://github.com/karan-13-hub)
 - **LinkedIn**: [Profile](https://www.linkedin.com/in/karan-mirakhor-b065b7142/)
+# karan-mirakhor.github.io
