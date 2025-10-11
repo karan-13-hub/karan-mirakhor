@@ -4,7 +4,7 @@ title: "Masters of Science (Research) in Robotics"
 institution: "Robotics Institute, Carnegie Mellon University"
 tagline: "Advancing multi-agent systems through belief modeling and strategic decision-making"
 profile_initials: "KM"
-profile_image: "profile.jpg"
+profile_image: "profile.jpeg"
 ---
 
 ## Social Links
