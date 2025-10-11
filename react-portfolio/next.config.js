@@ -10,8 +10,8 @@ const nextConfig = {
   trailingSlash: true,
   distDir: 'out',
   ...(process.env.NODE_ENV === 'production' && {
-    assetPrefix: '/mirakhor_karan_portfolio',
-    basePath: '/mirakhor_karan_portfolio',
+    assetPrefix: '',
+    basePath: '',
   }),
 }
 
