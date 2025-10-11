@@ -1,140 +1,122 @@
-# 🚀 GitHub Pages Deployment Guide
+# Portfolio Deployment Guide
 
-This guide will help you deploy Karan Mirakhor's research portfolio to GitHub Pages.
+This guide explains how to deploy the Karan Mirakhor portfolio to GitHub Pages.
 
-## 📋 Prerequisites
+## Repository Structure
 
-- GitHub account
-- Git installed on your system
-- Terminal/Command line access
-
-## 🎯 Quick Start (5 minutes)
-
-### Step 1: Create GitHub Repository
-
-1. Go to [GitHub.com](https://github.com) and sign in
-2. Click the **"+"** button → **"New repository"**
-3. **Repository name**: `karan-mirakhor.github.io` (replace with your username)
-4. **Description**: "Research Portfolio - Karan Mirakhor"
-5. Set to **Public**
-6. **Don't** initialize with README (we already have files)
-7. Click **"Create repository"**
-
-### Step 2: Connect Local Repository
-
-```bash
-# Add your GitHub repository as remote origin
-git remote add origin https://github.com/YOUR_USERNAME/karan-mirakhor.github.io.git
-
-# Push to GitHub
-git push -u origin main
+```
+mirakhor_karan_portfolio/
+├── react-portfolio/          # Next.js application
+│   ├── components/           # React components
+│   ├── content/             # Markdown content files
+│   ├── lib/                 # Utility functions
+│   ├── public/              # Static assets
+│   └── pages/               # Next.js pages
+├── .github/workflows/       # GitHub Actions
+└── DEPLOYMENT.md           # This file
 ```
 
-### Step 3: Enable GitHub Pages
+## Deployment Process
 
-1. Go to your repository on GitHub
-2. Click **"Settings"** tab
-3. Scroll down to **"Pages"** section
-4. Under **"Source"**, select **"Deploy from a branch"**
-5. Choose **"main"** branch and **"/ (root)"** folder
-6. Click **"Save"**
+### Automatic Deployment (Recommended)
 
-### Step 4: Access Your Portfolio
+1. **Push to main branch**: The portfolio automatically deploys when you push changes to the `main` branch
+2. **GitHub Actions**: The workflow builds the Next.js app and deploys to GitHub Pages
+3. **Access**: Your portfolio will be available at `https://karan-13-hub.github.io/mirakhor_karan_portfolio`
 
-- **URL**: `https://YOUR_USERNAME.github.io`
-- **Wait**: 2-5 minutes for deployment
-- **Refresh**: Check if it's live
+### Manual Deployment
 
-## 🔧 Alternative: Custom Repository Name
+If you need to deploy manually:
 
-If you want a different repository name:
+```bash
+# Navigate to the react-portfolio directory
+cd react-portfolio
 
-1. Create repository with any name (e.g., `portfolio`)
-2. Follow steps above
-3. Your URL will be: `https://YOUR_USERNAME.github.io/portfolio`
+# Install dependencies
+npm install
 
-## 📁 Portfolio Versions
+# Build the application
+npm run build
 
-The repository includes **3 portfolio versions**:
+# The built files will be in the 'out' directory
+# You can then deploy the 'out' directory to any static hosting service
+```
 
-### 1. Simple Portfolio (Default for GitHub Pages)
-- **Location**: `/simple-portfolio/`
-- **URL**: `https://YOUR_USERNAME.github.io/simple-portfolio/`
-- **Features**: Pure HTML/CSS/JS, works everywhere
+## Configuration
 
-### 2. React Portfolio
-- **Location**: `/react-portfolio/`
-- **Features**: Next.js, Tailwind CSS, Framer Motion
-- **Build**: `npm run build` (requires Node.js 12+)
+### Next.js Configuration
 
-### 3. Vue Portfolio
-- **Location**: `/vue-portfolio/`
-- **Features**: Vue 3, Vite, Tailwind CSS
-- **Build**: `npm run build` (requires Node.js 14+)
+The `next.config.js` file is configured for GitHub Pages:
 
-## 🛠️ Customization
+- `output: 'export'` - Generates static files
+- `trailingSlash: true` - Adds trailing slashes to URLs
+- `basePath` and `assetPrefix` - Configured for the repository path
 
-### Update Content
-1. Edit files in `/content/` folder
-2. For simple portfolio, edit `/simple-portfolio/index.html`
-3. Commit and push changes:
-   ```bash
-   git add .
-   git commit -m "Update portfolio content"
-   git push
-   ```
+### Content Management
 
-### Change Portfolio Version
-1. Edit root `/index.html`
-2. Change redirect URL from `./simple-portfolio/` to your preferred version
-3. Commit and push
+All content is managed through markdown files in the `content/` directory:
 
-### Custom Domain
-1. Add `CNAME` file to root directory
-2. Add your domain name in the file
-3. Configure DNS with your domain provider
+- `hero.md` - Hero section data
+- `about.md` - About section data
+- `contact.md` - Contact information
+- `interests.md` - Research interests
+- `navbar.md` - Navigation data
+- `footer.md` - Footer data
+- `awards/` - Individual award files
+- `projects/` - Individual project files
+- `publications/` - Individual publication files
 
-## 🔄 Automated Deployment
+## Updating Content
 
-The repository includes GitHub Actions for automatic deployment:
+To update the portfolio content:
 
-- **File**: `.github/workflows/deploy.yml`
-- **Triggers**: Push to main branch
-- **Action**: Automatically builds and deploys all versions
+1. Edit the relevant markdown files in the `content/` directory
+2. Commit and push changes to the `main` branch
+3. GitHub Actions will automatically rebuild and deploy the site
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
-### Portfolio Not Loading
-1. Check GitHub Pages settings
-2. Ensure main branch is selected
-3. Wait 5-10 minutes for propagation
-4. Check repository Actions tab for errors
+### Build Issues
 
-### Build Errors
-1. Check Node.js version compatibility
-2. Review package.json dependencies
-3. Check GitHub Actions logs
+If the build fails:
 
-### Custom Domain Issues
-1. Verify CNAME file exists
-2. Check DNS configuration
-3. Wait for DNS propagation (up to 24 hours)
+1. Check the GitHub Actions logs
+2. Ensure all dependencies are installed
+3. Verify that all markdown files have proper frontmatter
 
-## 📞 Support
+### Content Not Updating
 
-If you encounter issues:
+If content changes aren't reflected:
 
-1. Check GitHub Pages documentation
-2. Review repository Actions tab
-3. Check browser console for errors
-4. Verify all files are committed and pushed
+1. Clear browser cache
+2. Check that markdown files are properly formatted
+3. Verify that the build completed successfully
 
-## 🎉 Success!
+## Local Development
 
-Once deployed, your portfolio will be available at:
-- **Primary**: `https://YOUR_USERNAME.github.io`
-- **Simple**: `https://YOUR_USERNAME.github.io/simple-portfolio/`
-- **React**: `https://YOUR_USERNAME.github.io/react-portfolio/`
-- **Vue**: `https://YOUR_USERNAME.github.io/vue-portfolio/`
+To run the portfolio locally:
 
-Share your portfolio with the world! 🌍
+```bash
+cd react-portfolio
+npm install
+npm run dev
+```
+
+The site will be available at `http://localhost:3000`
+
+## GitHub Pages Settings
+
+Ensure GitHub Pages is configured correctly:
+
+1. Go to repository Settings
+2. Navigate to Pages section
+3. Source should be set to "GitHub Actions"
+4. The workflow should be automatically detected
+
+## Support
+
+For issues or questions about the deployment process, please check:
+
+1. GitHub Actions logs
+2. Next.js documentation
+3. GitHub Pages documentation

@@ -5,6 +5,11 @@ const nextConfig = {
   images: {
     domains: ['drive.google.com'],
   },
+  // GitHub Pages configuration
+  output: 'export',
+  trailingSlash: true,
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/mirakhor_karan_portfolio' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/mirakhor_karan_portfolio' : '',
 }
 
 module.exports = nextConfig
