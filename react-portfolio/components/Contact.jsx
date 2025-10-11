@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
+import { getSectionContent } from '../lib/markdown';
 
 const Contact = () => {
   const [ref, isInView] = useInView({ once: true, margin: "-100px" });
+  const contactData = getSectionContent('contact');
 
   const contactInfo = [
     {
@@ -66,11 +68,10 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="section-title">Get In Touch</h2>
+          <h2 className="section-title">{contactData?.title || 'Get In Touch'}</h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-8"></div>
           <p className="text-lg text-lightSlate max-w-3xl mx-auto">
-            I'm always interested in discussing new research opportunities, collaborations, 
-            and innovative projects in AI and robotics.
+            {contactData?.description || "I'm always interested in discussing new research opportunities, collaborations, and innovative projects in AI and robotics."}
           </p>
         </motion.div>
 
@@ -122,10 +123,10 @@ const Contact = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="mailto:karanmirakhor@gmail.com"
+              href={contactData?.primary_cta_link || "mailto:karanmirakhor@gmail.com"}
               className="btn-primary text-lg px-8 py-4"
             >
-              Send me an email
+              {contactData?.primary_cta || "Send me an email"}
             </motion.a>
           </motion.div>
         </motion.div>

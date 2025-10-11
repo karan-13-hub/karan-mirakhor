@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
+import { getSectionContent } from '../lib/markdown';
 
 const Interests = () => {
   const [ref, isInView] = useInView({ once: true, margin: "-100px" });
+  const interestsData = getSectionContent('interests');
 
   const interests = [
     {
@@ -41,11 +43,10 @@ const Interests = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="section-title">Research Interests</h2>
+          <h2 className="section-title">{interestsData?.title || 'Research Interests'}</h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-8"></div>
           <p className="text-lg text-lightSlate max-w-3xl mx-auto">
-            My research focuses on advancing artificial intelligence through multi-agent systems, 
-            with particular emphasis on learning, adaptation, and strategic decision-making.
+            {interestsData?.description || "My research focuses on advancing artificial intelligence through multi-agent systems, with particular emphasis on learning, adaptation, and strategic decision-making."}
           </p>
         </motion.div>
 

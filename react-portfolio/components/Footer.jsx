@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
+import { getSectionContent } from '../lib/markdown';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const footerData = getSectionContent('footer');
 
   return (
     <footer className="bg-navy border-t border-lightestNavy">
@@ -14,7 +16,7 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div className="text-lightSlate">
-              © {currentYear} Karan Mirakhor. All rights reserved.
+              {footerData?.copyright_text || `© ${currentYear} Karan Mirakhor. All rights reserved.`}
             </div>
             
             <div className="flex items-center space-x-6">

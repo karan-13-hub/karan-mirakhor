@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
+import { getSectionContent } from '../lib/markdown';
 
 const AboutSection = () => {
   const [ref, isInView] = useInView({ once: true, margin: "-100px" });
+  const aboutData = getSectionContent('about');
 
   return (
     <section id="about" ref={ref} className="py-20 bg-lightNavy/30">
@@ -13,26 +15,32 @@ const AboutSection = () => {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="section-title">About Me</h2>
+          <h2 className="section-title">{aboutData?.title || 'About Me'}</h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-8"></div>
           
           <div className="space-y-6 text-lg text-lightSlate leading-relaxed">
-            <p>
-              I am a Graduate Research Assistant at the Robotics Institute, Carnegie Mellon University, 
-              advised by Prof. Katia Sycara.
-            </p>
-            <p>
-              My research explores multi-agent reinforcement learning (MARL) in cooperative and competitive 
-              environments, emphasizing belief modeling, opponent adaptation, and decision-making under uncertainty.
-            </p>
-            <p>
-              Previously, I was a Pre-doctoral Research Fellow at TCS Research, India, working on task planning 
-              for indoor object rearrangement under partial observability.
-            </p>
-            <p>
-              I hold a B.Tech (Honors) in Electronics and Communication Engineering from IIIT Hyderabad, 
-              where I received the Program Gold Medal for highest GPA.
-            </p>
+            {aboutData?.content ? (
+              <div dangerouslySetInnerHTML={{ __html: aboutData.content.replace(/\n\n/g, '</p><p>').replace(/^/, '<p>').replace(/$/, '</p>') }} />
+            ) : (
+              <>
+                <p>
+                  I am a Graduate Research Assistant at the Robotics Institute, Carnegie Mellon University, 
+                  advised by Prof. Katia Sycara.
+                </p>
+                <p>
+                  My research explores multi-agent reinforcement learning (MARL) in cooperative and competitive 
+                  environments, emphasizing belief modeling, opponent adaptation, and decision-making under uncertainty.
+                </p>
+                <p>
+                  Previously, I was a Pre-doctoral Research Fellow at TCS Research, India, working on task planning 
+                  for indoor object rearrangement under partial observability.
+                </p>
+                <p>
+                  I hold a B.Tech (Honors) in Electronics and Communication Engineering from IIIT Hyderabad, 
+                  where I received the Program Gold Medal for highest GPA.
+                </p>
+              </>
+            )}
           </div>
 
           {/* Research Stats */}

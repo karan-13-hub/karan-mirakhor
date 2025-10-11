@@ -1,11 +1,15 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { getSectionContent } from '../lib/markdown';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [heroData, setHeroData] = useState(null);
 
   useEffect(() => {
     setIsVisible(true);
+    const data = getSectionContent('hero');
+    setHeroData(data);
   }, []);
 
   const scrollToAbout = () => {
@@ -37,7 +41,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-accent to-accent/50 flex items-center justify-center text-4xl font-bold text-navy"
           >
-            KM
+            {heroData?.profile_initials || 'KM'}
           </motion.div>
 
           {/* Name and Title */}
@@ -48,13 +52,15 @@ const HeroSection = () => {
             className="space-y-4"
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white">
-              Karan Mirakhor
+              {heroData?.name || 'Karan Mirakhor'}
             </h1>
             <p className="text-xl md:text-2xl lg:text-3xl text-accent font-medium">
-              Graduate Researcher in Reinforcement Learning and Robotics
+              {heroData?.title || 'Masters of Science (Research) in Robotics'}
+              <br />
+              {heroData?.institution || 'Robotics Institute, Carnegie Mellon University'}
             </p>
             <p className="text-lg md:text-xl text-lightSlate max-w-3xl mx-auto">
-              Advancing multi-agent systems through belief modeling and strategic decision-making
+              {heroData?.tagline || 'Advancing multi-agent systems through belief modeling and strategic decision-making'}
             </p>
           </motion.div>
 
