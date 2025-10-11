@@ -9,10 +9,6 @@ const nextConfig = {
   output: 'export',
   trailingSlash: true,
   distDir: 'out',
-  ...(process.env.NODE_ENV === 'production' && {
-    assetPrefix: '',
-    basePath: '',
-  }),
 }
 
 module.exports = nextConfig
