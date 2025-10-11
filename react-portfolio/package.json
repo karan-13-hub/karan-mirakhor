@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/build-content.js && next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && next export"
+    "export": "node scripts/build-content.js && next build && next export",
+    "build-content": "node scripts/build-content.js"
   },
   "dependencies": {
     "next": "12.3.4",

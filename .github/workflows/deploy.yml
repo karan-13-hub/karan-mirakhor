@@ -30,6 +30,7 @@ jobs:
       run: |
         cd react-portfolio
         npm run build
+        npm run export
         
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
