@@ -4,10 +4,307 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karan Mirakhor - Research Portfolio</title>
-    <meta http-equiv="refresh" content="0; url=./simple-portfolio/">
-    <link rel="canonical" href="./simple-portfolio/">
+    <meta name="description" content="Graduate Researcher in Reinforcement Learning and Robotics at Carnegie Mellon University">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <p>Redirecting to portfolio... <a href="./simple-portfolio/">Click here if not redirected automatically.</a></p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">KM</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#research" class="nav-link">Research</a>
+                <a href="#publications" class="nav-link">Publications</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#awards" class="nav-link">Awards</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link">Portfolio Versions</a>
+                    <div class="dropdown-content">
+                        <a href="./simple-portfolio/" class="dropdown-link">Simple (Current)</a>
+                        <a href="./react-portfolio/" class="dropdown-link">React Version</a>
+                        <a href="./vue-portfolio/" class="dropdown-link">Vue Version</a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="profile-image">
+                    <div class="profile-placeholder">KM</div>
+                </div>
+                <h1 class="hero-title">Karan Mirakhor</h1>
+                <p class="hero-subtitle">Graduate Researcher in Reinforcement Learning and Robotics</p>
+                <p class="hero-description">Advancing multi-agent systems through belief modeling and strategic decision-making</p>
+                
+                <div class="social-links">
+                    <a href="https://scholar.google.com/citations?user=wpeFm64AAAAJ&hl=en" target="_blank" class="social-link">
+                        <span>Google Scholar</span>
+                    </a>
+                    <a href="https://github.com/karan-13-hub" target="_blank" class="social-link">
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/karan-mirakhor-b065b7142/" target="_blank" class="social-link">
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1KMUiU1Ze_I2ZgC0N5dFkpX_ucFn5C_G5/view?usp=sharing" target="_blank" class="social-link">
+                        <span>CV</span>
+                    </a>
+                </div>
+                
+                <div class="scroll-indicator">
+                    <a href="#about" class="scroll-btn">
+                        <span>Scroll Down</span>
+                        <div class="scroll-arrow">↓</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="title-underline"></div>
+            
+            <div class="about-content">
+                <p>I am a Graduate Research Assistant at the Robotics Institute, Carnegie Mellon University, advised by Prof. Katia Sycara.</p>
+                <p>My research explores multi-agent reinforcement learning (MARL) in cooperative and competitive environments, emphasizing belief modeling, opponent adaptation, and decision-making under uncertainty.</p>
+                <p>Previously, I was a Pre-doctoral Research Fellow at TCS Research, India, working on task planning for indoor object rearrangement under partial observability.</p>
+                <p>I hold a B.Tech (Honors) in Electronics and Communication Engineering from IIIT Hyderabad, where I received the Program Gold Medal for highest GPA.</p>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Years Research Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Publications</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Interests -->
+    <section id="research" class="interests">
+        <div class="container">
+            <h2 class="section-title">Research Interests</h2>
+            <div class="title-underline"></div>
+            <p class="section-description">My research focuses on advancing artificial intelligence through multi-agent systems, with particular emphasis on learning, adaptation, and strategic decision-making.</p>
+            
+            <div class="interests-grid">
+                <div class="interest-card">
+                    <div class="interest-icon">🤖</div>
+                    <h3>Multi-Agent Reinforcement Learning</h3>
+                    <p>Cooperative and competitive learning in multi-agent systems</p>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">🦾</div>
+                    <h3>Robotics</h3>
+                    <p>Autonomous systems and robotic manipulation</p>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">👥</div>
+                    <h3>Imitation Learning</h3>
+                    <p>Learning from human demonstrations and expert behavior</p>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">🎯</div>
+                    <h3>Decision Making under Uncertainty</h3>
+                    <p>Robust decision-making in partially observable environments</p>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">🎭</div>
+                    <h3>Deception in AI</h3>
+                    <p>Strategic deception and adversarial behavior in AI systems</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="publications">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
+            <div class="title-underline"></div>
+            <p class="section-description">My research contributions in multi-agent reinforcement learning, robotics, and AI systems.</p>
+            
+            <div class="publications-list">
+                <div class="publication-card">
+                    <h3>Belief-Guided Zero-Shot Coordination for Multi-Agent Systems</h3>
+                    <p class="authors">Karan Mirakhor, Katia Sycara</p>
+                    <div class="venue-year">ICLR 2026</div>
+                    <p class="abstract">We propose a novel approach to zero-shot coordination in multi-agent systems by leveraging belief modeling and opponent adaptation. Our method enables agents to coordinate effectively with unseen partners by maintaining beliefs about their strategies and adapting accordingly.</p>
+                    <a href="https://openreview.net/forum?id=jJvXNpvOdM" target="_blank" class="read-paper-btn">Read Paper</a>
+                </div>
+                
+                <div class="publication-card">
+                    <h3>Strategic Deception in Multi-Agent Reinforcement Learning</h3>
+                    <p class="authors">Karan Mirakhor, Katia Sycara, Prashant Doshi</p>
+                    <div class="venue-year">AAMAS 2025</div>
+                    <p class="abstract">This work explores the role of strategic deception in multi-agent reinforcement learning environments. We develop a framework for agents to learn when and how to deceive opponents while maintaining cooperation when beneficial.</p>
+                    <a href="https://example.com/paper2" target="_blank" class="read-paper-btn">Read Paper</a>
+                </div>
+                
+                <div class="publication-card">
+                    <h3>Hierarchical Task Planning for Robotic Object Rearrangement under Partial Observability</h3>
+                    <p class="authors">Karan Mirakhor, TCS Research Team</p>
+                    <div class="venue-year">ICRA 2024</div>
+                    <p class="abstract">We present a hierarchical approach to task planning for robotic object rearrangement in partially observable environments. The method combines high-level symbolic planning with low-level motion planning.</p>
+                    <a href="https://example.com/paper3" target="_blank" class="read-paper-btn">Read Paper</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="title-underline"></div>
+            <p class="section-description">Selected projects showcasing my work in AI, robotics, and multi-agent systems.</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Just Imagine: Closed-Loop VLA for Long-Horizon Tasks</h3>
+                    <p>Visual-language-action pipeline leveraging world models for imagination-driven reasoning. Learning dense proxy rewards from sparse human videos to guide actor–critic control on Libero benchmark.</p>
+                    <a href="https://drive.google.com/presentation/d/1zFm-VuV9FV5P4Vt70gTIIagh_6zWmC2OEriu3IMXxfQ" target="_blank" class="project-link">View Project →</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Multi-Agent Simulation Framework for Cooperative Robotics</h3>
+                    <p>A comprehensive simulation framework for testing multi-agent reinforcement learning algorithms in cooperative robotic environments. Features include configurable agent behaviors and real-time visualization.</p>
+                    <a href="https://github.com/karan-13-hub/multi-agent-sim" target="_blank" class="project-link">View Project →</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Uncertainty Quantification in Deep Reinforcement Learning</h3>
+                    <p>Development of uncertainty quantification methods for deep reinforcement learning agents operating in safety-critical environments. Implements ensemble-based uncertainty estimation and Bayesian neural networks.</p>
+                    <a href="https://github.com/karan-13-hub/uncertainty-rl" target="_blank" class="project-link">View Project →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards -->
+    <section id="awards" class="awards">
+        <div class="container">
+            <h2 class="section-title">Awards & Recognition</h2>
+            <div class="title-underline"></div>
+            <p class="section-description">Recognition for academic excellence and research contributions.</p>
+            
+            <div class="awards-timeline">
+                <div class="award-item">
+                    <div class="award-dot"></div>
+                    <div class="award-content">
+                        <h3>JN Tata Endowment Scholarship</h3>
+                        <div class="award-year">2024</div>
+                        <p>Received for excellence in academic research and potential for doctoral study. This prestigious scholarship recognizes outstanding academic achievement and research potential in engineering and technology fields.</p>
+                    </div>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-dot"></div>
+                    <div class="award-content">
+                        <h3>Program Gold Medal - IIIT Hyderabad</h3>
+                        <div class="award-year">2023</div>
+                        <p>Awarded for achieving the highest GPA in the Electronics and Communication Engineering program. This recognition highlights academic excellence and outstanding performance throughout the undergraduate program.</p>
+                    </div>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-dot"></div>
+                    <div class="award-content">
+                        <h3>Best Research Paper Award - TCS Research</h3>
+                        <div class="award-year">2024</div>
+                        <p>Recognized for outstanding contribution to robotic task planning research. The paper presented novel approaches to hierarchical planning under partial observability, with significant practical applications in service robotics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="title-underline"></div>
+            <p class="section-description">I'm always interested in discussing new research opportunities, collaborations, and innovative projects in AI and robotics.</p>
+            
+            <div class="contact-grid">
+                <a href="mailto:karanmirakhor@gmail.com" class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>karanmirakhor@gmail.com</p>
+                </a>
+                
+                <a href="https://scholar.google.com/citations?user=wpeFm64AAAAJ&hl=en" target="_blank" class="contact-card">
+                    <div class="contact-icon">🎓</div>
+                    <h3>Google Scholar</h3>
+                    <p>View Profile</p>
+                </a>
+                
+                <a href="https://github.com/karan-13-hub" target="_blank" class="contact-card">
+                    <div class="contact-icon">💻</div>
+                    <h3>GitHub</h3>
+                    <p>karan-13-hub</p>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/karan-mirakhor-b065b7142/" target="_blank" class="contact-card">
+                    <div class="contact-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <p>Connect</p>
+                </a>
+                
+                <a href="https://drive.google.com/file/d/1KMUiU1Ze_I2ZgC0N5dFkpX_ucFn5C_G5/view?usp=sharing" target="_blank" class="contact-card">
+                    <div class="contact-icon">📄</div>
+                    <h3>CV</h3>
+                    <p>Download</p>
+                </a>
+            </div>
+            
+            <div class="contact-cta">
+                <a href="mailto:karanmirakhor@gmail.com" class="cta-btn">Send me an email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Karan Mirakhor. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://scholar.google.com/citations?user=wpeFm64AAAAJ&hl=en" target="_blank">Scholar</a>
+                    <a href="https://github.com/karan-13-hub" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/karan-mirakhor-b065b7142/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
