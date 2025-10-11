@@ -124,6 +124,23 @@
             margin-right: auto;
         }
         
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 2rem auto;
+            border: 4px solid #64ffda;
+            box-shadow: 0 0 30px rgba(100, 255, 218, 0.3);
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(100, 255, 218, 0.5);
+        }
+        
         .social-links {
             display: flex;
             justify-content: center;
@@ -244,6 +261,11 @@
                 font-size: 2.5rem;
             }
             
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+            
             .nav-links {
                 display: none;
             }
@@ -277,6 +299,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
+                <img src="./content/profile.jpg" alt="Karan Mirakhor" class="profile-image" onerror="this.style.display='none'">
                 <h1>Karan Mirakhor</h1>
                 <p class="subtitle">Masters of Science (Research) in Robotics</p>
                 <p class="subtitle">Robotics Institute, Carnegie Mellon University</p>
