@@ -4,14 +4,34 @@
 
 To complete the GitHub Pages deployment, you need to configure the repository settings:
 
-### **Step 1: Enable GitHub Pages**
-1. Go to your repository: https://github.com/karan-13-hub/karan-mirakhor.github.io
+### **Step 1: Create New Repository**
+1. Go to https://github.com/new
+2. Create a new repository named **`karan-mirakhor.github.io`**
+3. Make sure it's under your **personal account** (not an organization)
+4. Initialize with README (optional)
+5. Click **"Create repository"**
+
+### **Step 2: Push Code to New Repository**
+1. Clone the new repository locally:
+   ```bash
+   git clone https://github.com/karan-mirakhor/karan-mirakhor.github.io.git
+   ```
+2. Copy all files from this project to the new repository
+3. Push to the new repository:
+   ```bash
+   git add .
+   git commit -m "Initial portfolio setup"
+   git push origin main
+   ```
+
+### **Step 3: Enable GitHub Pages**
+1. Go to your new repository: https://github.com/karan-mirakhor/karan-mirakhor.github.io
 2. Click on **"Settings"** tab (at the top of the repository)
 3. Scroll down to **"Pages"** section in the left sidebar
 4. Under **"Source"**, select **"GitHub Actions"**
 5. Click **"Save"** to confirm
 
-### **Step 2: Verify Workflow Permissions**
+### **Step 4: Verify Workflow Permissions**
 1. In the same **"Settings"** tab
 2. Go to **"Actions"** → **"General"** in the left sidebar
 3. Scroll down to **"Workflow permissions"**
@@ -19,7 +39,7 @@ To complete the GitHub Pages deployment, you need to configure the repository se
 5. Check **"Allow GitHub Actions to create and approve pull requests"**
 6. Click **"Save"**
 
-### **Step 3: Check Deployment Status**
+### **Step 5: Check Deployment Status**
 1. Go to the **"Actions"** tab in your repository
 2. Look for **"Deploy Portfolio to GitHub Pages"** workflow
 3. Click on it to see the deployment progress
@@ -28,7 +48,7 @@ To complete the GitHub Pages deployment, you need to configure the repository se
 ## 🌐 **Your Portfolio URL**
 Once deployment is complete, your portfolio will be available at:
 ```
-https://karan-13-hub.github.io/mirakhor_karan_portfolio
+https://karan-mirakhor.github.io/
 ```
 
 ## 🔄 **What the New Workflow Does**
