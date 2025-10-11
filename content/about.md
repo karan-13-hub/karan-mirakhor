@@ -19,6 +19,6 @@ I hold a B.Tech (Honors) in Electronics and Communication Engineering from IIIT 
 
 ## Research Statistics
 
-- **Years Research Experience**: 3+
-- **Publications**: 5+
-- **Projects**: 10+
+- **Years Research Experience**: 5+
+- **Job Experience**: 2+
+- **Publications**: 3+
