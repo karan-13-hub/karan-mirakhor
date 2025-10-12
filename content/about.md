@@ -19,28 +19,60 @@ Perfect — your draft is already strong and well-structured. Here’s a **polis
 
 ---
 
-### About Me
+## About Me
 
-Hello! I’m **Karan Mirakhor**, a **second-year Master’s (MSR) student in Robotics at Carnegie Mellon University**, advised by [**Prof. Katia Sycara**](https://www.cs.cmu.edu/~sycara/).
+## About Me
 
-My research broadly lies in **Multi-Agent Reinforcement Learning (MARL)**. At CMU’s **Robotics Institute**, I am currently exploring **zero-shot coordination** in cooperative MARL settings, with a focus on **offline-to-online frameworks** for efficient training and adaptation. In parallel, I am investigating **competitive MARL**, studying **targeted deception in zero-sum games** through **higher-order opponent modeling** and analysis of **historical response patterns** to exploit individual vulnerabilities while maintaining robustness.
+Hello! I’m **Karan Mirakhor**, a **second-year MSR student in Robotics at [Carnegie Mellon University](https://www.cmu.edu/)**, advised by [**Prof. Katia Sycara**](https://www.cs.cmu.edu/~sycara/).
 
-Before CMU, I was a **Pre-doctoral Research Fellow** at **TCS Research**, advised by **Dr. Brojeshwar Bhowmick**, where I worked on **Task Planning for Indoor Object Rearrangement** under **partial observability (POMDP)**. My research involved building **graph-based scene representations** for scalable state understanding, employing **Large Language Models (LLMs)** for semantic object search, and integrating **Deep Reinforcement Learning** for sample-efficient and robust planning across both single and multi-room environments.
+My research lies at the intersection of **Multi-Agent Reinforcement Learning (MARL)**, **belief modeling**, and **generalization in cooperative and competitive settings**.  
+At CMU’s [**Robotics Institute**](https://www.ri.cmu.edu/), I work on:
 
-I am deeply fascinated by how intelligent agents can **learn structured, transferable policies** that generalize across tasks, embodiments, and environments — moving toward **autonomous systems capable of learning and reasoning like humans**. Looking ahead, I aim to develop **generalist robot policies** that unify learning, reasoning, and control, advancing the design of adaptable embodied agents for diverse real-world tasks.
+- 🧠 **Zero-shot coordination** in cooperative MARL  
+  Developing agents that can seamlessly collaborate with previously unseen partners without additional training. Specifically, I focus on **offline-to-online training frameworks** that leverage behavioral diversity in offline datasets coupled with efficient online adaptation using belief models.
 
-Outside of research, I’m a **chess enthusiast**, **squash and table tennis player**, and an unrepentant **coffee addict** who enjoys strategic thinking both on and off the board.
+- 🎭 **Competitive MARL and targeted deception**  
+  Designing **targeted deception strategies** by leveraging **higher-order opponent belief models** and analyzing **historical response patterns** to identify and exploit individual vulnerabilities.
 
-<!-- 
+---
 
-I am a Graduate Research Assistant at the Robotics Institute, Carnegie Mellon University, advised by Prof. Katia Sycara.
+### 🧩 Previous Research
 
-My research explores multi-agent reinforcement learning (MARL) in cooperative and competitive environments, emphasizing belief modeling, opponent adaptation, and decision-making under uncertainty.
+**Pre-doctoral Research Fellow** — [**TCS Research**](https://www.tcs.com/research-and-innovation)  
+*Advisor: [Dr. Brojeshwar Bhowmick](https://scholar.google.co.in/citations?user=Eqf8NrEAAAAJ&hl=en)*  
 
-Previously, I was a Pre-doctoral Research Fellow at TCS Research, India, working on task planning for indoor object rearrangement under partial observability.
+- Explored **Task Planning for Indoor Object Rearrangement** under **partial observability (POMDP)**.  
+- Developed scalable **graph-based scene representations**.  
+- Used **Large Language Models (LLMs)** for semantic object search.  
+- Applied **Deep RL** for efficient single and multi-room planning.
 
-I hold a B.Tech (Honors) in Electronics and Communication Engineering from IIIT Hyderabad, where I received the Program Gold Medal for highest GPA.
- -->
+---
+
+### 🎓 Undergraduate Research
+
+**B.Tech (Honors) in Electronics and Communication Engineering (ECE)** — [**IIIT Hyderabad**](https://www.iiit.ac.in/)  
+*Research Assistant, [Robotics Research Center](https://robotics.iiit.ac.in/)*  
+*Advisor: [Dr. Harikumar Kandath](https://scholar.google.co.in/citations?user=5i1t_QgAAAAJ&hl=en)*  
+
+- Worked on **aerial manipulator control** using **Control Barrier Lyapunov constraints** within a **Model Predictive Controller** for safe and stable operation.
+
+---
+
+### 🔭 Research Vision
+
+I am deeply fascinated by how **intelligent agents** can learn **structured, transferable policies** that generalize across **tasks, embodiments, and environments** — moving towards autonomous systems capable of **learning and reasoning like humans**.  
+
+My long-term goal is to develop **generalist robot policies** that **unify learning, reasoning, and control**, advancing adaptable embodied agents for diverse real-world tasks.
+
+---
+
+### ☕ Beyond Research
+
+Outside the lab, I enjoy:
+- ♟️ **Chess** – strategy and pattern recognition inspire my research outlook.  
+- 🏸 **Squash** & 🏓 **Table Tennis** – my go-to balance for mind and movement.  
+- ☕ **Coffee** – a daily ritual that fuels both thought and curiosity.
+
 ## Research Statistics
 
 - **Years Research Experience**: 5+
