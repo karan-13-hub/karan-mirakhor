@@ -1,4 +1,4 @@
-# Karan Mirakhor - Research Portfolio
+# Karan Mirakhor
 
 A dual-framework personal research portfolio built with React (Next.js) and Vue (Vite), featuring dynamic Markdown content support for publications, projects, and awards.
 
