@@ -1303,13 +1303,33 @@
 
         /* iPad and medium device navigation */
         @media (max-width: 1024px) and (min-width: 769px) {
+            .nav-container {
+                justify-content: space-between;
+                padding: 0 1rem;
+            }
+            
             .nav-links {
-                gap: 1.2rem;
+                gap: 0.8rem;
+                flex: 1;
+                justify-content: center;
+                margin: 0 1.5rem;
             }
             
             .nav-links a {
-                font-size: 0.95rem;
-                padding: 0.4rem 0.7rem;
+                font-size: 0.9rem;
+                padding: 0.5rem 0.7rem;
+                white-space: nowrap;
+            }
+            
+            .nav-controls {
+                position: static;
+                margin-left: auto;
+                flex-shrink: 0;
+            }
+            
+            .theme-toggle {
+                padding: 0.5rem;
+                font-size: 1.1rem;
             }
             
             .hero-content .description {
@@ -1402,13 +1422,33 @@
         
         /* Large tablet responsive design */
         @media (max-width: 1200px) and (min-width: 1025px) {
+            .nav-container {
+                justify-content: space-between;
+                padding: 0 1.5rem;
+            }
+            
             .nav-links {
-                gap: 1.5rem;
+                gap: 1.2rem;
+                flex: 1;
+                justify-content: center;
+                margin: 0 2rem;
             }
             
             .nav-links a {
                 font-size: 1rem;
-                padding: 0.4rem 0.8rem;
+                padding: 0.5rem 0.8rem;
+                white-space: nowrap;
+            }
+            
+            .nav-controls {
+                position: static;
+                margin-left: auto;
+                flex-shrink: 0;
+            }
+            
+            .theme-toggle {
+                padding: 0.5rem;
+                font-size: 1.2rem;
             }
         }
 
@@ -1567,7 +1607,7 @@
                             </div>
                             <p class="mb-3" style="color: var(--text-secondary);">
                                 <span class="font-bold" style="color: var(--text-secondary);">Advisor:</span> 
-                                <span class="font-bold" style="color: var(--text-secondary);">Dr. Brojeshwar Bhowmick</span>
+                                <a href="https://scholar.google.co.in/citations?user=Eqf8NrEAAAAJ&hl=en" target="_blank" class="transition-colors duration-300 font-bold" style="color: var(--accent-primary);" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--accent-primary)'">Dr. Brojeshwar Bhowmick</a>
                             </p>
                             <p class="leading-relaxed" style="color: var(--text-secondary);">
                                 Explored <span class="font-bold" style="color: var(--text-secondary);">Task Planning</span> for Indoor Object Rearrangement under 
@@ -1589,7 +1629,7 @@
                             <div class="space-y-2 mb-4">
                                 <p style="color: var(--text-secondary);">
                                     <span class="font-bold" style="color: var(--text-secondary);">Advisor:</span> 
-                                    <span class="font-bold" style="color: var(--text-secondary);">Dr. Harikumar Kandath</span>
+                                    <a href="https://scholar.google.co.in/citations?user=5i1t_QgAAAAJ&hl=en" target="_blank" class="transition-colors duration-300 font-bold" style="color: var(--accent-primary);" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--accent-primary)'">Dr. Harikumar Kandath</a>
                                 </p>
                             </div>
                             <p class="leading-relaxed" style="color: var(--text-secondary);">
