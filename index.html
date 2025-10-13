@@ -40,25 +40,7 @@
     
     <style>
         :root {
-            /* Dark theme (default) */
-            --bg-primary: #0f172a;
-            --bg-secondary: rgba(30, 41, 59, 0.3);
-            --bg-card: linear-gradient(135deg, rgba(17, 34, 64, 0.8) 0%, rgba(15, 27, 46, 0.8) 100%);
-            --bg-nav: rgba(15, 23, 42, 0.98);
-            --text-primary: #e2e8f0;
-            --text-secondary: #94a3b8;
-            --text-muted: #a8b2d1;
-            --accent-primary: #64ffda;
-            --accent-secondary: #00d4ff;
-            --border-color: rgba(100, 255, 218, 0.2);
-            --border-hover: #64ffda;
-            --shadow-color: rgba(0, 0, 0, 0.1);
-            --particle-color: rgba(100, 255, 218, 0.8);
-            --particle-glow: rgba(100, 255, 218, 0.3);
-        }
-
-        [data-theme="light"] {
-            /* Light theme */
+            /* Light theme (default) */
             --bg-primary: #f8fafc;
             --bg-secondary: #f1f5f9;
             --bg-card: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.9) 100%);
@@ -73,6 +55,24 @@
             --shadow-color: rgba(0, 0, 0, 0.1);
             --particle-color: rgba(79, 70, 229, 0.6);
             --particle-glow: rgba(79, 70, 229, 0.2);
+        }
+
+        [data-theme="dark"] {
+            /* Dark theme */
+            --bg-primary: #0f172a;
+            --bg-secondary: rgba(30, 41, 59, 0.3);
+            --bg-card: linear-gradient(135deg, rgba(17, 34, 64, 0.8) 0%, rgba(15, 27, 46, 0.8) 100%);
+            --bg-nav: rgba(15, 23, 42, 0.98);
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --text-muted: #a8b2d1;
+            --accent-primary: #64ffda;
+            --accent-secondary: #00d4ff;
+            --border-color: rgba(100, 255, 218, 0.2);
+            --border-hover: #64ffda;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --particle-color: rgba(100, 255, 218, 0.8);
+            --particle-glow: rgba(100, 255, 218, 0.3);
         }
 
         * {
@@ -128,6 +128,26 @@
             right: 0;
         }
 
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: absolute;
+            left: 0;
+            z-index: 1003;
+            min-width: 44px;
+            min-height: 44px;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+
         .theme-toggle {
             background: none;
             border: none;
@@ -155,25 +175,6 @@
             gap: 2rem;
         }
         
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            position: absolute;
-            right: 0;
-            z-index: 1003;
-            min-width: 44px;
-            min-height: 44px;
-            touch-action: manipulation;
-            -webkit-tap-highlight-color: transparent;
-            user-select: none;
-        }
         
         .mobile-menu-toggle:hover {
             color: var(--accent-primary);
@@ -233,12 +234,6 @@
             pointer-events: auto;
         }
 
-        .mobile-theme-toggle {
-            display: none;
-            justify-content: center;
-            padding: 1rem;
-            border-top: 1px solid var(--border-color);
-        }
         
         .nav-links a {
             color: var(--text-primary);
@@ -1076,6 +1071,7 @@
             
             .mobile-menu-toggle {
                 display: block;
+                left: 20px;
             }
             
             .mobile-nav-links a {
@@ -1087,10 +1083,6 @@
             
             .mobile-nav {
                 padding: 0.25rem 0;
-            }
-            
-            .mobile-theme-toggle {
-                display: flex;
             }
             
             nav {
@@ -1322,12 +1314,12 @@
             </ul>
             <div class="nav-controls">
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                    <i class="fas fa-sun"></i>
-                </button>
-                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
-                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-moon"></i>
                 </button>
             </div>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
             <div class="mobile-nav" id="mobile-nav">
                 <ul class="mobile-nav-links">
@@ -1338,11 +1330,6 @@
                     <li><a href="#awards">Awards</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="mobile-theme-toggle">
-                    <button class="theme-toggle" id="mobile-theme-toggle" aria-label="Toggle theme">
-                        <i class="fas fa-sun"></i>
-                    </button>
-                </div>
             </div>
         </div>
     </nav>
@@ -1375,44 +1362,44 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <section id="about" class="py-20" style="background: var(--bg-primary);">
         <div class="container mx-auto px-6 max-w-6xl">
             <!-- Section Header -->
             <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold text-white mb-4 tracking-wide">About Me</h2>
-                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+                <h2 class="text-5xl font-bold mb-4 tracking-wide" style="color: var(--text-primary);">About Me</h2>
+                <div class="w-24 h-1 mx-auto rounded-full" style="background: var(--accent-primary);"></div>
             </div>
 
             <!-- Main Content Container -->
-            <div class="prose prose-lg prose-invert max-w-none">
+            <div class="prose prose-lg max-w-none">
                 <!-- Introduction Card -->
-                <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 mb-12 border border-slate-700/50 shadow-2xl">
+                <div class="backdrop-blur-sm rounded-2xl p-8 mb-12 border shadow-2xl" style="background: var(--bg-card); border-color: var(--border-color);">
                     <div class="text-center mb-8">
-                        <p class="text-xl text-secondary leading-relaxed">
-                            I am a 2<sup>nd</sup> year Master of Science in Robotics (MSR) student at <a href="https://www.ri.cmu.edu/" target="_blank" class="text-primary hover:text-white transition-colors duration-300 font-semibold">Robotics Institute, Carnegie Mellon University</a>
+                        <p class="text-xl leading-relaxed" style="color: var(--text-secondary);">
+                            I am a 2<sup>nd</sup> year Master of Science in Robotics (MSR) student at <a href="https://www.ri.cmu.edu/" target="_blank" class="transition-colors duration-300 font-semibold" style="color: var(--accent-primary);" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--accent-primary)'">Robotics Institute, Carnegie Mellon University</a>
                         </p>
                     </div>
                     
                     <div class="text-center space-y-2">
-                        <p class="text-lg text-secondary">
-                            <span class="text-primary font-semibold">Graduate Research Assistant,</span> 
-                            <a href="https://www.ri.cmu.edu/labs/advanced-agent-robotics-technology-lab/" target="_blank" class="text-primary hover:text-white transition-colors duration-300 font-medium">Advanced Agent Robotics Technology Lab</a>
+                        <p class="text-lg" style="color: var(--text-secondary);">
+                            <span class="font-semibold" style="color: var(--accent-primary);">Graduate Research Assistant,</span> 
+                            <a href="https://www.ri.cmu.edu/labs/advanced-agent-robotics-technology-lab/" target="_blank" class="transition-colors duration-300 font-medium" style="color: var(--accent-primary);" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--accent-primary)'">Advanced Agent Robotics Technology Lab</a>
                         </p>
-                        <p class="text-lg text-secondary">
-                            <span class="text-primary font-semibold">Advisor:</span> 
-                            <a href="https://www.ri.cmu.edu/ri-people/katia-sycara/" target="_blank" class="text-primary hover:text-white transition-colors duration-300 font-medium">Prof. Katia Sycara</a>
+                        <p class="text-lg" style="color: var(--text-secondary);">
+                            <span class="font-semibold" style="color: var(--accent-primary);">Advisor:</span> 
+                            <a href="https://www.ri.cmu.edu/ri-people/katia-sycara/" target="_blank" class="transition-colors duration-300 font-medium" style="color: var(--accent-primary);" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--accent-primary)'">Prof. Katia Sycara</a>
                         </p>
                     </div>
                 </div>
 
                 <!-- Research Focus -->
                 <div class="mb-12">
-                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center" style="color: var(--text-primary);">
                         <span class="text-3xl mr-3">🔬</span>
                         Research Focus
                     </h3>
-                    <p class="text-lg text-secondary leading-relaxed mb-8">
-                        My research primarily focuses on <span class="text-primary font-semibold">Multi-Agent Reinforcement Learning (MARL)</span>. 
+                    <p class="text-lg leading-relaxed mb-8" style="color: var(--text-secondary);">
+                        My research primarily focuses on <span class="font-semibold" style="color: var(--accent-primary);">Multi-Agent Reinforcement Learning (MARL)</span>. 
                         Specifically, my work encompasses two key areas:
                     </p>
                 </div>
@@ -1420,12 +1407,12 @@
                 <!-- Research Areas Grid -->
                 <div class="grid md:grid-cols-2 gap-8 mb-16">
                     <!-- Zero-shot Coordination -->
-                    <div class="group bg-slate-800/40 backdrop-blur-sm rounded-xl p-6 border border-slate-700/30 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
-                        <h4 class="text-xl font-bold text-white mb-4 flex items-center group-hover:text-primary transition-colors duration-300">
+                    <div class="group backdrop-blur-sm rounded-xl p-6 border transition-all duration-300 hover:shadow-lg" style="background: var(--bg-card); border-color: var(--border-color);" onmouseover="this.style.borderColor='var(--accent-primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
+                        <h4 class="text-xl font-bold mb-4 flex items-center transition-colors duration-300" style="color: var(--text-primary);" onmouseover="this.style.color='var(--accent-primary)'" onmouseout="this.style.color='var(--text-primary)'">
                             <span class="text-2xl mr-3">🧠</span>
                             Zero-shot Coordination in Cooperative MARL
                         </h4>
-                        <p class="text-secondary leading-relaxed">
+                        <p class="leading-relaxed" style="color: var(--text-secondary);">
                             Developing agents that can seamlessly collaborate with previously unseen partners without additional training. 
                             Specifically, I focus on offline-to-online training frameworks that leverage 
                             behavioral diversity in offline datasets and enable efficient online adaptation.
@@ -1433,12 +1420,12 @@
                     </div>
 
                     <!-- Competitive MARL -->
-                    <div class="group bg-slate-800/40 backdrop-blur-sm rounded-xl p-6 border border-slate-700/30 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
-                        <h4 class="text-xl font-bold text-white mb-4 flex items-center group-hover:text-primary transition-colors duration-300">
+                    <div class="group backdrop-blur-sm rounded-xl p-6 border transition-all duration-300 hover:shadow-lg" style="background: var(--bg-card); border-color: var(--border-color);" onmouseover="this.style.borderColor='var(--accent-primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
+                        <h4 class="text-xl font-bold mb-4 flex items-center transition-colors duration-300" style="color: var(--text-primary);" onmouseover="this.style.color='var(--accent-primary)'" onmouseout="this.style.color='var(--text-primary)'">
                             <span class="text-2xl mr-3">🎭</span>
                             Targeted Deception in Competitive MARL
                         </h4>
-                        <p class="text-secondary leading-relaxed">
+                        <p class="leading-relaxed" style="color: var(--text-secondary);">
                             Developing targeted deception strategies by leveraging higher-order opponent belief models and analyzing 
                             historical response patterns to identify and exploit individual vulnerabilities.
                         </p>
@@ -1447,51 +1434,51 @@
 
                 <!-- Previous Research Experience -->
                 <div class="mb-16">
-                    <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
+                    <h3 class="text-2xl font-bold mb-8 flex items-center" style="color: var(--text-primary);">
                         <span class="text-3xl mr-3">📚</span>
                         Previous Experience
                     </h3>
                     
                     <div class="space-y-8">
                         <!-- TCS Research -->
-                        <div class="bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700/20 hover:border-slate-600/50 transition-all duration-300">
+                        <div class="backdrop-blur-sm rounded-xl p-6 border transition-all duration-300" style="background: var(--bg-card); border-color: var(--border-color);" onmouseover="this.style.borderColor='var(--text-secondary)'" onmouseout="this.style.borderColor='var(--border-color)'">
                             <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                                <h4 class="text-xl font-bold text-white mb-2 md:mb-0">
+                                <h4 class="text-xl font-bold mb-2 md:mb-0" style="color: var(--text-primary);">
                                     Pre-doctoral Research Fellow
                                 </h4>
-                                <a href="https://www.tcs.com/what-we-do/research" target="_blank" class="text-primary hover:text-white transition-colors duration-300 font-semibold text-lg">
+                                <a href="https://www.tcs.com/what-we-do/research" target="_blank" class="transition-colors duration-300 font-semibold text-lg" style="color: var(--accent-primary);" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--accent-primary)'">
                                     TCS Research
                                 </a>
                             </div>
-                            <p class="text-secondary mb-3">
-                                <em>Advisor: <a href="https://scholar.google.co.in/citations?user=Eqf8NrEAAAAJ&hl=en" target="_blank" class="text-primary hover:text-white transition-colors duration-300">Dr. Brojeshwar Bhowmick</a></em>
+                            <p class="mb-3" style="color: var(--text-secondary);">
+                                <em>Advisor: <a href="https://scholar.google.co.in/citations?user=Eqf8NrEAAAAJ&hl=en" target="_blank" class="transition-colors duration-300" style="color: var(--accent-primary);" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--accent-primary)'">Dr. Brojeshwar Bhowmick</a></em>
                             </p>
-                            <p class="text-secondary leading-relaxed">
-                                Explored <span class="text-primary font-semibold">Task Planning for Indoor Object Rearrangement</span> under 
-                                <span class="text-primary font-semibold">partial observability (POMDP)</span>. Developed scalable graph-based scene representations, utilized <span class="text-primary font-semibold">Large Language Models (LLMs)</span> for semantic object search, and applied <span class="text-primary font-semibold">Deep RL</span> for efficient single and multi-room planning.
+                            <p class="leading-relaxed" style="color: var(--text-secondary);">
+                                Explored <span class="font-semibold" style="color: var(--accent-primary);">Task Planning for Indoor Object Rearrangement</span> under 
+                                <span class="font-semibold" style="color: var(--accent-primary);">partial observability (POMDP)</span>. Developed scalable graph-based scene representations, utilized <span class="font-semibold" style="color: var(--accent-primary);">Large Language Models (LLMs)</span> for semantic object search, and applied <span class="font-semibold" style="color: var(--accent-primary);">Deep RL</span> for efficient single and multi-room planning.
                             </p>
                         </div>
 
                         <!-- IIIT Hyderabad -->
-                        <div class="bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700/20 hover:border-slate-600/50 transition-all duration-300">
+                        <div class="backdrop-blur-sm rounded-xl p-6 border transition-all duration-300" style="background: var(--bg-card); border-color: var(--border-color);" onmouseover="this.style.borderColor='var(--text-secondary)'" onmouseout="this.style.borderColor='var(--border-color)'">
                             <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                                <h4 class="text-xl font-bold text-white mb-2 md:mb-0">
+                                <h4 class="text-xl font-bold mb-2 md:mb-0" style="color: var(--text-primary);">
                                     Research Assistant
                                 </h4>
                                 <span class="text-lg">
-                                    <a href="https://robotics.iiit.ac.in/" target="_blank" class="text-primary hover:text-white transition-colors duration-300 font-semibold">Robotics Research Center</a>, 
-                                    <a href="https://www.iiit.ac.in/" target="_blank" class="text-primary hover:text-white transition-colors duration-300 font-semibold">IIIT Hyderabad</a>
+                                    <a href="https://robotics.iiit.ac.in/" target="_blank" class="transition-colors duration-300 font-semibold" style="color: var(--accent-primary);" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--accent-primary)'">Robotics Research Center</a>, 
+                                    <a href="https://www.iiit.ac.in/" target="_blank" class="transition-colors duration-300 font-semibold" style="color: var(--accent-primary);" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--accent-primary)'">IIIT Hyderabad</a>
                                 </span>
                             </div>
                             <div class="space-y-2 mb-4">
-                                <p class="text-secondary">
-                                    <em>Advisor: <a href="https://scholar.google.co.in/citations?user=5i1t_QgAAAAJ&hl=en" target="_blank" class="text-primary hover:text-white transition-colors duration-300">Dr. Harikumar Kandath</a></em>
+                                <p style="color: var(--text-secondary);">
+                                    <em>Advisor: <a href="https://scholar.google.co.in/citations?user=5i1t_QgAAAAJ&hl=en" target="_blank" class="transition-colors duration-300" style="color: var(--accent-primary);" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--accent-primary)'">Dr. Harikumar Kandath</a></em>
                                 </p>
                             </div>
-                            <p class="text-secondary leading-relaxed">
+                            <p class="leading-relaxed" style="color: var(--text-secondary);">
                                 Worked on Aerial Manipulator Control using 
-                                <span class="text-primary font-semibold">Control Barrier Lyapunov constraints</span> within a 
-                                <span class="text-primary font-semibold">Model Predictive Controller</span> for safe operation of the aerial manipulator in constrained environments.
+                                <span class="font-semibold" style="color: var(--accent-primary);">Control Barrier Lyapunov constraints</span> within a 
+                                <span class="font-semibold" style="color: var(--accent-primary);">Model Predictive Controller</span> for safe operation of the aerial manipulator in constrained environments.
                             </p>
                         </div>
                     </div>
@@ -1499,12 +1486,12 @@
 
                 <!-- Future Vision -->
                 <div class="mb-16">
-                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center" style="color: var(--text-primary);">
                         <span class="text-3xl mr-3">🔭</span>
                         Future Vision
                     </h3>
-                    <div class="bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700/20">
-                        <p class="text-secondary leading-relaxed">
+                    <div class="backdrop-blur-sm rounded-xl p-6 border" style="background: var(--bg-card); border-color: var(--border-color);">
+                        <p class="leading-relaxed" style="color: var(--text-secondary);">
                             I am fascinated by how intelligent agents can learn structured, transferable policies that generalize across tasks embodiments, and environments, moving toward autonomous systems capable of learning and reasoning like humans. My long-term goal is to develop generalist robot policies that unify learning, reasoning, and control, advancing adaptable embodied agents for diverse real-world tasks.
                         </p>
                     </div>
@@ -1512,12 +1499,12 @@
 
                 <!-- Beyond Research -->
                 <div class="mb-16">
-                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center" style="color: var(--text-primary);">
                         <span class="text-3xl mr-3">☕</span>
                         Beyond Research
                     </h3>
-                    <div class="bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700/20">
-                        <p class="text-secondary leading-relaxed">
+                    <div class="backdrop-blur-sm rounded-xl p-6 border" style="background: var(--bg-card); border-color: var(--border-color);">
+                        <p class="leading-relaxed" style="color: var(--text-secondary);">
                             Outside the lab, I enjoy 
                             <span class="inline-flex items-center mx-1"><span class="text-2xl mr-1">♟️</span>Chess</span>, 
                             <span class="inline-flex items-center mx-1"><span class="text-2xl mr-1">🏸</span>Squash</span>, and 
@@ -1529,17 +1516,17 @@
 
                 <!-- Stats Section -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-sm rounded-xl p-6 border border-primary/20 text-center hover:border-primary/40 transition-all duration-300">
-                        <div class="text-4xl font-bold text-primary mb-2">5+</div>
-                        <div class="text-secondary font-medium">Years Research Experience</div>
+                    <div class="backdrop-blur-sm rounded-xl p-6 border text-center transition-all duration-300" style="background: var(--bg-card); border-color: var(--border-color);" onmouseover="this.style.borderColor='var(--accent-primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
+                        <div class="text-4xl font-bold mb-2" style="color: var(--accent-primary);">5+</div>
+                        <div class="font-medium" style="color: var(--text-secondary);">Years Research Experience</div>
                     </div>
-                    <div class="bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-sm rounded-xl p-6 border border-primary/20 text-center hover:border-primary/40 transition-all duration-300">
-                        <div class="text-4xl font-bold text-primary mb-2">2+</div>
-                        <div class="text-secondary font-medium">Years Job Experience</div>
+                    <div class="backdrop-blur-sm rounded-xl p-6 border text-center transition-all duration-300" style="background: var(--bg-card); border-color: var(--border-color);" onmouseover="this.style.borderColor='var(--accent-primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
+                        <div class="text-4xl font-bold mb-2" style="color: var(--accent-primary);">2+</div>
+                        <div class="font-medium" style="color: var(--text-secondary);">Years Job Experience</div>
                     </div>
-                    <div class="bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-sm rounded-xl p-6 border border-primary/20 text-center hover:border-primary/40 transition-all duration-300">
-                        <div class="text-4xl font-bold text-primary mb-2">3+</div>
-                        <div class="text-secondary font-medium">Publications & Patents</div>
+                    <div class="backdrop-blur-sm rounded-xl p-6 border text-center transition-all duration-300" style="background: var(--bg-card); border-color: var(--border-color);" onmouseover="this.style.borderColor='var(--accent-primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
+                        <div class="text-4xl font-bold mb-2" style="color: var(--accent-primary);">3+</div>
+                        <div class="font-medium" style="color: var(--text-secondary);">Publications & Patents</div>
                     </div>
                 </div>
             </div>
@@ -2123,11 +2110,10 @@
         // Theme switching functionality
         function initThemeToggle() {
             const themeToggle = document.getElementById('theme-toggle');
-            const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
             const body = document.body;
             
-            // Get saved theme or default to dark
-            const savedTheme = localStorage.getItem('theme') || 'dark';
+            // Get saved theme or default to light
+            const savedTheme = localStorage.getItem('theme') || 'light';
             body.setAttribute('data-theme', savedTheme);
             updateThemeIcons(savedTheme);
             
@@ -2143,17 +2129,10 @@
             function updateThemeIcons(theme) {
                 const sunIcon = 'fas fa-sun';
                 const moonIcon = 'fas fa-moon';
-                const iconClass = theme === 'dark' ? sunIcon : moonIcon;
+                const iconClass = theme === 'light' ? moonIcon : sunIcon;
                 
                 if (themeToggle) {
                     const icon = themeToggle.querySelector('i');
-                    if (icon) {
-                        icon.className = iconClass;
-                    }
-                }
-                
-                if (mobileThemeToggle) {
-                    const icon = mobileThemeToggle.querySelector('i');
                     if (icon) {
                         icon.className = iconClass;
                     }
@@ -2163,10 +2142,6 @@
             // Add event listeners
             if (themeToggle) {
                 themeToggle.addEventListener('click', toggleTheme);
-            }
-            
-            if (mobileThemeToggle) {
-                mobileThemeToggle.addEventListener('click', toggleTheme);
             }
         }
 
