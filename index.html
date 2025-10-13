@@ -243,6 +243,23 @@
             color: #64ffda;
         }
         
+        .social-link {
+            color: #94a3b8;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem;
+        }
+        
+        .social-link:hover {
+            color: #64ffda;
+            background: rgba(100, 255, 218, 0.1);
+        }
+        
         /* Sections */
         .section {
             padding: 5rem 0;
@@ -840,10 +857,7 @@
         <div class="container">
             <div class="hero-content">
                 <img src="./content/profile.jpeg" alt="Karan Mirakhor" class="profile-image" onerror="this.style.display='none'">
-                <h1><span id="greeting">Hello!!</span></h1>
-                <p class="subtitle">I am Karan Mirakhor, 2nd year Master of Science (Research) student in Robotics (MSR) at the <a href="https://www.ri.cmu.edu/" target="_blank" class="highlight">Robotics Institute, Carnegie Mellon University</a></p>
-                <p class="subtitle">Graduate Research Assistant — <a href="https://www.ri.cmu.edu/labs/advanced-agent-robotics-technology-lab/" target="_blank" class="highlight">Advanced Agent Robotics Technology Lab</a></p>
-                <p class="subtitle">Advisor: <a href="https://www.ri.cmu.edu/ri-people/katia-sycara/" target="_blank" class="highlight">Prof. Katia Sycara</a></p>
+                <h1>Karan Mirakhor</h1>
                 
                 <div class="social-links">
                     <a href="https://scholar.google.com/citations?user=wpeFm64AAAAJ&hl=en" target="_blank">
@@ -855,7 +869,7 @@
                     <a href="https://www.linkedin.com/in/karan-mirakhor-b065b7142/" target="_blank">
                         <i class="fab fa-linkedin"></i> LinkedIn
                     </a>
-                    <a href="https://drive.google.com/file/d/1KMUiU1Ze_I2ZgC0N5dFkpX_ucFn5C_G5/view?usp=sharing" target="_blank">
+                    <a href="https://drive.google.com/file/d/1l_eqqx5Yj0VHMLLEFMwIw9SPhR8qlddx/view?usp=sharing" target="_blank">
                         <i class="fas fa-file-lines"></i> Resume
                     </a>
                 </div>
@@ -877,21 +891,22 @@
                 <!-- Introduction Card -->
                 <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 mb-12 border border-slate-700/50 shadow-2xl">
                     <div class="text-center mb-8">
-                        <h3 class="text-3xl font-bold text-white mb-4 tracking-wide">Karan Mirakhor</h3>
+                        <img src="./content/profile.jpeg" alt="Karan Mirakhor" class="profile-image mx-auto mb-6" onerror="this.style.display='none'">
+                        <h3 class="text-3xl font-bold text-white mb-4 tracking-wide">Hello!!</h3>
                         <p class="text-xl text-secondary leading-relaxed">
-                            Second-year Master of Science (Research) student in Robotics (MSR) at the 
-                            <a href="https://www.ri.cmu.edu/" target="_blank" class="text-primary hover:text-white transition-colors duration-300 font-semibold">Robotics Institute, Carnegie Mellon University</a>, 
+                            I am Karan Mirakhor, 2nd year Master of Science (Research) student in Robotics (MSR) at the 
+                            <a href="https://www.ri.cmu.edu/" target="_blank" class="text-primary hover:text-white transition-colors duration-300 font-semibold">Robotics Institute, Carnegie Mellon University</a>
                         </p>
                     </div>
                     
                     <div class="text-center space-y-2">
                         <p class="text-lg text-secondary">
                             <span class="text-primary font-semibold">Graduate Research Assistant</span> — 
-                            <a href="https://www.ri.cmu.edu/robotics-groups/advanced-agent-robotics-technology-lab/" target="_blank" class="text-primary hover:text-white transition-colors duration-300 font-medium">Advanced Agent Robotics Technology Lab</a>
+                            <a href="https://www.ri.cmu.edu/labs/advanced-agent-robotics-technology-lab/" target="_blank" class="text-primary hover:text-white transition-colors duration-300 font-medium">Advanced Agent Robotics Technology Lab</a>
                         </p>
                         <p class="text-lg text-secondary">
                             <span class="text-primary font-semibold">Advisor:</span> 
-                            <a href="https://www.cs.cmu.edu/~sycara/" target="_blank" class="text-primary hover:text-white transition-colors duration-300 font-medium">Prof. Katia Sycara</a>
+                            <a href="https://www.ri.cmu.edu/ri-people/katia-sycara/" target="_blank" class="text-primary hover:text-white transition-colors duration-300 font-medium">Prof. Katia Sycara</a>
                         </p>
                     </div>
                 </div>
