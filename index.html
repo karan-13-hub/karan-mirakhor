@@ -89,12 +89,12 @@
             --submission-bg: #451a03;
             --submission-text: #fbbf24;
             --submission-border: #f59e0b;
-            --publication-bg: #1e3a8a;
-            --publication-text: #60a5fa;
-            --publication-border: #3b82f6;
-            --patent-bg: #581c87;
-            --patent-text: #c084fc;
-            --patent-border: #8b5cf6;
+            --publication-bg: #1e40af;
+            --publication-text: #93c5fd;
+            --publication-border: #60a5fa;
+            --patent-bg: #7c3aed;
+            --patent-text: #e9d5ff;
+            --patent-border: #a78bfa;
         }
 
         * {
@@ -359,7 +359,7 @@
             display: inline-block;
             transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
             opacity: 1;
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 500;
             transform: translateY(0);
         }
@@ -782,7 +782,7 @@
         .publication-tile h3 {
             color: var(--text-primary);
             font-size: 1.25rem;
-            font-weight: 600;
+            font-weight: 800;
             line-height: 1.4;
             margin-bottom: 0.8rem;
             transition: color 0.3s ease;
@@ -1027,7 +1027,7 @@
             flex-direction: column;
             gap: 1.25rem;
             margin-top: 2rem;
-            max-width: 1400px;
+            max-width: 1600px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -1036,7 +1036,7 @@
             background: var(--bg-card);
             border: 2px solid var(--border-color);
             border-radius: 14px;
-            padding: 1.5rem 2rem;
+            padding: 1.5rem 2.5rem;
             display: flex;
             align-items: flex-start;
             gap: 1.25rem;
@@ -1612,7 +1612,7 @@
                             </div>
                             <p class="mb-3" style="color: var(--text-secondary);">
                                 <span class="font-bold" style="color: var(--text-secondary);">Advisor:</span> 
-                                <a href="https://scholar.google.co.in/citations?user=Eqf8NrEAAAAJ&hl=en" target="_blank" class="transition-colors duration-300 font-bold" style="color: var(--accent-primary);" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--accent-primary)'">Dr. Brojeshwar Bhowmick</a>
+                                <a href="https://scholar.google.co.in/citations?user=Eqf8NrEAAAAJ&hl=en" target="_blank" class="transition-colors duration-300 font-medium" style="color: var(--accent-primary);" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--accent-primary)'">Dr. Brojeshwar Bhowmick</a>
                             </p>
                             <p class="leading-relaxed" style="color: var(--text-secondary);">
                                 Explored <span class="font-bold" style="color: var(--text-secondary);">Task Planning</span> for Indoor Object Rearrangement under 
@@ -1634,7 +1634,7 @@
                             <div class="space-y-2 mb-4">
                                 <p style="color: var(--text-secondary);">
                                     <span class="font-bold" style="color: var(--text-secondary);">Advisor:</span> 
-                                    <a href="https://scholar.google.co.in/citations?user=5i1t_QgAAAAJ&hl=en" target="_blank" class="transition-colors duration-300 font-bold" style="color: var(--accent-primary);" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--accent-primary)'">Dr. Harikumar Kandath</a>
+                                    <a href="https://scholar.google.co.in/citations?user=5i1t_QgAAAAJ&hl=en" target="_blank" class="transition-colors duration-300 font-medium" style="color: var(--accent-primary);" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--accent-primary)'">Dr. Harikumar Kandath</a>
                                 </p>
                             </div>
                             <p class="leading-relaxed" style="color: var(--text-secondary);">
@@ -1698,9 +1698,7 @@
     <!-- Research Section -->
     <section id="research" class="py-20 section">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-semibold mb-12 text-center" style="color: var(--accent-primary);">
-                Research Interests
-            </h2>
+            <h2 class="section-title">Research Interests</h2>
             <div class="text-center mb-12">
                 <p class="text-base max-w-5xl mx-auto leading-relaxed" style="color: var(--text-secondary);">
                     My research focuses on advancing artificial intelligence through Long-Horizon Planning, Sequential Decision-Making, and Human-AI Collaboration. My objective is to engineer autonomous systems capable of exhibiting strategic planning, adaptive behavior, and safe, robust control when operating in complex, uncertain environments.
@@ -1785,7 +1783,7 @@
                         <p class="authors">Anonymous</p>
                         <p class="venue">ICLR 2026 Conference Submission</p>
                         <div class="publication-actions">
-                            <a href="https://drive.google.com/file/d/1KMUiU1Ze_I2ZgC0N5dFkpX_ucFn5C_G5/view?usp=sharing" target="_blank" class="publication-link">View Paper →</a>
+                            <a href="https://drive.google.com/file/d/1KMUiU1Ze_I2ZgC0N5dFkpX_ucFn5C_G5/view?usp=sharing" target="_blank" class="publication-link">View Paper 📄</a>
                             <button class="expand-btn" onclick="toggleAbstract(this)">
                                 <span class="expand-text">Read Abstract</span>
                                 <i class="fas fa-eye expand-icon"></i>
@@ -1805,7 +1803,7 @@
                         <p class="authors">Karan Mirakhor, Sourav Ghosh, Dipanjan Das, Brojeshwar Bhowmick</p>
                         <p class="venue">Proceedings of the AAAI Conference on Artificial Intelligence, 2024 (Oral)</p>
                         <div class="publication-actions">
-                            <a href="https://ojs.aaai.org/index.php/AAAI/article/view/28902" target="_blank" class="publication-link">View Paper →</a>
+                            <a href="https://ojs.aaai.org/index.php/AAAI/article/view/28902" target="_blank" class="publication-link">View Paper 📄</a>
                             <button class="expand-btn" onclick="toggleAbstract(this)">
                                 <span class="expand-text">Read Abstract</span>
                                 <i class="fas fa-eye expand-icon"></i>
@@ -1825,7 +1823,7 @@
                         <p class="authors">Karan Mirakhor, Sourav Ghosh, Dipanjan Das, Brojeshwar Bhowmick</p>
                         <p class="venue">The Twelfth International Conference on Learning Representations (ICLR), 2024</p>
                         <div class="publication-actions">
-                            <a href="https://proceedings.iclr.cc/paper_files/paper/2024/hash/13b28ea4105bf409ab6b8ac8184af812-Abstract-Conference.html" target="_blank" class="publication-link">View Paper →</a>
+                            <a href="https://proceedings.iclr.cc/paper_files/paper/2024/hash/13b28ea4105bf409ab6b8ac8184af812-Abstract-Conference.html" target="_blank" class="publication-link">View Paper 📄</a>
                             <button class="expand-btn" onclick="toggleAbstract(this)">
                                 <span class="expand-text">Read Abstract</span>
                                 <i class="fas fa-eye expand-icon"></i>
@@ -1845,7 +1843,7 @@
                         <p class="authors">Vedant Mundheda, Karan Mirakhor, KS Rahul, Harikumar Kandath, Nagamanikandan Govindan</p>
                         <p class="venue">European Control Conference (ECC), 2023</p>
                         <div class="publication-actions">
-                            <a href="https://ieeexplore.ieee.org/document/10178336" target="_blank" class="publication-link">View Paper →</a>
+                            <a href="https://ieeexplore.ieee.org/document/10178336" target="_blank" class="publication-link">View Paper 📄</a>
                             <button class="expand-btn" onclick="toggleAbstract(this)">
                                 <span class="expand-text">Read Abstract</span>
                                 <i class="fas fa-eye expand-icon"></i>
@@ -1865,7 +1863,7 @@
                         <p class="authors">Dipanjan Das, Karan Mirakhor, Sourav Ghosh, Brojeshwar Bhowmick</p>
                         <p class="venue">US Patent Office (Application 18/760,514)</p>
                         <div class="publication-actions">
-                            <a href="https://patents.google.com/patent/US20250053156A1/en" target="_blank" class="publication-link">View Patent →</a>
+                            <a href="https://patents.google.com/patent/US20250053156A1/en" target="_blank" class="publication-link">View Patent ⚖️</a>
                             <button class="expand-btn" onclick="toggleAbstract(this)">
                                 <span class="expand-text">Read Abstract</span>
                                 <i class="fas fa-eye expand-icon"></i>
