@@ -114,12 +114,6 @@
             background: rgba(100, 255, 218, 0.1);
         }
         
-        .hamburger-icon, .close-icon {
-            font-size: 1.2rem;
-            font-weight: bold;
-            display: inline-block;
-        }
-        
         .mobile-nav {
             display: none;
             position: absolute;
@@ -1191,8 +1185,7 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
-                    <span class="hamburger-icon">☰</span>
-                    <span class="close-icon" style="display: none;">✕</span>
+                    <i class="fas fa-bars"></i>
                 </button>
             </div>
             <div class="mobile-nav" id="mobile-nav">
@@ -2104,29 +2097,20 @@
                     isMenuOpen = !isMenuOpen;
                     mobileNav.classList.toggle('active', isMenuOpen);
                     
-                    const hamburgerIcon = mobileMenuToggle.querySelector('.hamburger-icon');
-                    const closeIcon = mobileMenuToggle.querySelector('.close-icon');
-                    
-                    if (hamburgerIcon && closeIcon) {
-                        if (isMenuOpen) {
-                            hamburgerIcon.style.display = 'none';
-                            closeIcon.style.display = 'inline';
-                        } else {
-                            hamburgerIcon.style.display = 'inline';
-                            closeIcon.style.display = 'none';
-                        }
+                    const icon = mobileMenuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars', !isMenuOpen);
+                        icon.classList.toggle('fa-times', isMenuOpen);
                     }
                 };
                 
                 const closeMenu = () => {
                     isMenuOpen = false;
                     mobileNav.classList.remove('active');
-                    const hamburgerIcon = mobileMenuToggle.querySelector('.hamburger-icon');
-                    const closeIcon = mobileMenuToggle.querySelector('.close-icon');
-                    
-                    if (hamburgerIcon && closeIcon) {
-                        hamburgerIcon.style.display = 'inline';
-                        closeIcon.style.display = 'none';
+                    const icon = mobileMenuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.add('fa-bars');
+                        icon.classList.remove('fa-times');
                     }
                 };
                 
