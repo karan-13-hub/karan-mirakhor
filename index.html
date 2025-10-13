@@ -477,78 +477,6 @@
             margin-right: auto;
         }
 
-        /* Research Grid */
-        .research-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .research-card {
-            background: var(--bg-card);
-            padding: 2rem;
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
-            min-height: 280px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-        }
-
-        .research-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px var(--shadow-color), 0 10px 10px -5px var(--shadow-color);
-            border-color: var(--accent-primary);
-        }
-
-        .research-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--accent-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 2rem auto;
-            transition: all 0.3s ease;
-            opacity: 0.1;
-        }
-
-        .research-card:hover .research-icon {
-            opacity: 1;
-            transform: scale(1.1);
-        }
-
-        .research-card h3 {
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .research-card:hover h3 {
-            color: var(--accent-primary);
-        }
-
-        .research-card p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            font-size: 1.1rem;
-            flex-grow: 1;
-        }
-
-        .research-icon span {
-            color: white;
-            font-size: 2rem;
-        }
         
         .card {
             background: var(--bg-card);
@@ -1196,31 +1124,6 @@
                 max-width: 100%;
             }
             
-            .research-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-                max-width: 100%;
-            }
-            
-            .research-card {
-                min-height: 250px;
-                padding: 1.5rem;
-            }
-            
-            .research-icon {
-                width: 70px;
-                height: 70px;
-                margin-bottom: 1.5rem;
-            }
-            
-            .research-card h3 {
-                font-size: 1.3rem;
-                margin-bottom: 1rem;
-            }
-            
-            .research-card p {
-                font-size: 1rem;
-            }
             
             .card {
                 padding: 1.8rem 2.5rem;
@@ -1319,15 +1222,6 @@
                 max-width: 1400px;
             }
             
-            .research-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-                max-width: 1200px;
-            }
-            
-            .research-card {
-                min-height: 260px;
-            }
             
             .card {
                 padding: 1.8rem 3rem;
@@ -1410,13 +1304,6 @@
             }
         }
 
-        @media (min-width: 1201px) {
-            .research-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 2rem;
-                max-width: 1200px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -1654,55 +1541,75 @@
     </section>
 
     <!-- Research Section -->
-    <section id="research" class="section">
-        <div class="container">
-            <h2 class="section-title">Research Interests</h2>
-            <div class="section-content">
-                <p>My research focuses on advancing artificial intelligence through Long-Horizon Planning, Sequential Decision-Making, and Human-AI Collaboration. My objective is to engineer autonomous systems capable of exhibiting strategic planning, adaptive behavior, and safe, robust control when operating in complex, uncertain environments.</p>
+    <section id="research" class="py-20" style="background: var(--bg-secondary);">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-semibold mb-12 text-center" style="color: var(--accent-primary);">
+                Research Interests
+            </h2>
+            <div class="text-center mb-12">
+                <p class="text-lg max-w-4xl mx-auto leading-relaxed" style="color: var(--text-secondary);">
+                    My research focuses on advancing artificial intelligence through Long-Horizon Planning, Sequential Decision-Making, and Human-AI Collaboration. My objective is to engineer autonomous systems capable of exhibiting strategic planning, adaptive behavior, and safe, robust control when operating in complex, uncertain environments.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="backdrop-blur-sm rounded-2xl shadow-lg text-center transition-all duration-300 hover:transform hover:-translate-y-1" style="background: var(--bg-card); padding: 2rem; border: 1px solid var(--border-color);">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style="background: var(--border-color);">
+                        <span class="text-3xl">🤖</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4" style="color: var(--text-primary);">Reinforcement Learning</h3>
+                    <p class="leading-relaxed" style="color: var(--text-secondary);">
+                        Develop algorithms that enable agents to learn close-to-optimal planning and control strategies in robotics, leveraging human demonstrations, fixed datasets, or interactions with dynamic environments.
+                    </p>
+                </div>
                 
-                <div class="research-grid">
-                    <div class="research-card">
-                        <div class="research-icon">
-                            <span>🤖</span>
-                        </div>
-                        <h3>Reinforcement Learning</h3>
-                        <p>Develop algorithms that enable agents to learn close-to-optimal planning and control strategies in robotics, leveraging human demonstrations, fixed datasets, or interactions with dynamic environments.</p>
+                <div class="backdrop-blur-sm rounded-2xl shadow-lg text-center transition-all duration-300 hover:transform hover:-translate-y-1" style="background: var(--bg-card); padding: 2rem; border: 1px solid var(--border-color);">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style="background: var(--border-color);">
+                        <span class="text-3xl">📈</span>
                     </div>
-                    <div class="research-card">
-                        <div class="research-icon">
-                            <span>📈</span>
-                        </div>
-                        <h3>Sequence Modelling</h3>
-                        <p>Design models that predict and understand sequential data, including temporal patterns, trajectories, and planning sequences.</p>
+                    <h3 class="text-xl font-semibold mb-4" style="color: var(--text-primary);">Sequence Modelling</h3>
+                    <p class="leading-relaxed" style="color: var(--text-secondary);">
+                        Design models that predict and understand sequential data, including temporal patterns, trajectories, and planning sequences.
+                    </p>
+                </div>
+                
+                <div class="backdrop-blur-sm rounded-2xl shadow-lg text-center transition-all duration-300 hover:transform hover:-translate-y-1" style="background: var(--bg-card); padding: 2rem; border: 1px solid var(--border-color);">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style="background: var(--border-color);">
+                        <span class="text-3xl">🎯</span>
                     </div>
-                    <div class="research-card">
-                        <div class="research-icon">
-                            <span>🎯</span>
-                        </div>
-                        <h3>Decision Making under Uncertainty</h3>
-                        <p>Develop methods for robust and adaptive decision-making in partially observable or stochastic environments.</p>
+                    <h3 class="text-xl font-semibold mb-4" style="color: var(--text-primary);">Decision Making under Uncertainty</h3>
+                    <p class="leading-relaxed" style="color: var(--text-secondary);">
+                        Develop methods for robust and adaptive decision-making in partially observable or stochastic environments.
+                    </p>
+                </div>
+                
+                <div class="backdrop-blur-sm rounded-2xl shadow-lg text-center transition-all duration-300 hover:transform hover:-translate-y-1" style="background: var(--bg-card); padding: 2rem; border: 1px solid var(--border-color);">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style="background: var(--border-color);">
+                        <span class="text-3xl">👥</span>
                     </div>
-                    <div class="research-card">
-                        <div class="research-icon">
-                            <span>👥</span>
-                        </div>
-                        <h3>Multi-Agent Reinforcement Learning (MARL)</h3>
-                        <p>Study interactions of multiple agents learning together, including cooperation, competition, and strategic reasoning.</p>
+                    <h3 class="text-xl font-semibold mb-4" style="color: var(--text-primary);">Multi-Agent Reinforcement Learning (MARL)</h3>
+                    <p class="leading-relaxed" style="color: var(--text-secondary);">
+                        Study interactions of multiple agents learning together, including cooperation, competition, and strategic reasoning.
+                    </p>
+                </div>
+                
+                <div class="backdrop-blur-sm rounded-2xl shadow-lg text-center transition-all duration-300 hover:transform hover:-translate-y-1" style="background: var(--bg-card); padding: 2rem; border: 1px solid var(--border-color);">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style="background: var(--border-color);">
+                        <span class="text-3xl">🛡️</span>
                     </div>
-                    <div class="research-card">
-                        <div class="research-icon">
-                            <span>🛡️</span>
-                        </div>
-                        <h3>Safe and Robust Control</h3>
-                        <p>Design control strategies for autonomous systems that ensure safety, reliability, and robustness under uncertainty.</p>
+                    <h3 class="text-xl font-semibold mb-4" style="color: var(--text-primary);">Safe and Robust Control</h3>
+                    <p class="leading-relaxed" style="color: var(--text-secondary);">
+                        Design control strategies for autonomous systems that ensure safety, reliability, and robustness under uncertainty.
+                    </p>
+                </div>
+                
+                <div class="backdrop-blur-sm rounded-2xl shadow-lg text-center transition-all duration-300 hover:transform hover:-translate-y-1" style="background: var(--bg-card); padding: 2rem; border: 1px solid var(--border-color);">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style="background: var(--border-color);">
+                        <span class="text-3xl">🗺️</span>
                     </div>
-                    <div class="research-card">
-                        <div class="research-icon">
-                            <span>🗺️</span>
-                        </div>
-                        <h3>Planning</h3>
-                        <p>Develop algorithms for efficient and adaptive planning in robotics and AI systems, including long-horizon decision-making.</p>
-                    </div>
+                    <h3 class="text-xl font-semibold mb-4" style="color: var(--text-primary);">Planning</h3>
+                    <p class="leading-relaxed" style="color: var(--text-secondary);">
+                        Develop algorithms for efficient and adaptive planning in robotics and AI systems, including long-horizon decision-making.
+                    </p>
                 </div>
             </div>
         </div>
