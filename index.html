@@ -261,16 +261,16 @@
         .cards {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
+            gap: 2rem;
             margin-top: 3rem;
-            max-width: 1400px;
+            max-width: 1600px;
             margin-left: auto;
             margin-right: auto;
         }
         
         .card {
             background: linear-gradient(135deg, rgba(17, 34, 64, 0.8) 0%, rgba(15, 27, 46, 0.8) 100%);
-            padding: 2.5rem 3rem;
+            padding: 1.8rem 4rem;
             border-radius: 16px;
             border: 1px solid rgba(100, 255, 218, 0.2);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -278,7 +278,8 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             position: relative;
             overflow: hidden;
-            min-height: 220px;
+            min-height: 160px;
+            max-height: 180px;
         }
         
         .card::before {
@@ -305,10 +306,10 @@
         
         .card h3 {
             color: white;
-            margin-bottom: 1.5rem;
-            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            line-height: 1.3;
+            line-height: 1.2;
             transition: color 0.3s ease;
         }
         
@@ -318,9 +319,9 @@
         
         .card p {
             color: #a8b2d1;
-            margin-bottom: 1rem;
-            line-height: 1.7;
-            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+            font-size: 0.95rem;
             transition: color 0.3s ease;
         }
         
@@ -385,21 +386,22 @@
             
             .cards {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 1.5rem;
                 max-width: 100%;
             }
             
             .card {
-                padding: 2rem 2.5rem;
-                min-height: 180px;
+                padding: 1.5rem 2.5rem;
+                min-height: 140px;
+                max-height: 160px;
             }
             
             .card h3 {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
             }
             
             .card p {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
         }
         
@@ -407,21 +409,22 @@
         @media (max-width: 1024px) and (min-width: 769px) {
             .cards {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-                max-width: 1200px;
+                gap: 1.5rem;
+                max-width: 1400px;
             }
             
             .card {
-                padding: 2rem 2.5rem;
-                min-height: 200px;
+                padding: 1.5rem 3rem;
+                min-height: 150px;
+                max-height: 170px;
             }
             
             .card h3 {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
             }
             
             .card p {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
         }
     </style>
