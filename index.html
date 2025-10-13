@@ -698,6 +698,11 @@
             margin-bottom: 0.4rem;
             font-size: 0.98rem;
             line-height: 1.5;
+            display: none; /* hidden by default */
+        }
+
+        .award-tile:hover .award-content p {
+            display: block; /* reveal on hover */
         }
 
         @media (max-width: 768px) {
