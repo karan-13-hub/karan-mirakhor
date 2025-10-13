@@ -641,6 +641,93 @@
             text-decoration: underline;
         }
         
+        /* Projects Section - Horizontal tiles */
+        .projects-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin-top: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .project-tile {
+            background: linear-gradient(135deg, rgba(17, 34, 64, 0.8) 0%, rgba(15, 27, 46, 0.8) 100%);
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            border-radius: 14px;
+            padding: 1.5rem 2rem 3.25rem 2rem; /* extra bottom space for + button */
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .project-tile:hover {
+            border-color: #64ffda;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .project-content h3 {
+            color: white;
+            margin-bottom: 0.4rem;
+            font-size: 1.2rem;
+            line-height: 1.35;
+        }
+
+        .project-summary {
+            color: #a8b2d1;
+            font-size: 1rem;
+            line-height: 1.5;
+            white-space: nowrap; /* single line */
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .project-details {
+            display: none;
+            margin-top: 0.5rem;
+        }
+
+        .project-tile.expanded .project-details {
+            display: block;
+        }
+
+        .project-links a { color: #64ffda; text-decoration: none; font-weight: 500; }
+        .project-links a:hover { text-decoration: underline; }
+
+        .project-toggle {
+            position: absolute;
+            left: 50%;
+            bottom: 0.8rem;
+            transform: translateX(-50%);
+        }
+
+        .project-toggle button {
+            width: 36px;
+            height: 36px;
+            border-radius: 9999px;
+            border: 1px solid #64ffda;
+            background: transparent;
+            color: #64ffda;
+            font-size: 1.2rem;
+            line-height: 1;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .project-toggle button:hover {
+            background: #64ffda;
+            color: #0f172a;
+        }
+
+        @media (max-width: 768px) {
+            .project-content h3 { font-size: 1.1rem; }
+            .project-summary { font-size: 0.95rem; }
+        }
+
         /* Awards Section */
         .awards-container {
             display: flex;
@@ -1038,7 +1125,7 @@
                         </h4>
                         <p class="text-secondary leading-relaxed">
                             Developing targeted deception strategies by leveraging higher-order opponent belief models and analyzing 
-                            historical response patterns to identify and exploit individual behavioral vulnerabilities.
+                            historical response patterns to identify and exploit individual vulnerabilities.
                         </p>
                     </div>
                 </div>
@@ -1298,21 +1385,58 @@
             <div class="section-content">
                 <p>Selected projects showcasing my work in AI, robotics, and multi-agent systems.</p>
                 
-                <div class="cards">
-                    <div class="card">
-                        <h3>Just Imagine: Closed-Loop VLA for Long-Horizon Tasks</h3>
-                        <p>Visual-language-action pipeline leveraging world models for imagination-driven reasoning. Learning dense proxy rewards from sparse human videos to guide actor–critic control on Libero benchmark.</p>
-                        <a href="https://drive.google.com/presentation/d/1zFm-VuV9FV5P4Vt70gTIIagh_6zWmC2OEriu3IMXxfQ" target="_blank">View Project →</a>
+                <div class="projects-container">
+                    <div class="project-tile" id="project-1">
+                        <div class="project-content">
+                            <h3>Just imagine: Closed Loop VLA with World Modelling for Long-Horizon Tasks</h3>
+                            <p class="project-summary">Working on a closed-loop Visual-Language-Action (VLA) pipeline that leverages world models for imagination-driven reasoning, simulating future states via pose-conditioned robot rendering.</p>
+                            <div class="project-details">
+                                <p>Learned dense proxy rewards from sparse human demonstration videos to guide an actor-critic framework, with evaluation on the LIBERO benchmark for tabletop manipulation tasks.</p>
+                                <p class="project-links">
+                                    <a href="https://docs.google.com/presentation/d/1zFm-VuV9FV5P4Vt70gTIIagh_6zWmC2OEriu3IMXxfQ/edit?usp=sharing" target="_blank">Slides</a>
+                                    · <a href="https://libero-project.github.io/main.html" target="_blank">LIBERO Benchmark</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="project-toggle">
+                            <button aria-label="Toggle details" onclick="toggleProject('project-1', this)">+</button>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>Multi-Agent Simulation Framework for Cooperative Robotics</h3>
-                        <p>A comprehensive simulation framework for testing multi-agent reinforcement learning algorithms in cooperative robotic environments. Features include configurable agent behaviors, dynamic environment generation, and real-time visualization.</p>
-                        <a href="https://github.com/karan-13-hub/multi-agent-sim" target="_blank">View Project →</a>
+
+                    <div class="project-tile" id="project-2">
+                        <div class="project-content">
+                            <h3>ReMov3r: Real-Time Monocular Video to 3D Reconstruction</h3>
+                            <p class="project-summary">Designed a transformer-based architecture with cross-attentional fusion, hierarchical spatio-temporal representation, and confidence-guided depth refinement for improved 3D reconstruction.</p>
+                            <div class="project-details">
+                                <p>Enhanced trajectory estimation via adaptive keyframe selection and state representation learning, outperforming CUT3R and SLAM3R on ScanNetV2 and 7-Scenes benchmarks.</p>
+                                <p class="project-links">
+                                    <a href="https://drive.google.com/file/d/1SCU6ewW7yld8Vf9UZZhS0eCzKZog-N4J/view?usp=sharing" target="_blank">Report</a>
+                                    · <a href="https://cvpr.thecvf.com/virtual/2025/poster/34897" target="_blank">CUT3R</a>
+                                    · <a href="https://cvpr.thecvf.com/virtual/2025/poster/34485" target="_blank">SLAM3R</a>
+                                    · <a href="http://www.scan-net.org/" target="_blank">ScanNetV2</a>
+                                    · <a href="https://www.microsoft.com/en-us/research/project/rgb-d-dataset-7-scenes/" target="_blank">7-Scenes</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="project-toggle">
+                            <button aria-label="Toggle details" onclick="toggleProject('project-2', this)">+</button>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>Uncertainty Quantification in Deep Reinforcement Learning</h3>
-                        <p>Development of uncertainty quantification methods for deep reinforcement learning agents operating in safety-critical environments. Implements ensemble-based uncertainty estimation and Bayesian neural networks.</p>
-                        <a href="https://github.com/karan-13-hub/uncertainty-rl" target="_blank">View Project →</a>
+
+                    <div class="project-tile" id="project-3">
+                        <div class="project-content">
+                            <h3>Multimodal House Rearrangement using Carrier Objects as Tools</h3>
+                            <p class="project-summary">Extended prior work on embodied agents to enable efficient house rearrangement by grouping and transporting multiple objects simultaneously through the use of carrier tools, based on language or visual inputs.</p>
+                            <div class="project-details">
+                                <p>Leveraged LLMs for semantic reasoning and carrier classification; employed MCTS, CEM, and Deep RL for object grouping, space management, and robust task planning.</p>
+                                <p class="project-links">
+                                    <a href="https://drive.google.com/file/d/1E9NNGx_fdIOdlLSDMpl0OM7nBuvmYiPF/view?usp=sharing" target="_blank">Report</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="project-toggle">
+                            <button aria-label="Toggle details" onclick="toggleProject('project-3', this)">+</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1723,6 +1847,17 @@
                 expandText.textContent = 'More Info';
                 expandIcon.textContent = '▼';
                 button.classList.remove('expanded');
+            }
+        }
+
+        // Toggle project expansion
+        function toggleProject(id, btn) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const expanded = el.classList.toggle('expanded');
+            if (btn) {
+                btn.textContent = expanded ? '−' : '+';
+                btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
             }
         }
 
