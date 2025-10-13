@@ -639,6 +639,81 @@
             text-decoration: underline;
         }
         
+        /* Awards Section */
+        .awards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin-top: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .award-tile {
+            background: linear-gradient(135deg, rgba(17, 34, 64, 0.8) 0%, rgba(15, 27, 46, 0.8) 100%);
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            border-radius: 14px;
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .award-tile:hover {
+            border-color: #64ffda;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .award-meta {
+            min-width: 120px;
+            max-width: 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.4rem;
+        }
+
+        .award-year {
+            display: inline-block;
+            border: 1px solid rgba(100, 255, 218, 0.3);
+            color: #64ffda;
+            padding: 0.25rem 0.6rem;
+            border-radius: 9999px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .award-content h3 {
+            color: white;
+            margin-bottom: 0.4rem;
+            font-size: 1.15rem;
+            line-height: 1.35;
+        }
+
+        .award-content p {
+            color: #a8b2d1;
+            margin-bottom: 0.4rem;
+            font-size: 0.98rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .award-tile {
+                flex-direction: column;
+                gap: 0.75rem;
+                padding: 1.25rem 1.25rem;
+            }
+            .award-meta {
+                min-width: auto;
+                max-width: none;
+                flex-direction: row;
+                gap: 0.75rem;
+            }
+        }
+
         /* Footer */
         footer {
             background: #0f172a;
@@ -1233,23 +1308,78 @@
         <div class="container">
             <h2 class="section-title">Awards & Recognition</h2>
             <div class="section-content">
-                <p>Recognition for academic excellence and research contributions.</p>
-                
-                <div class="cards">
-                    <div class="card">
-                        <h3>Best Research Paper Award - TCS Research</h3>
-                        <p><strong>Year:</strong> 2024</p>
-                        <p>Recognized for outstanding contribution to robotic task planning research. The paper presented novel approaches to hierarchical planning under partial observability, with significant practical applications in service robotics.</p>
+                <div class="awards-container">
+                    <div class="award-tile">
+                        <div class="award-meta">
+                            <span class="award-year">2024</span>
+                        </div>
+                        <div class="award-content">
+                            <h3>JN Tata Endowment Scholarship</h3>
+                            <p>Since 1892, the J. N. Tata Endowment has awarded loan scholarships to over 5,700 Indian students for higher studies overseas. The awards are merit-based, recognizing "the best and most gifted so as to make them of the greatest service to the country”.</p>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>JN Tata Endowment Scholarship</h3>
-                        <p><strong>Year:</strong> 2024</p>
-                        <p>Received for excellence in academic research and potential for doctoral study. This prestigious scholarship recognizes outstanding academic achievement and research potential in engineering and technology fields.</p>
+
+                    <div class="award-tile">
+                        <div class="award-meta">
+                            <span class="award-year">2022</span>
+                        </div>
+                        <div class="award-content">
+                            <h3>Program Gold Medal</h3>
+                            <p>Highest Cumulative GPA n the Electronics and Communication Engineering program.</p>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>Program Gold Medal - IIIT Hyderabad</h3>
-                        <p><strong>Year:</strong> 2023</p>
-                        <p>Awarded for achieving the highest GPA in the Electronics and Communication Engineering program. This recognition highlights academic excellence and outstanding performance throughout the undergraduate program.</p>
+
+                    <div class="award-tile">
+                        <div class="award-meta">
+                            <span class="award-year">2022</span>
+                        </div>
+                        <div class="award-content">
+                            <h3>Runners up in ARTPARK Robotics Challenge</h3>
+                            <p>Stood 2nd out of 133 teams that took part in Nationwide robotics competition organised by ARTPARK for building an Autonomous Janitor Bot.</p>
+                            <p>Team lead for perception and planning stack to develop the vision algorithms used for segmentation, clustering, detection of doors, markers, grasp points etc. and also implemented MPC with static obstacle avoidance.</p>
+                            <p>Integrated the state of the art RTAB-MAP SLAM and move-base planner for bot localisation, 3D environment mapping and autonomous trajectory generation.</p>
+                        </div>
+                    </div>
+
+                    <div class="award-tile">
+                        <div class="award-meta">
+                            <span class="award-year">2018-2021</span>
+                        </div>
+                        <div class="award-content">
+                            <h3>Dean's List Award for Academic Excellence</h3>
+                            <p>Among the Top 2% in the BTech class of 2k18 for academic excellence from year 2018 to 2021.</p>
+                        </div>
+                    </div>
+
+                    <div class="award-tile">
+                        <div class="award-meta">
+                            <span class="award-year">2020</span>
+                        </div>
+                        <div class="award-content">
+                            <h3>Semi - Finalist in Flipkart Grid 2.0 challenge</h3>
+                            <p>Among the top 25 out of the 500+ participating teams for building an Autonomous Stair Climbing Robot.</p>
+                            <p>Novel Tri-wheel design based mobile robot for Autonomous detection, alignment and maneuvering over the stairs along with Payload stabilization using Linear actuators.</p>
+                        </div>
+                    </div>
+
+                    <div class="award-tile">
+                        <div class="award-meta">
+                            <span class="award-year">2017</span>
+                        </div>
+                        <div class="award-content">
+                            <h3>KVPY SA Fellow 2016</h3>
+                            <p>Issued by Department of Science and Technology, Government of India in collaboration with Indian Institute of Science, Bangalore for secured All India Rank of 299 in KVPY - 2016 out of 1 Million students.</p>
+                        </div>
+                    </div>
+
+                    <div class="award-tile">
+                        <div class="award-meta">
+                            <span class="award-year">2016</span>
+                        </div>
+                        <div class="award-content">
+                            <h3>National Topper in NSTSE (National Level Science Talent Search Exam)</h3>
+                            <p>Issued by the Unified Council for securing All India Rank (AIR) - 1 among Class - 10 students across the country.</p>
+                        </div>
                     </div>
                 </div>
             </div>
