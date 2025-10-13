@@ -71,6 +71,8 @@
             padding: 1.2rem 0;
             transition: all 0.3s ease;
             border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+            transform: translateZ(0);
+            will-change: transform;
         }
         
         .nav-container {
@@ -983,7 +985,7 @@
             }
             
             nav {
-                padding: 0.8rem 0;
+                padding: 1.2rem 0;
             }
             
             .nav-container {
@@ -992,9 +994,11 @@
             
             .mobile-menu-toggle {
                 font-size: 1.2rem;
-                padding: 0.3rem;
+                padding: 0.5rem;
                 display: block !important;
                 right: 20px;
+                min-width: 48px;
+                min-height: 48px;
             }
             
             .social-links {
@@ -1721,8 +1725,10 @@
             const nav = document.querySelector('nav');
             if (window.scrollY > 100) {
                 nav.style.background = 'rgba(15, 23, 42, 0.98)';
+                nav.style.backdropFilter = 'blur(15px)';
             } else {
                 nav.style.background = 'rgba(15, 23, 42, 0.98)';
+                nav.style.backdropFilter = 'blur(15px)';
             }
         });
 
