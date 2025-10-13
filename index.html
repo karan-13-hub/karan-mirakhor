@@ -748,14 +748,16 @@
             .project-summary { font-size: 0.95rem; }
         }
 
-        /* Top-right project links */
-        .project-links-top {
-            position: absolute;
-            top: 0.9rem;
-            right: 1rem;
+        /* Project header (title + links on same line) */
+        .project-header {
             display: flex;
-            gap: 0.6rem;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.25rem;
         }
+        .project-header h3 { flex: 1 1 auto; word-break: break-word; }
+        .project-links-top { display: flex; gap: 0.6rem; }
         .project-links-top a {
             color: #64ffda;
             text-decoration: none;
@@ -1426,11 +1428,13 @@
                 
                 <div class="projects-container">
                     <div class="project-tile" id="project-1">
-                        <div class="project-links-top">
-                            <a href="https://docs.google.com/presentation/d/1zFm-VuV9FV5P4Vt70gTIIagh_6zWmC2OEriu3IMXxfQ/edit?usp=sharing" target="_blank">Slides</a>
-                        </div>
                         <div class="project-content">
-                            <h3>Just imagine: Closed Loop VLA with World Modelling for Long-Horizon Tasks</h3>
+                            <div class="project-header">
+                                <h3>Just imagine: Closed Loop VLA with World Modelling for Long-Horizon Tasks</h3>
+                                <div class="project-links-top">
+                                    <a href="https://docs.google.com/presentation/d/1zFm-VuV9FV5P4Vt70gTIIagh_6zWmC2OEriu3IMXxfQ/edit?usp=sharing" target="_blank">Slides</a>
+                                </div>
+                            </div>
                             <p class="project-summary">Working on a closed-loop Visual-Language-Action (VLA) pipeline that leverages world models for imagination-driven reasoning, simulating future states via pose-conditioned robot rendering.</p>
                             <div class="project-details">
                                 <p>Learned dense proxy rewards from sparse human demonstration videos to guide an actor-critic framework, with evaluation on the <a href="https://libero-project.github.io/main.html" target="_blank">LIBERO benchmark</a> for tabletop manipulation tasks. See <a href="https://docs.google.com/presentation/d/1zFm-VuV9FV5P4Vt70gTIIagh_6zWmC2OEriu3IMXxfQ/edit?usp=sharing" target="_blank">slides</a>.</p>
@@ -1442,11 +1446,13 @@
                     </div>
 
                     <div class="project-tile" id="project-2">
-                        <div class="project-links-top">
-                            <a href="https://drive.google.com/file/d/1SCU6ewW7yld8Vf9UZZhS0eCzKZog-N4J/view?usp=sharing" target="_blank">Report</a>
-                        </div>
                         <div class="project-content">
-                            <h3>ReMov3r: Real-Time Monocular Video to 3D Reconstruction</h3>
+                            <div class="project-header">
+                                <h3>ReMov3r: Real-Time Monocular Video to 3D Reconstruction</h3>
+                                <div class="project-links-top">
+                                    <a href="https://drive.google.com/file/d/1SCU6ewW7yld8Vf9UZZhS0eCzKZog-N4J/view?usp=sharing" target="_blank">Report</a>
+                                </div>
+                            </div>
                             <p class="project-summary">Designed a transformer-based architecture with cross-attentional fusion, hierarchical spatio-temporal representation, and confidence-guided depth refinement for improved 3D reconstruction.</p>
                             <div class="project-details">
                                 <p>Enhanced trajectory estimation via adaptive keyframe selection and state representation learning, outperforming <a href="https://cvpr.thecvf.com/virtual/2025/poster/34897" target="_blank">CUT3R</a> and <a href="https://cvpr.thecvf.com/virtual/2025/poster/34485" target="_blank">SLAM3R</a> on <a href="http://www.scan-net.org/" target="_blank">ScanNetV2</a> and <a href="https://www.microsoft.com/en-us/research/project/rgb-d-dataset-7-scenes/" target="_blank">7-Scenes</a> benchmarks. See <a href="https://drive.google.com/file/d/1SCU6ewW7yld8Vf9UZZhS0eCzKZog-N4J/view?usp=sharing" target="_blank">report</a>.</p>
@@ -1458,11 +1464,13 @@
                     </div>
 
                     <div class="project-tile" id="project-3">
-                        <div class="project-links-top">
-                            <a href="https://drive.google.com/file/d/1E9NNGx_fdIOdlLSDMpl0OM7nBuvmYiPF/view?usp=sharing" target="_blank">Report</a>
-                        </div>
                         <div class="project-content">
-                            <h3>Multimodal House Rearrangement using Carrier Objects as Tools</h3>
+                            <div class="project-header">
+                                <h3>Multimodal House Rearrangement using Carrier Objects as Tools</h3>
+                                <div class="project-links-top">
+                                    <a href="https://drive.google.com/file/d/1E9NNGx_fdIOdlLSDMpl0OM7nBuvmYiPF/view?usp=sharing" target="_blank">Report</a>
+                                </div>
+                            </div>
                             <p class="project-summary">Extended prior work on embodied agents to enable efficient house rearrangement by grouping and transporting multiple objects simultaneously through the use of carrier tools, based on language or visual inputs.</p>
                             <div class="project-details">
                                 <p>Leveraged LLMs for semantic reasoning and carrier classification; employed MCTS, CEM, and Deep RL for object grouping, space management, and robust task planning.</p>
