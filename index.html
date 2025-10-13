@@ -74,8 +74,9 @@
         
         .nav-container {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            position: relative;
         }
         
         .nav-links {
@@ -94,6 +95,8 @@
             padding: 0.5rem;
             border-radius: 4px;
             transition: all 0.3s ease;
+            position: absolute;
+            right: 0;
         }
         
         .mobile-menu-toggle:hover {
@@ -974,6 +977,19 @@
                 padding: 0.25rem 0;
             }
             
+            nav {
+                padding: 0.8rem 0;
+            }
+            
+            .nav-container {
+                padding: 0;
+            }
+            
+            .mobile-menu-toggle {
+                font-size: 1.2rem;
+                padding: 0.3rem;
+            }
+            
             .social-links {
                 flex-direction: column;
                 gap: 1rem;
@@ -1415,7 +1431,7 @@
                         <div class="publication-actions">
                             <a href="https://drive.google.com/file/d/1KMUiU1Ze_I2ZgC0N5dFkpX_ucFn5C_G5/view?usp=sharing" target="_blank" class="publication-link">View Paper →</a>
                             <button class="expand-btn" onclick="toggleAbstract(this)">
-                                <span class="expand-text">More Info</span>
+                                <span class="expand-text">Read Abstract</span>
                                 <span class="expand-icon">▼</span>
                             </button>
                         </div>
@@ -1435,7 +1451,7 @@
                         <div class="publication-actions">
                             <a href="https://ojs.aaai.org/index.php/AAAI/article/view/28902" target="_blank" class="publication-link">View Paper →</a>
                             <button class="expand-btn" onclick="toggleAbstract(this)">
-                                <span class="expand-text">More Info</span>
+                                <span class="expand-text">Read Abstract</span>
                                 <span class="expand-icon">▼</span>
                             </button>
                     </div>
@@ -1455,7 +1471,7 @@
                         <div class="publication-actions">
                             <a href="https://proceedings.iclr.cc/paper_files/paper/2024/hash/13b28ea4105bf409ab6b8ac8184af812-Abstract-Conference.html" target="_blank" class="publication-link">View Paper →</a>
                             <button class="expand-btn" onclick="toggleAbstract(this)">
-                                <span class="expand-text">More Info</span>
+                                <span class="expand-text">Read Abstract</span>
                                 <span class="expand-icon">▼</span>
                             </button>
                         </div>
@@ -1475,7 +1491,7 @@
                         <div class="publication-actions">
                             <a href="https://ieeexplore.ieee.org/document/10178336" target="_blank" class="publication-link">View Paper →</a>
                             <button class="expand-btn" onclick="toggleAbstract(this)">
-                                <span class="expand-text">More Info</span>
+                                <span class="expand-text">Read Abstract</span>
                                 <span class="expand-icon">▼</span>
                             </button>
                         </div>
@@ -1495,7 +1511,7 @@
                         <div class="publication-actions">
                             <a href="https://patents.google.com/patent/US20250053156A1/en" target="_blank" class="publication-link">View Patent →</a>
                             <button class="expand-btn" onclick="toggleAbstract(this)">
-                                <span class="expand-text">More Info</span>
+                                <span class="expand-text">Read Abstract</span>
                                 <span class="expand-icon">▼</span>
                             </button>
                         </div>
@@ -1984,12 +2000,12 @@
             
             if (abstractFull.style.display === 'none') {
                 abstractFull.style.display = 'block';
-                expandText.textContent = 'Less Info';
+                expandText.textContent = 'Hide Abstract';
                 expandIcon.textContent = '▲';
                 button.classList.add('expanded');
             } else {
                 abstractFull.style.display = 'none';
-                expandText.textContent = 'More Info';
+                expandText.textContent = 'Read Abstract';
                 expandIcon.textContent = '▼';
                 button.classList.remove('expanded');
             }
