@@ -177,6 +177,7 @@
         #greeting {
             display: inline-block;
             transition: all 0.3s ease;
+            opacity: 1;
         }
         
         .hero-content .subtitle {
@@ -891,11 +892,9 @@
                 <!-- Introduction Card -->
                 <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 mb-12 border border-slate-700/50 shadow-2xl">
                     <div class="text-center mb-8">
-                        <img src="./content/profile.jpeg" alt="Karan Mirakhor" class="profile-image mx-auto mb-6" onerror="this.style.display='none'">
-                        <h3 class="text-3xl font-bold text-white mb-4 tracking-wide">Hello!!</h3>
+                        <h3 class="text-3xl font-bold text-white mb-4 tracking-wide"><span id="greeting">Hello!!</span></h3>
                         <p class="text-xl text-secondary leading-relaxed">
-                            I am Karan Mirakhor, 2nd year Master of Science (Research) student in Robotics (MSR) at the 
-                            <a href="https://www.ri.cmu.edu/" target="_blank" class="text-primary hover:text-white transition-colors duration-300 font-semibold">Robotics Institute, Carnegie Mellon University</a>
+                            I am Karan Mirakhor, 2nd year Master of Science (Research) student in Robotics (MSR) at the <a href="https://www.ri.cmu.edu/" target="_blank" class="text-primary hover:text-white transition-colors duration-300 font-semibold">Robotics Institute, Carnegie Mellon University</a>
                         </p>
                     </div>
                     
@@ -1586,6 +1585,39 @@
                 button.classList.remove('expanded');
             }
         }
+
+        // Dynamic greeting in different languages
+        const greetings = [
+            'Hello!!',
+            'Hola!!',
+            'Bonjour!!',
+            'Guten Tag!!',
+            'Ciao!!',
+            'Olá!!',
+            'Привет!!',
+            'こんにちは!!',
+            '你好!!',
+            '안녕하세요!!',
+            'Namaste!!',
+            'Salam!!'
+        ];
+        
+        let currentGreetingIndex = 0;
+        const greetingElement = document.getElementById('greeting');
+        
+        function changeGreeting() {
+            if (greetingElement) {
+                greetingElement.style.opacity = '0';
+                setTimeout(() => {
+                    greetingElement.textContent = greetings[currentGreetingIndex];
+                    greetingElement.style.opacity = '1';
+                    currentGreetingIndex = (currentGreetingIndex + 1) % greetings.length;
+                }, 300);
+            }
+        }
+        
+        // Change greeting every 3 seconds
+        setInterval(changeGreeting, 3000);
     </script>
 </body>
 </html>
