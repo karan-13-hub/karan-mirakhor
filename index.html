@@ -922,8 +922,12 @@
             display: none; /* hidden by default */
         }
 
-        .award-tile:hover .award-content p {
-            display: block; /* reveal on hover */
+        .award-tile.expanded .award-content p {
+            display: block; /* reveal when expanded */
+        }
+        
+        .award-tile {
+            cursor: pointer;
         }
 
         @media (max-width: 768px) {
@@ -1649,9 +1653,6 @@
                             <p class="project-summary">Extended prior work on embodied agents to enable efficient house rearrangement by grouping and transporting multiple objects simultaneously through the use of carrier tools, based on language or visual inputs.</p>
                             <div class="project-details">
                                 <p>Leveraged LLMs for semantic reasoning and carrier classification; employed MCTS, CEM, and Deep RL for object grouping, space management, and robust task planning.</p>
-                                <p class="project-links">
-                                    <a href="https://drive.google.com/file/d/1E9NNGx_fdIOdlLSDMpl0OM7nBuvmYiPF/view?usp=sharing" target="_blank">Report</a>
-                                </p>
                             </div>
                         </div>
                         <div class="project-toggle">
@@ -2023,6 +2024,7 @@
             new ParticleAnimation();
             initGreetingRotation();
             initMobileMenu();
+            initAwardTiles();
         });
 
         // Dynamic greeting rotation
@@ -2100,6 +2102,42 @@
             }
         }
 
+
+        // Award tiles functionality
+        function initAwardTiles() {
+            const awardTiles = document.querySelectorAll('.award-tile');
+            
+            awardTiles.forEach(tile => {
+                tile.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    
+                    const isCurrentlyExpanded = tile.classList.contains('expanded');
+                    
+                    // Close all other tiles
+                    awardTiles.forEach(otherTile => {
+                        if (otherTile !== tile) {
+                            otherTile.classList.remove('expanded');
+                        }
+                    });
+                    
+                    // Toggle current tile (clicking open tile will close it)
+                    if (isCurrentlyExpanded) {
+                        tile.classList.remove('expanded');
+                    } else {
+                        tile.classList.add('expanded');
+                    }
+                });
+            });
+            
+            // Close all tiles when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.award-tile')) {
+                    awardTiles.forEach(tile => {
+                        tile.classList.remove('expanded');
+                    });
+                }
+            });
+        }
 
         // Mobile menu functionality
         function initMobileMenu() {
