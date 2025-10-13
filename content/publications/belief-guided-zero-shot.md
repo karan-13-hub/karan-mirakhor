@@ -1,5 +1,5 @@
 ---
-title: "Belief-Guided Zero-Shot Coordination for Multi-Agent Systems"
+title: "Belief"
 authors: "Karan Mirakhor, Katia Sycara"
 venue: "ICLR"
 year: 2026
