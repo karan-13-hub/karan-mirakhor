@@ -674,7 +674,8 @@
         .project-content h3 {
             color: white;
             margin-bottom: 0.4rem;
-            font-size: 1.2rem;
+            font-size: 1.35rem; /* ~ +2pt from 1.2rem */
+            font-weight: 800; /* bold title */
             line-height: 1.35;
         }
 
@@ -743,9 +744,28 @@
         }
 
         @media (max-width: 768px) {
-            .project-content h3 { font-size: 1.1rem; }
+            .project-content h3 { font-size: 1.25rem; }
             .project-summary { font-size: 0.95rem; }
         }
+
+        /* Top-right project links */
+        .project-links-top {
+            position: absolute;
+            top: 0.9rem;
+            right: 1rem;
+            display: flex;
+            gap: 0.6rem;
+        }
+        .project-links-top a {
+            color: #64ffda;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid #64ffda;
+            padding: 0.2rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+        .project-links-top a:hover { background: #64ffda; color: #0f172a; }
 
         /* Awards Section */
         .awards-container {
@@ -1406,6 +1426,9 @@
                 
                 <div class="projects-container">
                     <div class="project-tile" id="project-1">
+                        <div class="project-links-top">
+                            <a href="https://docs.google.com/presentation/d/1zFm-VuV9FV5P4Vt70gTIIagh_6zWmC2OEriu3IMXxfQ/edit?usp=sharing" target="_blank">Slides</a>
+                        </div>
                         <div class="project-content">
                             <h3>Just imagine: Closed Loop VLA with World Modelling for Long-Horizon Tasks</h3>
                             <p class="project-summary">Working on a closed-loop Visual-Language-Action (VLA) pipeline that leverages world models for imagination-driven reasoning, simulating future states via pose-conditioned robot rendering.</p>
@@ -1419,6 +1442,9 @@
                     </div>
 
                     <div class="project-tile" id="project-2">
+                        <div class="project-links-top">
+                            <a href="https://drive.google.com/file/d/1SCU6ewW7yld8Vf9UZZhS0eCzKZog-N4J/view?usp=sharing" target="_blank">Report</a>
+                        </div>
                         <div class="project-content">
                             <h3>ReMov3r: Real-Time Monocular Video to 3D Reconstruction</h3>
                             <p class="project-summary">Designed a transformer-based architecture with cross-attentional fusion, hierarchical spatio-temporal representation, and confidence-guided depth refinement for improved 3D reconstruction.</p>
@@ -1432,6 +1458,9 @@
                     </div>
 
                     <div class="project-tile" id="project-3">
+                        <div class="project-links-top">
+                            <a href="https://drive.google.com/file/d/1E9NNGx_fdIOdlLSDMpl0OM7nBuvmYiPF/view?usp=sharing" target="_blank">Report</a>
+                        </div>
                         <div class="project-content">
                             <h3>Multimodal House Rearrangement using Carrier Objects as Tools</h3>
                             <p class="project-summary">Extended prior work on embodied agents to enable efficient house rearrangement by grouping and transporting multiple objects simultaneously through the use of carrier tools, based on language or visual inputs.</p>
