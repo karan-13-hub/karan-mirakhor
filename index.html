@@ -527,15 +527,6 @@
             margin-bottom: 1.2rem;
         }
         
-        .abstract-preview {
-            margin-bottom: 1rem;
-        }
-        
-        .abstract-preview p {
-            color: #a8b2d1;
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
         
         .abstract-full {
             margin-top: 1rem;
@@ -551,7 +542,27 @@
         
         .publication-actions {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .publication-link {
+            color: #64ffda;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid #64ffda;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .publication-link:hover {
+            background: #64ffda;
+            color: #0f172a;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(100, 255, 218, 0.3);
         }
         
         .expand-btn {
@@ -695,8 +706,20 @@
                 font-size: 0.9rem;
             }
             
-            .abstract-preview p, .abstract-full p {
+            .abstract-full p {
                 font-size: 0.9rem;
+            }
+            
+            .publication-actions {
+                flex-direction: column;
+                gap: 0.8rem;
+                align-items: stretch;
+            }
+            
+            .publication-link {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+                text-align: center;
             }
         }
         
@@ -759,8 +782,20 @@
                 font-size: 0.95rem;
             }
             
-            .abstract-preview p, .abstract-full p {
+            .abstract-full p {
                 font-size: 0.9rem;
+            }
+            
+            .publication-actions {
+                flex-direction: column;
+                gap: 0.8rem;
+                align-items: stretch;
+            }
+            
+            .publication-link {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+                text-align: center;
             }
         }
     </style>
@@ -1031,8 +1066,6 @@
         <div class="container">
             <h2 class="section-title">Publications & Patents</h2>
             <div class="section-content">
-                <p>My research contributions in multi-agent reinforcement learning, robotics, and AI systems.</p>
-                
                 <div class="publications-container">
                     <div class="publication-tile">
                         <div class="publication-header">
@@ -1042,15 +1075,13 @@
                         <h3>Efficient Zero-Shot Coordination via Offline Policy Diversity and Online Belief Reasoning</h3>
                         <p class="authors">Anonymous</p>
                         <p class="venue">ICLR 2026 Conference Submission</p>
-                        <div class="abstract-preview">
-                            <p>A central challenge in multi-agent reinforcement learning is <strong>zero-shot coordination (ZSC)</strong>; the ability of agents to collaborate with previously unseen partners... We propose an effective framework that combines <strong>offline dataset diversity</strong> with <strong>efficient online adaptation</strong>.</p>
-                    </div>
                         <div class="publication-actions">
+                            <a href="https://drive.google.com/file/d/1KMUiU1Ze_I2ZgC0N5dFkpX_ucFn5C_G5/view?usp=sharing" target="_blank" class="publication-link">View Paper →</a>
                             <button class="expand-btn" onclick="toggleAbstract(this)">
                                 <span class="expand-text">More Info</span>
                                 <span class="expand-icon">▼</span>
                             </button>
-                    </div>
+                        </div>
                         <div class="abstract-full" style="display: none;">
                             <p>A central challenge in multi-agent reinforcement learning is <strong>zero-shot coordination (ZSC)</strong>: the ability of agents to collaborate with previously unseen partners. Existing approaches, such as population-based training or convention-avoidance methods, improve ZSC but typically rely on extensive online interaction, leading to high sample complexity. A natural alternative is to leverage preexisting interaction datasets through offline learning. However, offline training alone is insufficient for effective ZSC, as agents tend to overfit to the conventions present in the dataset and struggle to adapt to novel partners. To address this limitation, we propose an <em>offline-to-online ZSC</em> framework that combines offline dataset diversity with efficient online adaptation. In the offline stage, trajectories are embedded and clustered into behavioral modes to train specialized agents and their belief models, from which a best-response agent is learned. In the online stage, this agent is refined through belief-guided counterfactual rollouts, where belief models simulate alternative successor states under different teammate behaviors, thereby expanding the training distribution beyond the dataset. Experiments on the ZSC benchmark <em>Hanabi</em> in 2-player settings, as well as in human-AI coordination, demonstrate that our approach achieves state-of-the-art performance with unseen partners while significantly reducing the amount of online interaction.</p>
                         </div>
@@ -1060,23 +1091,21 @@
                         <div class="publication-header">
                             <div class="publication-type publication">Publication</div>
                             <div class="publication-date">2024/03/24</div>
-                        </div>
+                    </div>
                         <h3>Task planning for object rearrangement in multi-room environments</h3>
                         <p class="authors">Karan Mirakhor, Sourav Ghosh, Dipanjan Das, Brojeshwar Bhowmick</p>
                         <p class="venue">Proceedings of the AAAI Conference on Artificial Intelligence, 2024 (Oral)</p>
-                        <div class="abstract-preview">
-                            <p>Object rearrangement in a multi-room setup should produce a reasonable plan that reduces the agent's overall travel and the number of steps. Recent state-of-the-art methods fail to produce such plans... The proposed method introduces several innovative techniques...</p>
-                        </div>
                         <div class="publication-actions">
+                            <a href="https://ojs.aaai.org/index.php/AAAI/article/view/28902" target="_blank" class="publication-link">View Paper →</a>
                             <button class="expand-btn" onclick="toggleAbstract(this)">
                                 <span class="expand-text">More Info</span>
                                 <span class="expand-icon">▼</span>
                             </button>
-                        </div>
+                    </div>
                         <div class="abstract-full" style="display: none;">
                             <p>Object rearrangement in a multi-room setup should produce a reasonable plan that reduces the agent's overall travel and the number of steps. Recent state-of-the-art methods fail to produce such plans because they rely on explicit exploration for discovering unseen objects due to partial observability and a heuristic planner to sequence the actions for rearrangement. This paper proposes a novel task planner to efficiently plan a sequence of actions to discover unseen objects and rearrange misplaced objects within an untidy house to achieve a desired tidy state. The proposed method introduces several innovative techniques, including (i) a method for discovering unseen objects using commonsense knowledge from large language models, (ii) a collision resolution and buffer prediction method based on Cross-Entropy Method to handle blocked goal and swap cases, (iii) a directed spatial graph-based state space for scalability, and (iv) deep reinforcement learning (RL) for producing an efficient plan to simultaneously discover unseen objects and rearrange the visible misplaced ones to minimize the overall traversal. The paper also presents new metrics and a benchmark dataset called MoPOR to evaluate the effectiveness of the rearrangement planning in a multi-room setting. The experimental results demonstrate that the proposed method effectively addresses the multi-room rearrangement problem.</p>
-                        </div>
                     </div>
+                </div>
 
                     <div class="publication-tile">
                         <div class="publication-header">
@@ -1086,10 +1115,8 @@
                         <h3>Task planning for visual room rearrangement under partial observability</h3>
                         <p class="authors">Karan Mirakhor, Sourav Ghosh, Dipanjan Das, Brojeshwar Bhowmick</p>
                         <p class="venue">The Twelfth International Conference on Learning Representations (ICLR), 2024</p>
-                        <div class="abstract-preview">
-                            <p>This paper presents a novel <strong>hierarchical task planner</strong> under partial observability that empowers an embodied agent to use visual input to efficiently plan a sequence of actions for simultaneous object search and rearrangement...</p>
-                        </div>
                         <div class="publication-actions">
+                            <a href="https://proceedings.iclr.cc/paper_files/paper/2024/hash/13b28ea4105bf409ab6b8ac8184af812-Abstract-Conference.html" target="_blank" class="publication-link">View Paper →</a>
                             <button class="expand-btn" onclick="toggleAbstract(this)">
                                 <span class="expand-text">More Info</span>
                                 <span class="expand-icon">▼</span>
@@ -1108,10 +1135,8 @@
                         <h3>Predictive barrier lyapunov function based control for safe trajectory tracking of an aerial manipulator</h3>
                         <p class="authors">Vedant Mundheda, Karan Mirakhor, KS Rahul, Harikumar Kandath, Nagamanikandan Govindan</p>
                         <p class="venue">2023 European Control Conference (ECC), IEEE</p>
-                        <div class="abstract-preview">
-                            <p>This paper proposes a novel <strong>controller framework</strong> that provides trajectory tracking for an <strong>Aerial Manipulator (AM)</strong> while ensuring the safe operation of the system under unknown bounded disturbances. The AM considered here is a 2-DOF manipulator rigidly attached to a UAV...</p>
-                        </div>
                         <div class="publication-actions">
+                            <a href="https://ieeexplore.ieee.org/document/10178336" target="_blank" class="publication-link">View Paper →</a>
                             <button class="expand-btn" onclick="toggleAbstract(this)">
                                 <span class="expand-text">More Info</span>
                                 <span class="expand-icon">▼</span>
@@ -1130,10 +1155,8 @@
                         <h3>Method and system for task planning for visual room rearrangement under partial observability</h3>
                         <p class="authors">Dipanjan Das, Karan Mirakhor, Sourav Ghosh, Brojeshwar Bhowmick</p>
                         <p class="venue">US Patent Office (Application 18/760,514)</p>
-                        <div class="abstract-preview">
-                            <p>A method and system for <strong>task planning for visual room rearrangement under partial observability</strong> is disclosed. The system or the robotic agent utilizes a visual input to efficiently plan a sequence of actions...</p>
-                        </div>
                         <div class="publication-actions">
+                            <a href="https://patents.google.com/patent/US20250053156A1/en" target="_blank" class="publication-link">View Patent →</a>
                             <button class="expand-btn" onclick="toggleAbstract(this)">
                                 <span class="expand-text">More Info</span>
                                 <span class="expand-icon">▼</span>
