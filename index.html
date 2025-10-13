@@ -436,6 +436,153 @@
             box-shadow: 0 4px 12px rgba(100, 255, 218, 0.3);
         }
         
+        /* Publications Section */
+        .publications-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .publication-tile {
+            background: linear-gradient(135deg, rgba(17, 34, 64, 0.8) 0%, rgba(15, 27, 46, 0.8) 100%);
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .publication-tile:hover {
+            border-color: #64ffda;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .publication-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .publication-type {
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .publication-type.submission {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+        
+        .publication-type.publication {
+            background: rgba(100, 255, 218, 0.2);
+            color: #64ffda;
+            border: 1px solid rgba(100, 255, 218, 0.3);
+        }
+        
+        .publication-type.patent {
+            background: rgba(168, 85, 247, 0.2);
+            color: #a855f7;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+        }
+        
+        .publication-date {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .publication-tile h3 {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s ease;
+        }
+        
+        .publication-tile:hover h3 {
+            color: #64ffda;
+        }
+        
+        .authors {
+            color: #a8b2d1;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+        
+        .venue {
+            color: #64ffda;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+        
+        .abstract-preview {
+            margin-bottom: 1rem;
+        }
+        
+        .abstract-preview p {
+            color: #a8b2d1;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        .abstract-full {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(100, 255, 218, 0.2);
+        }
+        
+        .abstract-full p {
+            color: #a8b2d1;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        .publication-actions {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .expand-btn {
+            background: transparent;
+            border: 1px solid #64ffda;
+            color: #64ffda;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .expand-btn:hover {
+            background: #64ffda;
+            color: #0f172a;
+            transform: translateY(-1px);
+        }
+        
+        .expand-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .expand-btn.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+        
         .card a {
             color: #64ffda;
             text-decoration: none;
@@ -535,6 +682,22 @@
                 font-size: 0.9rem;
                 padding: 0.6rem 1.2rem;
             }
+            
+            .publication-tile {
+                padding: 1.5rem;
+            }
+            
+            .publication-tile h3 {
+                font-size: 1.1rem;
+            }
+            
+            .authors, .venue {
+                font-size: 0.9rem;
+            }
+            
+            .abstract-preview p, .abstract-full p {
+                font-size: 0.9rem;
+            }
         }
         
         /* Tablet responsive design */
@@ -582,6 +745,22 @@
             .contact-tile a {
                 font-size: 0.95rem;
                 padding: 0.7rem 1.3rem;
+            }
+            
+            .publication-tile {
+                padding: 1.8rem;
+            }
+            
+            .publication-tile h3 {
+                font-size: 1.2rem;
+            }
+            
+            .authors, .venue {
+                font-size: 0.95rem;
+            }
+            
+            .abstract-preview p, .abstract-full p {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -850,31 +1029,119 @@
     <!-- Publications Section -->
     <section id="publications" class="section">
         <div class="container">
-            <h2 class="section-title">Publications</h2>
+            <h2 class="section-title">Publications & Patents</h2>
             <div class="section-content">
                 <p>My research contributions in multi-agent reinforcement learning, robotics, and AI systems.</p>
                 
-                <div class="cards">
-                    <div class="card">
-                        <h3>Belief-Guided Zero-Shot Coordination for Multi-Agent Systems</h3>
-                        <p><strong>Authors:</strong> Karan Mirakhor, Katia Sycara</p>
-                        <p><strong>Venue:</strong> ICLR 2026</p>
-                        <p>We propose a novel approach to zero-shot coordination in multi-agent systems by leveraging belief modeling and opponent adaptation. Our method enables agents to coordinate effectively with unseen partners by maintaining beliefs about their strategies and adapting accordingly.</p>
-                        <a href="https://openreview.net/forum?id=jJvXNpvOdM" target="_blank">Read Paper →</a>
+                <div class="publications-container">
+                    <div class="publication-tile">
+                        <div class="publication-header">
+                            <div class="publication-type submission">Submission</div>
+                            <div class="publication-date">Oct 2025</div>
                     </div>
-                    <div class="card">
-                        <h3>Strategic Deception in Multi-Agent Reinforcement Learning</h3>
-                        <p><strong>Authors:</strong> Karan Mirakhor, Katia Sycara, Prashant Doshi</p>
-                        <p><strong>Venue:</strong> AAMAS 2025</p>
-                        <p>This work explores the role of strategic deception in multi-agent reinforcement learning environments. We develop a framework for agents to learn when and how to deceive opponents while maintaining cooperation when beneficial.</p>
-                        <a href="#" target="_blank">Read Paper →</a>
+                        <h3>Efficient Zero-Shot Coordination via Offline Policy Diversity and Online Belief Reasoning</h3>
+                        <p class="authors">Anonymous</p>
+                        <p class="venue">ICLR 2026 Conference Submission</p>
+                        <div class="abstract-preview">
+                            <p>A central challenge in multi-agent reinforcement learning is <strong>zero-shot coordination (ZSC)</strong>; the ability of agents to collaborate with previously unseen partners... We propose an effective framework that combines <strong>offline dataset diversity</strong> with <strong>efficient online adaptation</strong>.</p>
                     </div>
-                    <div class="card">
-                        <h3>Hierarchical Task Planning for Robotic Object Rearrangement under Partial Observability</h3>
-                        <p><strong>Authors:</strong> Karan Mirakhor, TCS Research Team</p>
-                        <p><strong>Venue:</strong> ICRA 2024</p>
-                        <p>We present a hierarchical approach to task planning for robotic object rearrangement in partially observable environments. The method combines high-level symbolic planning with low-level motion planning.</p>
-                        <a href="#" target="_blank">Read Paper →</a>
+                        <div class="publication-actions">
+                            <button class="expand-btn" onclick="toggleAbstract(this)">
+                                <span class="expand-text">More Info</span>
+                                <span class="expand-icon">▼</span>
+                            </button>
+                    </div>
+                        <div class="abstract-full" style="display: none;">
+                            <p>A central challenge in multi-agent reinforcement learning is <strong>zero-shot coordination (ZSC)</strong>; the ability of agents to collaborate with previously unseen partners without additional training. This is crucial for deploying multi-agent systems in real-world scenarios where agents must interact with diverse, previously unseen teammates. We propose an effective framework that combines <strong>offline dataset diversity</strong> with <strong>efficient online adaptation</strong> through belief reasoning, enabling agents to quickly adapt to new partners during deployment.</p>
+                        </div>
+                    </div>
+
+                    <div class="publication-tile">
+                        <div class="publication-header">
+                            <div class="publication-type publication">Publication</div>
+                            <div class="publication-date">2024/03/24</div>
+                        </div>
+                        <h3>Task planning for object rearrangement in multi-room environments</h3>
+                        <p class="authors">Karan Mirakhor, Sourav Ghosh, Dipanjan Das, Brojeshwar Bhowmick</p>
+                        <p class="venue">Proceedings of the AAAI Conference on Artificial Intelligence, 2024</p>
+                        <div class="abstract-preview">
+                            <p>Object rearrangement in a multi-room setup should produce a reasonable plan that reduces the agent's overall travel and the number of steps. Recent state-of-the-art methods fail to produce such plans... The proposed method introduces several innovative techniques...</p>
+                        </div>
+                        <div class="publication-actions">
+                            <button class="expand-btn" onclick="toggleAbstract(this)">
+                                <span class="expand-text">More Info</span>
+                                <span class="expand-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="abstract-full" style="display: none;">
+                            <p>Object rearrangement in a multi-room setup should produce a reasonable plan that reduces the agent's overall travel and the number of steps. Recent state-of-the-art methods fail to produce such plans due to the complexity of multi-room environments and partial observability constraints. The proposed method introduces several innovative techniques including hierarchical planning, visual scene understanding, and efficient search strategies to address these challenges.</p>
+                        </div>
+                    </div>
+
+                    <div class="publication-tile">
+                        <div class="publication-header">
+                            <div class="publication-type publication">Publication</div>
+                            <div class="publication-date">2024</div>
+                        </div>
+                        <h3>Task planning for visual room rearrangement under partial observability</h3>
+                        <p class="authors">Karan Mirakhor, Sourav Ghosh, Dipanjan Das, Brojeshwar Bhowmick</p>
+                        <p class="venue">The Twelfth International Conference on Learning Representations (ICLR), 2024</p>
+                        <div class="abstract-preview">
+                            <p>This paper presents a novel <strong>hierarchical task planner</strong> under partial observability that empowers an embodied agent to use visual input to efficiently plan a sequence of actions for simultaneous object search and rearrangement...</p>
+                        </div>
+                        <div class="publication-actions">
+                            <button class="expand-btn" onclick="toggleAbstract(this)">
+                                <span class="expand-text">More Info</span>
+                                <span class="expand-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="abstract-full" style="display: none;">
+                            <p>This paper presents a novel <strong>hierarchical task planner</strong> under partial observability that empowers an embodied agent to use visual input to efficiently plan a sequence of actions for simultaneous object search and rearrangement. The approach combines high-level symbolic planning with low-level visual reasoning to handle the challenges of partial observability in complex indoor environments.</p>
+                        </div>
+                    </div>
+
+                    <div class="publication-tile">
+                        <div class="publication-header">
+                            <div class="publication-type publication">Publication</div>
+                            <div class="publication-date">2023/06/13</div>
+                        </div>
+                        <h3>Predictive barrier lyapunov function based control for safe trajectory tracking of an aerial manipulator</h3>
+                        <p class="authors">Vedant Mundheda, Karan Mirakhor, KS Rahul, Harikumar Kandath, Nagamanikandan Govindan</p>
+                        <p class="venue">2023 European Control Conference (ECC), IEEE</p>
+                        <div class="abstract-preview">
+                            <p>This paper proposes a novel <strong>controller framework</strong> that provides trajectory tracking for an <strong>Aerial Manipulator (AM)</strong> while ensuring the safe operation of the system under unknown bounded disturbances. The AM considered here is a 2-DOF manipulator rigidly attached to a UAV...</p>
+                        </div>
+                        <div class="publication-actions">
+                            <button class="expand-btn" onclick="toggleAbstract(this)">
+                                <span class="expand-text">More Info</span>
+                                <span class="expand-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="abstract-full" style="display: none;">
+                            <p>This paper proposes a novel <strong>controller framework</strong> that provides trajectory tracking for an <strong>Aerial Manipulator (AM)</strong> while ensuring the safe operation of the system under unknown bounded disturbances. The AM considered here is a 2-DOF manipulator rigidly attached to a UAV, and the proposed control strategy ensures both performance and safety constraints are satisfied during operation.</p>
+                        </div>
+                    </div>
+
+                    <div class="publication-tile">
+                        <div class="publication-header">
+                            <div class="publication-type patent">Patent</div>
+                            <div class="publication-date">2025/02/13</div>
+                        </div>
+                        <h3>Method and system for task planning for visual room rearrangement under partial observability</h3>
+                        <p class="authors">Dipanjan Das, Karan Mirakhor, Sourav Ghosh, Brojeshwar Bhowmick</p>
+                        <p class="venue">US Patent Office (Application 18/760,514)</p>
+                        <div class="abstract-preview">
+                            <p>A method and system for <strong>task planning for visual room rearrangement under partial observability</strong> is disclosed. The system or the robotic agent utilizes a visual input to efficiently plan a sequence of actions...</p>
+                        </div>
+                        <div class="publication-actions">
+                            <button class="expand-btn" onclick="toggleAbstract(this)">
+                                <span class="expand-text">More Info</span>
+                                <span class="expand-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="abstract-full" style="display: none;">
+                            <p>A method and system for <strong>task planning for visual room rearrangement under partial observability</strong> is disclosed. The system or the robotic agent utilizes a visual input to efficiently plan a sequence of actions for object search and rearrangement in complex indoor environments while handling partial observability constraints through innovative hierarchical planning techniques.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -943,9 +1210,9 @@
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-container">
                 <div class="contact-tile">
-                    <h3>📧 Email</h3>
-                    <p>karanmirakhor@gmail.com</p>
-                    <a href="mailto:karanmirakhor@gmail.com">Send Email →</a>
+                        <h3>📧 Email</h3>
+                        <p>karanmirakhor@gmail.com</p>
+                        <a href="mailto:karanmirakhor@gmail.com">Send Email →</a>
                 </div>
             </div>
         </div>
@@ -1204,6 +1471,26 @@
         document.addEventListener('DOMContentLoaded', () => {
             new ParticleAnimation();
         });
+
+        // Toggle abstract expansion
+        function toggleAbstract(button) {
+            const tile = button.closest('.publication-tile');
+            const abstractFull = tile.querySelector('.abstract-full');
+            const expandText = button.querySelector('.expand-text');
+            const expandIcon = button.querySelector('.expand-icon');
+            
+            if (abstractFull.style.display === 'none') {
+                abstractFull.style.display = 'block';
+                expandText.textContent = 'Less Info';
+                expandIcon.textContent = '▲';
+                button.classList.add('expanded');
+            } else {
+                abstractFull.style.display = 'none';
+                expandText.textContent = 'More Info';
+                expandIcon.textContent = '▼';
+                button.classList.remove('expanded');
+            }
+        }
     </script>
 </body>
 </html>
