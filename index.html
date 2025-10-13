@@ -168,7 +168,7 @@
         }
         
         .hero-content .description {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             color: #94a3b8;
             margin-bottom: 2rem;
             max-width: 600px;
@@ -233,6 +233,13 @@
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
+        }
+        
+        .section-content p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            line-height: 1.6;
         }
         
         .stats {
@@ -321,7 +328,7 @@
             color: #a8b2d1;
             margin-bottom: 0.5rem;
             line-height: 1.5;
-            font-size: 0.95rem;
+            font-size: 1.15rem;
             transition: color 0.3s ease;
         }
         
@@ -370,6 +377,10 @@
                 font-size: 2.5rem;
             }
             
+            .hero-content .description {
+                font-size: 1.2rem;
+            }
+            
             .profile-image {
                 width: 150px;
                 height: 150px;
@@ -382,6 +393,10 @@
             .social-links {
                 flex-direction: column;
                 gap: 1rem;
+            }
+            
+            .section-content p {
+                font-size: 1.1rem;
             }
             
             .cards {
@@ -401,12 +416,20 @@
             }
             
             .card p {
-                font-size: 0.9rem;
+                font-size: 1.05rem;
             }
         }
         
         /* Tablet responsive design */
         @media (max-width: 1024px) and (min-width: 769px) {
+            .hero-content .description {
+                font-size: 1.3rem;
+            }
+            
+            .section-content p {
+                font-size: 1.15rem;
+            }
+            
             .cards {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 1.5rem;
@@ -424,7 +447,7 @@
             }
             
             .card p {
-                font-size: 0.9rem;
+                font-size: 1.1rem;
             }
         }
     </style>
