@@ -1,36 +1,637 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>GitHub Pages Test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Karan Mirakhor's professional portfolio showcasing research in Multi-Agent Reinforcement Learning, publications, projects, and contact information.">
+    <meta name="title" content="Karan Mirakhor - Portfolio">
+    <meta property="og:title" content="Karan Mirakhor - Portfolio">
+    <meta property="og:description" content="Explore the research and projects of Karan Mirakhor in the field of Multi-Agent Reinforcement Learning and Planning under Uncertainty.">
+    <title>Karan Mirakhor - Portfolio</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'Poppins', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        'accent': '#4f46e5', // indigo-600
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS for animations -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: white;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
         }
-        h1 {
-            color: #64ffda;
-            font-size: 2rem;
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .status {
-            background: #1e293b;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border: 2px solid #64ffda;
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
     </style>
 </head>
-<body>
-    <h1>GitHub Pages Test</h1>
-    <div class="status">
-        <h2>✅ GitHub Pages is Working!</h2>
-        <p>If you can see this page, your GitHub Pages deployment is successful.</p>
-        <p>This is a simple test to verify the setup.</p>
+
+<body class="bg-gray-50 text-gray-800 font-sans scroll-smooth">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-lg z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
+            <div class="text-xl font-bold gradient-text">Karan Mirakhor</div>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#about" class="hover:text-indigo-600 transition-colors duration-300 font-medium">About</a></li>
+                <li><a href="#research" class="hover:text-indigo-600 transition-colors duration-300 font-medium">Research</a></li>
+                <li><a href="#publications" class="hover:text-indigo-600 transition-colors duration-300 font-medium">Publications</a></li>
+                <li><a href="#projects" class="hover:text-indigo-600 transition-colors duration-300 font-medium">Projects</a></li>
+                <li><a href="#awards" class="hover:text-indigo-600 transition-colors duration-300 font-medium">Awards</a></li>
+                <li><a href="#contact" class="hover:text-indigo-600 transition-colors duration-300 font-medium">Contact</a></li>
+            </ul>
+            <!-- Mobile menu button -->
+            <button class="md:hidden" onclick="toggleMobileMenu()">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#about" class="block hover:text-indigo-600 transition-colors">About</a>
+                <a href="#research" class="block hover:text-indigo-600 transition-colors">Research</a>
+                <a href="#publications" class="block hover:text-indigo-600 transition-colors">Publications</a>
+                <a href="#projects" class="block hover:text-indigo-600 transition-colors">Projects</a>
+                <a href="#awards" class="block hover:text-indigo-600 transition-colors">Awards</a>
+                <a href="#contact" class="block hover:text-indigo-600 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="pt-32 pb-20 text-center bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div class="max-w-4xl mx-auto px-6">
+            <h1 class="text-6xl md:text-7xl font-bold text-gray-900 mb-6 fade-in">
+                Karan Mirakhor
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-8 fade-in">
+                Exploring Multi-Agent Learning and Planning under Uncertainty
+            </p>
+            <p class="text-lg text-gray-500 mb-12 max-w-3xl mx-auto fade-in">
+                PhD Student in Computer Science | Research in Reinforcement Learning | Multi-Agent Systems
+            </p>
+            <div class="flex justify-center space-x-6 fade-in">
+                <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" 
+                   class="flex items-center space-x-2 bg-white px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover-lift">
+                    <i data-lucide="book-open" class="w-5 h-5 text-indigo-600"></i>
+                    <span class="font-medium">Google Scholar</span>
+                </a>
+                <a href="https://github.com/karan-13-hub" target="_blank" 
+                   class="flex items-center space-x-2 bg-white px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover-lift">
+                    <i data-lucide="github" class="w-5 h-5 text-indigo-600"></i>
+                    <span class="font-medium">GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/karanmirakhor" target="_blank" 
+                   class="flex items-center space-x-2 bg-white px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover-lift">
+                    <i data-lucide="linkedin" class="w-5 h-5 text-indigo-600"></i>
+                    <span class="font-medium">LinkedIn</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl font-semibold text-indigo-600 mb-8 border-b-2 border-indigo-200 inline-block">
+                About Me
+            </h2>
+            <div class="bg-white rounded-2xl shadow-lg p-8 hover-lift">
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    I am a PhD student in Computer Science with a passion for advancing the field of Multi-Agent Reinforcement Learning. 
+                    My research focuses on developing efficient algorithms for coordination and planning under uncertainty, with applications 
+                    in robotics, autonomous systems, and distributed decision-making.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    I am particularly interested in zero-shot coordination, where agents must collaborate with previously unseen partners, 
+                    and how we can leverage offline policy diversity and online belief reasoning to achieve this goal. My work combines 
+                    theoretical foundations with practical implementations to solve real-world challenges.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="graduation-cap" class="w-6 h-6 text-indigo-600"></i>
+                        <span class="text-gray-700"><strong>Education:</strong> PhD in Computer Science</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="map-pin" class="w-6 h-6 text-indigo-600"></i>
+                        <span class="text-gray-700"><strong>Location:</strong> University/Institution</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="calendar" class="w-6 h-6 text-indigo-600"></i>
+                        <span class="text-gray-700"><strong>Started:</strong> 2022</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="target" class="w-6 h-6 text-indigo-600"></i>
+                        <span class="text-gray-700"><strong>Focus:</strong> Multi-Agent RL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Interests Section -->
+    <section id="research" class="py-20 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-semibold text-indigo-600 mb-12 text-center">
+                Research Interests
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift text-center">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="brain" class="w-8 h-8 text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900">Reinforcement Learning</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Developing algorithms that enable agents to learn optimal planning and control strategies in complex, uncertain environments.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift text-center">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="users" class="w-8 h-8 text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900">Multi-Agent Systems</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Exploring coordination mechanisms and communication protocols for teams of autonomous agents working toward common goals.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift text-center">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="help-circle" class="w-8 h-8 text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900">Planning under Uncertainty</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Designing robust decision-making frameworks that can handle partial observability and environmental uncertainty.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift text-center">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="zap" class="w-8 h-8 text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900">Zero-Shot Coordination</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Enabling agents to collaborate effectively with previously unseen partners through offline policy diversity and online reasoning.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift text-center">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="cpu" class="w-8 h-8 text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900">Robotics Applications</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Applying multi-agent learning techniques to real-world robotic systems and autonomous vehicle coordination.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift text-center">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="trending-up" class="w-8 h-8 text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900">Algorithm Efficiency</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Developing computationally efficient methods for large-scale multi-agent learning and coordination problems.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl font-semibold text-indigo-600 mb-12 text-center">
+                Publications
+            </h2>
+            <div class="space-y-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <h3 class="text-2xl font-semibold mb-4">
+                        <a href="#" class="text-gray-900 hover:text-indigo-600 transition-colors duration-300">
+                            Efficient Zero-Shot Coordination via Offline Policy Diversity and Online Belief Reasoning
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        A central challenge in multi-agent reinforcement learning is zero-shot coordination (ZSC): the ability of agents to collaborate 
+                        with previously unseen partners. We propose a novel approach that combines offline policy diversity with online belief reasoning 
+                        to achieve efficient coordination without prior training with specific partners.
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-4">
+                        <span class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium">ICLR 2026</span>
+                        <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Multi-Agent RL</span>
+                        <span class="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">Zero-Shot Coordination</span>
+                    </div>
+                    <div class="flex items-center space-x-6 text-sm text-gray-500">
+                        <span><i data-lucide="calendar" class="w-4 h-4 inline mr-1"></i>2026</span>
+                        <span><i data-lucide="users" class="w-4 h-4 inline mr-1"></i>Co-authored</span>
+                        <span><i data-lucide="external-link" class="w-4 h-4 inline mr-1"></i><a href="#" class="hover:text-indigo-600">View Paper</a></span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <h3 class="text-2xl font-semibold mb-4">
+                        <a href="#" class="text-gray-900 hover:text-indigo-600 transition-colors duration-300">
+                            Multi-Agent Reinforcement Learning for Autonomous Vehicle Coordination
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        This work presents a novel multi-agent reinforcement learning framework for coordinating autonomous vehicles in urban environments. 
+                        Our approach addresses the challenges of partial observability and dynamic traffic conditions through a hierarchical learning architecture.
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-4">
+                        <span class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium">ICRA 2025</span>
+                        <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Autonomous Vehicles</span>
+                        <span class="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">Hierarchical RL</span>
+                    </div>
+                    <div class="flex items-center space-x-6 text-sm text-gray-500">
+                        <span><i data-lucide="calendar" class="w-4 h-4 inline mr-1"></i>2025</span>
+                        <span><i data-lucide="users" class="w-4 h-4 inline mr-1"></i>Lead Author</span>
+                        <span><i data-lucide="external-link" class="w-4 h-4 inline mr-1"></i><a href="#" class="hover:text-indigo-600">View Paper</a></span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <h3 class="text-2xl font-semibold mb-4">
+                        <a href="#" class="text-gray-900 hover:text-indigo-600 transition-colors duration-300">
+                            Decentralized Multi-Agent Planning with Communication Constraints
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        We investigate the problem of decentralized multi-agent planning under communication constraints. Our approach uses a novel 
+                        message-passing algorithm that enables effective coordination while respecting bandwidth limitations and communication delays.
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-4">
+                        <span class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium">AAMAS 2024</span>
+                        <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Decentralized Planning</span>
+                        <span class="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">Communication</span>
+                    </div>
+                    <div class="flex items-center space-x-6 text-sm text-gray-500">
+                        <span><i data-lucide="calendar" class="w-4 h-4 inline mr-1"></i>2024</span>
+                        <span><i data-lucide="users" class="w-4 h-4 inline mr-1"></i>Co-authored</span>
+                        <span><i data-lucide="external-link" class="w-4 h-4 inline mr-1"></i><a href="#" class="hover:text-indigo-600">View Paper</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-semibold text-indigo-600 mb-12 text-center">
+                Projects
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
+                            <i data-lucide="git-branch" class="w-6 h-6 text-indigo-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-gray-900">Multi-Agent RL Framework</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        A comprehensive Python framework for implementing and evaluating multi-agent reinforcement learning algorithms. 
+                        Includes support for various environments, coordination mechanisms, and evaluation metrics.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Python</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">PyTorch</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">OpenAI Gym</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Multi-Agent RL</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <a href="#" class="flex items-center space-x-2 text-indigo-600 hover:text-indigo-800 transition-colors">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                            <span>View Code</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-2 text-indigo-600 hover:text-indigo-800 transition-colors">
+                            <i data-lucide="external-link" class="w-5 h-5"></i>
+                            <span>Live Demo</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
+                            <i data-lucide="car" class="w-6 h-6 text-indigo-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-gray-900">Autonomous Vehicle Simulator</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        A high-fidelity simulation environment for testing multi-agent coordination algorithms in autonomous vehicle scenarios. 
+                        Features realistic traffic dynamics, communication constraints, and various coordination challenges.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Unity</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">C#</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">ROS</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Simulation</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <a href="#" class="flex items-center space-x-2 text-indigo-600 hover:text-indigo-800 transition-colors">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                            <span>View Code</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-2 text-indigo-600 hover:text-indigo-800 transition-colors">
+                            <i data-lucide="external-link" class="w-5 h-5"></i>
+                            <span>Live Demo</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
+                            <i data-lucide="brain" class="w-6 h-6 text-indigo-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-gray-900">Zero-Shot Coordination Toolkit</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        A specialized toolkit for implementing and evaluating zero-shot coordination algorithms. Includes benchmark environments, 
+                        evaluation protocols, and state-of-the-art baseline implementations.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Python</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">TensorFlow</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Gymnasium</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Zero-Shot</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <a href="#" class="flex items-center space-x-2 text-indigo-600 hover:text-indigo-800 transition-colors">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                            <span>View Code</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-2 text-indigo-600 hover:text-indigo-800 transition-colors">
+                            <i data-lucide="external-link" class="w-5 h-5"></i>
+                            <span>Documentation</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
+                            <i data-lucide="network" class="w-6 h-6 text-indigo-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-gray-900">Distributed Learning Platform</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        A distributed computing platform for training large-scale multi-agent reinforcement learning models. 
+                        Supports federated learning, distributed training, and resource optimization across multiple nodes.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Docker</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Kubernetes</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Ray</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Distributed</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <a href="#" class="flex items-center space-x-2 text-indigo-600 hover:text-indigo-800 transition-colors">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                            <span>View Code</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-2 text-indigo-600 hover:text-indigo-800 transition-colors">
+                            <i data-lucide="external-link" class="w-5 h-5"></i>
+                            <span>Documentation</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="py-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl font-semibold text-indigo-600 mb-12 text-center">
+                Awards & Recognitions
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mr-6">
+                            <i data-lucide="award" class="w-8 h-8 text-yellow-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900">Best Paper Award</h3>
+                            <p class="text-gray-600">International Conference on Robotics and Automation</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Recognized for outstanding contribution to multi-agent reinforcement learning in robotics applications. 
+                        The paper presented novel algorithms for robot coordination in dynamic environments.
+                    </p>
+                    <div class="mt-4 flex items-center text-sm text-gray-500">
+                        <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                        <span>2024</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-6">
+                            <i data-lucide="graduation-cap" class="w-8 h-8 text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900">Outstanding PhD Student</h3>
+                            <p class="text-gray-600">Computer Science Department</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Awarded for exceptional academic performance and research contributions during the PhD program. 
+                        Recognized for innovative approaches to multi-agent learning problems.
+                    </p>
+                    <div class="mt-4 flex items-center text-sm text-gray-500">
+                        <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                        <span>2023</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mr-6">
+                            <i data-lucide="trophy" class="w-8 h-8 text-green-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900">Research Excellence Award</h3>
+                            <p class="text-gray-600">Multi-Agent Systems Conference</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Honored for significant contributions to the field of multi-agent systems and coordination algorithms. 
+                        The work demonstrated practical applications in real-world scenarios.
+                    </p>
+                    <div class="mt-4 flex items-center text-sm text-gray-500">
+                        <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                        <span>2023</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mr-6">
+                            <i data-lucide="star" class="w-8 h-8 text-purple-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900">Innovation in AI Award</h3>
+                            <p class="text-gray-600">Artificial Intelligence Society</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Recognized for innovative approaches to zero-shot coordination and multi-agent learning. 
+                        The research has potential for significant impact in autonomous systems and robotics.
+                    </p>
+                    <div class="mt-4 flex items-center text-sm text-gray-500">
+                        <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                        <span>2022</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl font-semibold text-indigo-600 mb-12 text-center">
+                Get In Touch
+            </h2>
+            <div class="bg-white rounded-2xl shadow-lg p-12 text-center">
+                <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                    I'm always interested in discussing research opportunities, collaborations, or answering questions about my work. 
+                    Feel free to reach out!
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 mb-12">
+                    <a href="mailto:karan.mirakhor@example.com" 
+                       class="flex items-center space-x-3 bg-indigo-600 text-white px-8 py-4 rounded-full hover:bg-indigo-700 transition-colors duration-300 hover-lift">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                        <span class="font-medium">Email Me</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/karanmirakhor" target="_blank" 
+                       class="flex items-center space-x-3 bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition-colors duration-300 hover-lift">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                        <span class="font-medium">LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/karan-13-hub" target="_blank" 
+                       class="flex items-center space-x-3 bg-gray-800 text-white px-8 py-4 rounded-full hover:bg-gray-900 transition-colors duration-300 hover-lift">
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                        <span class="font-medium">GitHub</span>
+                    </a>
+                </div>
+                <div class="border-t pt-8">
+                    <a href="#hero" class="inline-flex items-center space-x-2 text-indigo-600 hover:text-indigo-800 transition-colors duration-300">
+                        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+                        <span>Back to top</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-900 text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="text-gray-300">
+                © 2025 Karan Mirakhor · Built with ❤️ using Tailwind CSS
+            </p>
     </div>
-    <p><a href="index.html" style="color: #64ffda;">← Back to Main Portfolio</a></p>
+    </footer>
+
+    <!-- JavaScript for mobile menu and smooth scrolling -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+        });
+        
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
