@@ -678,6 +678,11 @@
             line-height: 1.35;
         }
 
+        .project-content {
+            text-align: left; /* override section center alignment */
+            width: 100%;
+        }
+
         .project-summary {
             color: #a8b2d1;
             font-size: 1rem;
@@ -697,6 +702,16 @@
 
         .project-tile.expanded .project-details {
             display: block;
+        }
+
+        /* When expanded, show full summary (no clamp) so first line is readable above details */
+        .project-tile.expanded .project-summary {
+            display: block;
+            -webkit-line-clamp: unset;
+            line-clamp: unset;
+            -webkit-box-orient: vertical;
+            white-space: normal;
+            overflow: visible;
         }
 
         .project-links a { color: #64ffda; text-decoration: none; font-weight: 500; }
@@ -1395,11 +1410,7 @@
                             <h3>Just imagine: Closed Loop VLA with World Modelling for Long-Horizon Tasks</h3>
                             <p class="project-summary">Working on a closed-loop Visual-Language-Action (VLA) pipeline that leverages world models for imagination-driven reasoning, simulating future states via pose-conditioned robot rendering.</p>
                             <div class="project-details">
-                                <p>Learned dense proxy rewards from sparse human demonstration videos to guide an actor-critic framework, with evaluation on the LIBERO benchmark for tabletop manipulation tasks.</p>
-                                <p class="project-links">
-                                    <a href="https://docs.google.com/presentation/d/1zFm-VuV9FV5P4Vt70gTIIagh_6zWmC2OEriu3IMXxfQ/edit?usp=sharing" target="_blank">Slides</a>
-                                    · <a href="https://libero-project.github.io/main.html" target="_blank">LIBERO Benchmark</a>
-                                </p>
+                                <p>Learned dense proxy rewards from sparse human demonstration videos to guide an actor-critic framework, with evaluation on the <a href="https://libero-project.github.io/main.html" target="_blank">LIBERO benchmark</a> for tabletop manipulation tasks. See <a href="https://docs.google.com/presentation/d/1zFm-VuV9FV5P4Vt70gTIIagh_6zWmC2OEriu3IMXxfQ/edit?usp=sharing" target="_blank">slides</a>.</p>
                             </div>
                         </div>
                         <div class="project-toggle">
