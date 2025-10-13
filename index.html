@@ -174,10 +174,27 @@
             color: white;
         }
         
+        #greeting {
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
         .hero-content .subtitle {
             font-size: 1.5rem;
             color: #64ffda;
             margin-bottom: 1rem;
+        }
+        
+        .subtitle .highlight {
+            color: #64ffda;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .subtitle .highlight:hover {
+            color: #00d4ff;
+            text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
         }
         
         .hero-content .description {
@@ -823,9 +840,10 @@
         <div class="container">
             <div class="hero-content">
                 <img src="./content/profile.jpeg" alt="Karan Mirakhor" class="profile-image" onerror="this.style.display='none'">
-                <h1>Karan Mirakhor</h1>
-                <p class="subtitle">Masters of Science (Research) in Robotics</p>
-                <p class="subtitle">Robotics Institute, Carnegie Mellon University</p>
+                <h1><span id="greeting">Hello!!</span></h1>
+                <p class="subtitle">I am Karan Mirakhor, 2nd year Master of Science (Research) student in Robotics (MSR) at the <a href="https://www.ri.cmu.edu/" target="_blank" class="highlight">Robotics Institute, Carnegie Mellon University</a></p>
+                <p class="subtitle">Graduate Research Assistant — <a href="https://www.ri.cmu.edu/labs/advanced-agent-robotics-technology-lab/" target="_blank" class="highlight">Advanced Agent Robotics Technology Lab</a></p>
+                <p class="subtitle">Advisor: <a href="https://www.ri.cmu.edu/ri-people/katia-sycara/" target="_blank" class="highlight">Prof. Katia Sycara</a></p>
                 
                 <div class="social-links">
                     <a href="https://scholar.google.com/citations?user=wpeFm64AAAAJ&hl=en" target="_blank">
@@ -1134,7 +1152,7 @@
                         </div>
                         <h3>Predictive barrier lyapunov function based control for safe trajectory tracking of an aerial manipulator</h3>
                         <p class="authors">Vedant Mundheda, Karan Mirakhor, KS Rahul, Harikumar Kandath, Nagamanikandan Govindan</p>
-                        <p class="venue">2023 European Control Conference (ECC), IEEE</p>
+                        <p class="venue">European Control Conference (ECC), 2023</p>
                         <div class="publication-actions">
                             <a href="https://ieeexplore.ieee.org/document/10178336" target="_blank" class="publication-link">View Paper →</a>
                             <button class="expand-btn" onclick="toggleAbstract(this)">
@@ -1493,7 +1511,46 @@
         // Initialize particle animation when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             new ParticleAnimation();
+            initGreetingRotation();
         });
+
+        // Dynamic greeting rotation
+        function initGreetingRotation() {
+            const greetings = [
+                'Hello!!',
+                'Hi!',
+                'Hola!',
+                'Bonjour!',
+                'Guten Tag!',
+                'Ciao!',
+                'こんにちは!',
+                '안녕하세요!',
+                '你好!',
+                'Привет!',
+                'Namaste!',
+                'Salam!',
+                'Shalom!',
+                'Olá!',
+                'Hej!'
+            ];
+            
+            let currentIndex = 0;
+            const greetingElement = document.getElementById('greeting');
+            
+            if (greetingElement) {
+                setInterval(() => {
+                    greetingElement.style.opacity = '0';
+                    greetingElement.style.transform = 'translateY(-10px)';
+                    
+                    setTimeout(() => {
+                        currentIndex = (currentIndex + 1) % greetings.length;
+                        greetingElement.textContent = greetings[currentIndex];
+                        greetingElement.style.opacity = '1';
+                        greetingElement.style.transform = 'translateY(0)';
+                    }, 300);
+                }, 3000);
+            }
+        }
 
         // Toggle abstract expansion
         function toggleAbstract(button) {
