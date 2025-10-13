@@ -259,10 +259,11 @@
         
         #greeting {
             display: inline-block;
-            transition: all 0.3s ease;
+            transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
             opacity: 1;
             font-size: 2.75rem; /* larger font */
             font-weight: 600; /* less bold */
+            transform: translateY(0);
         }
         
         .hero-content .subtitle {
@@ -2002,17 +2003,23 @@
             const greetingElement = document.getElementById('greeting');
             
             if (greetingElement) {
-                setInterval(() => {
+                const animateGreeting = () => {
+                    // Fade out and move up
                     greetingElement.style.opacity = '0';
-                    greetingElement.style.transform = 'translateY(-10px)';
+                    greetingElement.style.transform = 'translateY(-15px)';
                     
                     setTimeout(() => {
+                        // Change text
                         currentIndex = (currentIndex + 1) % greetings.length;
                         greetingElement.textContent = greetings[currentIndex];
+                        
+                        // Fade in and move to position
                         greetingElement.style.opacity = '1';
                         greetingElement.style.transform = 'translateY(0)';
-                    }, 300);
-                }, 3000);
+                    }, 400);
+                };
+                
+                setInterval(animateGreeting, 3000);
             }
         }
 
@@ -2047,38 +2054,6 @@
             }
         }
 
-        // Dynamic greeting in different languages
-        const greetings = [
-            'Hello!!',
-            'Hola!!',
-            'Bonjour!!',
-            'Guten Tag!!',
-            'Ciao!!',
-            'Olá!!',
-            'Привет!!',
-            'こんにちは!!',
-            '你好!!',
-            '안녕하세요!!',
-            'Namaste!!',
-            'Salam!!'
-        ];
-        
-        let currentGreetingIndex = 0;
-        const greetingElement = document.getElementById('greeting');
-        
-        function changeGreeting() {
-            if (greetingElement) {
-                greetingElement.style.opacity = '0';
-                setTimeout(() => {
-                    greetingElement.textContent = greetings[currentGreetingIndex];
-                    greetingElement.style.opacity = '1';
-                    currentGreetingIndex = (currentGreetingIndex + 1) % greetings.length;
-                }, 300);
-            }
-        }
-        
-        // Change greeting every 3 seconds
-        setInterval(changeGreeting, 3000);
 
         // Mobile menu functionality
         function initMobileMenu() {
