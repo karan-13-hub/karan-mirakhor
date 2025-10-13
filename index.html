@@ -90,7 +90,7 @@
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
             position: relative;
@@ -476,6 +476,68 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        /* Research Grid */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .research-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
+        }
+
+        .research-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px var(--shadow-color), 0 10px 10px -5px var(--shadow-color);
+            border-color: var(--accent-primary);
+        }
+
+        .research-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+            transition: all 0.3s ease;
+        }
+
+        .research-card:hover .research-icon {
+            background: var(--accent-primary);
+            transform: scale(1.1);
+        }
+
+        .research-card h3 {
+            color: var(--text-primary);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .research-card:hover h3 {
+            color: var(--accent-primary);
+        }
+
+        .research-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
         
         .card {
             background: var(--bg-card);
@@ -631,6 +693,9 @@
             flex-direction: column;
             gap: 1.5rem;
             margin-top: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .publication-tile {
@@ -806,7 +871,7 @@
             flex-direction: column;
             gap: 1.25rem;
             margin-top: 2rem;
-            max-width: 1200px;
+            max-width: 1400px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -934,7 +999,7 @@
             flex-direction: column;
             gap: 1.25rem;
             margin-top: 2rem;
-            max-width: 1200px;
+            max-width: 1400px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -1120,6 +1185,12 @@
                 max-width: 100%;
             }
             
+            .research-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                max-width: 100%;
+            }
+            
             .card {
                 padding: 1.8rem 2.5rem;
                 min-height: 180px;
@@ -1217,6 +1288,12 @@
                 max-width: 1400px;
             }
             
+            .research-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+                max-width: 1200px;
+            }
+            
             .card {
                 padding: 1.8rem 3rem;
                 min-height: 190px;
@@ -1295,6 +1372,14 @@
             .nav-links a {
                 font-size: 1rem;
                 padding: 0.4rem 0.8rem;
+            }
+        }
+
+        @media (min-width: 1201px) {
+            .research-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+                max-width: 1200px;
             }
         }
     </style>
@@ -1540,29 +1625,47 @@
             <div class="section-content">
                 <p>My research focuses on advancing artificial intelligence through Long-Horizon Planning, Sequential Decision-Making, and Human-AI Collaboration. My objective is to engineer autonomous systems capable of exhibiting strategic planning, adaptive behavior, and safe, robust control when operating in complex, uncertain environments.</p>
                 
-                <div class="cards">
-                    <div class="card">
-                        <h3>🤖 Reinforcement Learning</h3>
+                <div class="research-grid">
+                    <div class="research-card">
+                        <div class="research-icon">
+                            <span class="text-3xl">🤖</span>
+                        </div>
+                        <h3>Reinforcement Learning</h3>
                         <p>Develop algorithms that enable agents to learn close-to-optimal planning and control strategies in robotics, leveraging human demonstrations, fixed datasets, or interactions with dynamic environments.</p>
                     </div>
-                    <div class="card">
-                        <h3>📈 Sequence Modelling</h3>
+                    <div class="research-card">
+                        <div class="research-icon">
+                            <span class="text-3xl">📈</span>
+                        </div>
+                        <h3>Sequence Modelling</h3>
                         <p>Design models that predict and understand sequential data, including temporal patterns, trajectories, and planning sequences.</p>
                     </div>
-                    <div class="card">
-                        <h3>🎯 Decision Making under Uncertainty</h3>
+                    <div class="research-card">
+                        <div class="research-icon">
+                            <span class="text-3xl">🎯</span>
+                        </div>
+                        <h3>Decision Making under Uncertainty</h3>
                         <p>Develop methods for robust and adaptive decision-making in partially observable or stochastic environments.</p>
                     </div>
-                    <div class="card">
-                        <h3>👥 Multi-Agent Reinforcement Learning (MARL)</h3>
+                    <div class="research-card">
+                        <div class="research-icon">
+                            <span class="text-3xl">👥</span>
+                        </div>
+                        <h3>Multi-Agent Reinforcement Learning (MARL)</h3>
                         <p>Study interactions of multiple agents learning together, including cooperation, competition, and strategic reasoning.</p>
                     </div>
-                    <div class="card">
-                        <h3>🛡️ Safe and Robust Control</h3>
+                    <div class="research-card">
+                        <div class="research-icon">
+                            <span class="text-3xl">🛡️</span>
+                        </div>
+                        <h3>Safe and Robust Control</h3>
                         <p>Design control strategies for autonomous systems that ensure safety, reliability, and robustness under uncertainty.</p>
                     </div>
-                    <div class="card">
-                        <h3>🗺️ Planning</h3>
+                    <div class="research-card">
+                        <div class="research-icon">
+                            <span class="text-3xl">🗺️</span>
+                        </div>
+                        <h3>Planning</h3>
                         <p>Develop algorithms for efficient and adaptive planning in robotics and AI systems, including long-horizon decision-making.</p>
                     </div>
                 </div>
