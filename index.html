@@ -41,18 +41,18 @@
     <style>
         :root {
             /* Light theme (default) */
-            --bg-primary: #f8fafc;
-            --bg-secondary: #f1f5f9;
-            --bg-card: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+            --bg-primary: #f0f4f8;
+            --bg-secondary: #e2e8f0;
+            --bg-card: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 252, 255, 0.95) 100%);
             --bg-nav: rgba(255, 255, 255, 0.98);
             --text-primary: #0f172a;
             --text-secondary: #334155;
             --text-muted: #64748b;
             --accent-primary: #4f46e5;
             --accent-secondary: #7c3aed;
-            --border-color: rgba(79, 70, 229, 0.15);
+            --border-color: rgba(79, 70, 229, 0.25);
             --border-hover: #4f46e5;
-            --shadow-color: rgba(0, 0, 0, 0.08);
+            --shadow-color: rgba(0, 0, 0, 0.12);
             --particle-color: rgba(79, 70, 229, 0.6);
             --particle-glow: rgba(79, 70, 229, 0.2);
             
@@ -426,7 +426,7 @@
             padding: 0.875rem 1.25rem;
             border-radius: 12px;
             border: 2px solid var(--border-color);
-            box-shadow: 0 4px 12px var(--shadow-color);
+            box-shadow: 0 6px 16px -4px var(--shadow-color), 0 3px 8px -2px var(--shadow-color);
             transition: all 0.3s ease;
             font-weight: 700;
             font-size: 1rem;
@@ -437,8 +437,8 @@
         .social-links a:hover {
             color: var(--accent-primary);
             border-color: var(--accent-primary);
-            box-shadow: 0 6px 16px var(--particle-glow);
-            transform: translateY(-3px);
+            box-shadow: 0 8px 20px -4px var(--particle-glow), 0 4px 12px -2px var(--particle-glow);
+            transform: translateY(-4px);
         }
         
         .social-links a i {
@@ -545,10 +545,10 @@
             background: var(--bg-card);
             padding: 2rem 3.5rem;
             border-radius: 16px;
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--border-color);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
-            box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
+            box-shadow: 0 8px 16px -4px var(--shadow-color), 0 4px 8px -2px var(--shadow-color);
             position: relative;
             overflow: visible;
             min-height: 200px;
@@ -573,7 +573,7 @@
         .card:hover {
             border-color: var(--accent-primary);
             transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px var(--shadow-color), 0 10px 10px -5px var(--shadow-color), 0 0 0 1px var(--border-color);
+            box-shadow: 0 24px 32px -8px var(--shadow-color), 0 12px 16px -4px var(--shadow-color), 0 0 0 2px var(--accent-primary);
         }
         
         .card h3 {
@@ -614,11 +614,11 @@
             background: var(--bg-card);
             padding: 2.5rem 3rem;
             border-radius: 16px;
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--border-color);
             text-align: center;
             max-width: 400px;
             width: 100%;
-            box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
+            box-shadow: 0 8px 16px -4px var(--shadow-color), 0 4px 8px -2px var(--shadow-color);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
@@ -643,7 +643,7 @@
         .contact-tile:hover {
             transform: translateY(-5px);
             border-color: var(--accent-primary);
-            box-shadow: 0 20px 25px -5px var(--shadow-color), 0 10px 10px -5px var(--shadow-color), 0 0 0 1px var(--border-color);
+            box-shadow: 0 24px 32px -8px var(--shadow-color), 0 12px 16px -4px var(--shadow-color), 0 0 0 2px var(--accent-primary);
         }
         
         .contact-tile h3 {
@@ -701,18 +701,19 @@
         
         .publication-tile {
             background: var(--bg-card);
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--border-color);
             border-radius: 12px;
             padding: 2rem;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 4px 12px -2px var(--shadow-color), 0 2px 6px -1px var(--shadow-color);
         }
         
         .publication-tile:hover {
             border-color: var(--accent-primary);
-            box-shadow: 0 8px 25px var(--shadow-color);
-            transform: translateY(-2px);
+            box-shadow: 0 12px 32px -4px var(--shadow-color), 0 6px 16px -2px var(--shadow-color);
+            transform: translateY(-4px);
         }
         
         .publication-header {
@@ -883,7 +884,7 @@
 
         .project-tile {
             background: var(--bg-card);
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--border-color);
             border-radius: 14px;
             padding: 1.5rem 2rem 3.25rem 2rem; /* extra bottom space for + button */
             display: flex;
@@ -892,12 +893,13 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden; /* ensure inner content doesn't spill outside */
+            box-shadow: 0 4px 12px -2px var(--shadow-color), 0 2px 6px -1px var(--shadow-color);
         }
 
         .project-tile:hover {
             border-color: var(--accent-primary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px var(--shadow-color);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -4px var(--shadow-color), 0 6px 12px -2px var(--shadow-color);
         }
 
         .project-content h3 {
@@ -1012,19 +1014,20 @@
 
         .award-tile {
             background: var(--bg-card);
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--border-color);
             border-radius: 14px;
             padding: 1.5rem 2rem;
             display: flex;
             align-items: flex-start;
             gap: 1.25rem;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 12px -2px var(--shadow-color), 0 2px 6px -1px var(--shadow-color);
         }
 
         .award-tile:hover {
             border-color: var(--accent-primary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px var(--shadow-color);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -4px var(--shadow-color), 0 6px 12px -2px var(--shadow-color);
         }
 
         .award-meta {
