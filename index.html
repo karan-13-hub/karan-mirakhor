@@ -124,7 +124,8 @@
             backdrop-filter: blur(15px);
             border-top: 1px solid rgba(100, 255, 218, 0.1);
             padding: 0.5rem 0;
-            z-index: 999;
+            z-index: 1001;
+            pointer-events: auto;
         }
         
         .mobile-nav.active {
@@ -150,6 +151,9 @@
             display: block;
             touch-action: manipulation;
             -webkit-tap-highlight-color: transparent;
+            position: relative;
+            z-index: 1002;
+            pointer-events: auto;
         }
         
         .mobile-nav-links a:hover {
@@ -160,6 +164,7 @@
         .mobile-nav-links a.active {
             color: #64ffda;
             background: rgba(100, 255, 218, 0.15);
+            pointer-events: auto;
         }
         
         .nav-links a {
@@ -2115,8 +2120,41 @@
                 
                 // Close mobile menu when clicking on a link
                 mobileNavLinks.forEach(link => {
-                    link.addEventListener('click', closeMenu);
-                    link.addEventListener('touchend', closeMenu);
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        closeMenu();
+                        
+                        // Navigate to the section
+                        const href = link.getAttribute('href');
+                        if (href && href.startsWith('#')) {
+                            const target = document.querySelector(href);
+                            if (target) {
+                                target.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }
+                        }
+                    });
+                    
+                    link.addEventListener('touchend', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        closeMenu();
+                        
+                        // Navigate to the section
+                        const href = link.getAttribute('href');
+                        if (href && href.startsWith('#')) {
+                            const target = document.querySelector(href);
+                            if (target) {
+                                target.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }
+                        }
+                    });
                 });
                 
                 // Close mobile menu when clicking outside
