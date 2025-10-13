@@ -108,7 +108,7 @@
             background: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.6;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.6s ease, color 0.6s ease;
         }
         
         .container {
@@ -292,6 +292,8 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            background: var(--bg-primary);
+            transition: background-color 0.6s ease;
         }
         
         .hero::before {
@@ -304,6 +306,7 @@
             background: radial-gradient(circle at 25% 25%, rgba(100, 255, 218, 0.1) 0%, transparent 50%),
                         radial-gradient(circle at 75% 75%, rgba(100, 255, 218, 0.1) 0%, transparent 50%);
             z-index: -1;
+            transition: opacity 0.6s ease;
         }
         
         /* Particle Animation Background */
@@ -427,7 +430,7 @@
             border-radius: 12px;
             border: 2px solid var(--border-color);
             box-shadow: 0 6px 16px -4px var(--shadow-color), 0 3px 8px -2px var(--shadow-color);
-            transition: all 0.3s ease;
+            transition: all 0.6s ease;
             font-weight: 700;
             font-size: 1rem;
             min-width: 140px;
@@ -472,10 +475,26 @@
         /* Sections */
         .section {
             padding: 5rem 0;
+            background: var(--bg-primary);
+            transition: background-color 0.6s ease;
+            position: relative;
         }
         
-        .section:nth-child(even) {
-            background: var(--bg-secondary);
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            z-index: -1;
+        }
+        
+        .section:nth-child(even)::before {
+            opacity: 1;
         }
         
         .section-title {
@@ -546,7 +565,7 @@
             padding: 2rem 3.5rem;
             border-radius: 16px;
             border: 2px solid var(--border-color);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             box-shadow: 0 8px 16px -4px var(--shadow-color), 0 4px 8px -2px var(--shadow-color);
             position: relative;
@@ -619,7 +638,7 @@
             max-width: 400px;
             width: 100%;
             box-shadow: 0 8px 16px -4px var(--shadow-color), 0 4px 8px -2px var(--shadow-color);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
         }
@@ -704,7 +723,7 @@
             border: 2px solid var(--border-color);
             border-radius: 12px;
             padding: 2rem;
-            transition: all 0.3s ease;
+            transition: all 0.6s ease;
             position: relative;
             overflow: hidden;
             box-shadow: 0 4px 12px -2px var(--shadow-color), 0 2px 6px -1px var(--shadow-color);
@@ -890,7 +909,7 @@
             display: flex;
             align-items: flex-start;
             gap: 1.25rem;
-            transition: all 0.3s ease;
+            transition: all 0.6s ease;
             position: relative;
             overflow: hidden; /* ensure inner content doesn't spill outside */
             box-shadow: 0 4px 12px -2px var(--shadow-color), 0 2px 6px -1px var(--shadow-color);
@@ -1020,7 +1039,7 @@
             display: flex;
             align-items: flex-start;
             gap: 1.25rem;
-            transition: all 0.3s ease;
+            transition: all 0.6s ease;
             box-shadow: 0 4px 12px -2px var(--shadow-color), 0 2px 6px -1px var(--shadow-color);
         }
 
@@ -1458,7 +1477,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20" style="background: var(--bg-primary);">
+    <section id="about" class="py-20 section">
         <div class="container mx-auto px-6 max-w-6xl">
             <!-- Section Header -->
             <div class="text-center mb-16">
@@ -1630,7 +1649,7 @@
     </section>
 
     <!-- Research Section -->
-    <section id="research" class="py-20" style="background: var(--bg-secondary);">
+    <section id="research" class="py-20 section">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-3xl font-semibold mb-12 text-center" style="color: var(--accent-primary);">
                 Research Interests
