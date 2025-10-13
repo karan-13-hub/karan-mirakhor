@@ -21,6 +21,23 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#64ffda',
+                        'secondary': '#94a3b8',
+                        'accent': '#0f172a',
+                        'surface': '#1e293b'
+                    }
+                }
+            }
+        }
+    </script>
+    
     <style>
         * {
             margin: 0;
@@ -336,70 +353,187 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p>Hello! I'm <strong>Karan Mirakhor</strong>, a <strong>second-year Master of Science (Research) student in Robotics (MSR) at the <a href="https://www.ri.cmu.edu/" target="_blank" class="accent-link">Robotics Institute</a>, <a href="https://www.cmu.edu/" target="_blank" class="accent-link">Carnegie Mellon University</a></strong>.</p>
-                
-                <p><strong>Graduate Research Assistant</strong> - <a href="https://www.ri.cmu.edu/robotics-groups/advanced-agent-robotics-technology-lab/" target="_blank" class="accent-link">Advanced Agent Robotics Technology Lab</a><br>
-                <strong>Advisor:</strong> <a href="https://www.cs.cmu.edu/~sycara/" target="_blank" class="accent-link">Prof. Katia Sycara</a></p>
-                
-                <p>My research primarily focuses on <strong>Multi-Agent Reinforcement Learning (MARL)</strong>. Specifically, my work is on:</p>
-                
-                <div class="research-areas">
-                    <div class="research-area">
-                        <h3 class="area-title">🧠 Zero-shot Coordination in Cooperative MARL</h3>
-                        <p>Developing agents that can seamlessly collaborate with previously unseen partners without additional training. Specifically, I focus on <strong>offline-to-online training frameworks</strong> that leverage behavioral diversity in offline datasets and enable efficient online adaptation using belief models.</p>
+    <section id="about" class="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-white mb-4 tracking-wide">About Me</h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Main Content Container -->
+            <div class="prose prose-lg prose-invert max-w-none">
+                <!-- Introduction Card -->
+                <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 mb-12 border border-slate-700/50 shadow-2xl">
+                    <div class="text-center mb-8">
+                        <h3 class="text-3xl font-bold text-white mb-4 tracking-wide">Karan Mirakhor</h3>
+                        <p class="text-xl text-secondary leading-relaxed">
+                            Second-year Master of Science (Research) student in Robotics (MSR) at the 
+                            <a href="https://www.ri.cmu.edu/" target="_blank" class="text-primary hover:text-white transition-colors duration-300 font-semibold">Robotics Institute</a>, 
+                            <a href="https://www.cmu.edu/" target="_blank" class="text-primary hover:text-white transition-colors duration-300 font-semibold">Carnegie Mellon University</a>
+                        </p>
                     </div>
                     
-                    <div class="research-area">
-                        <h3 class="area-title">🎭 Competitive MARL and Targeted Deception</h3>
-                        <p>Developing <strong>targeted deception strategies</strong> by leveraging <strong>higher-order opponent belief models</strong> and analyzing <strong>historical response patterns</strong> to identify and exploit individual behavioral vulnerabilities.</p>
+                    <div class="text-center space-y-2">
+                        <p class="text-lg text-secondary">
+                            <span class="text-primary font-semibold">Graduate Research Assistant</span> — 
+                            <a href="https://www.ri.cmu.edu/robotics-groups/advanced-agent-robotics-technology-lab/" target="_blank" class="text-primary hover:text-white transition-colors duration-300 font-medium">Advanced Agent Robotics Technology Lab</a>
+                        </p>
+                        <p class="text-lg text-secondary">
+                            <span class="text-primary font-semibold">Advisor:</span> 
+                            <a href="https://www.cs.cmu.edu/~sycara/" target="_blank" class="text-primary hover:text-white transition-colors duration-300 font-medium">Prof. Katia Sycara</a>
+                        </p>
                     </div>
                 </div>
-                
-                <div class="experience-section">
-                    <h3 class="section-subtitle">📚 Previous Research Experience</h3>
+
+                <!-- Research Focus -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+                        <span class="text-3xl mr-3">🔬</span>
+                        Research Focus
+                    </h3>
+                    <p class="text-lg text-secondary leading-relaxed mb-8">
+                        My research primarily focuses on <span class="text-primary font-semibold">Multi-Agent Reinforcement Learning (MARL)</span>. 
+                        Specifically, my work encompasses two key areas:
+                    </p>
+                </div>
+
+                <!-- Research Areas Grid -->
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <!-- Zero-shot Coordination -->
+                    <div class="group bg-slate-800/40 backdrop-blur-sm rounded-xl p-6 border border-slate-700/30 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+                        <h4 class="text-xl font-bold text-white mb-4 flex items-center group-hover:text-primary transition-colors duration-300">
+                            <span class="text-2xl mr-3">🧠</span>
+                            Zero-shot Coordination in Cooperative MARL
+                        </h4>
+                        <p class="text-secondary leading-relaxed">
+                            Developing agents that can seamlessly collaborate with previously unseen partners without additional training. 
+                            Specifically, I focus on <span class="text-primary font-semibold">offline-to-online training frameworks</span> that leverage 
+                            behavioral diversity in offline datasets and enable efficient online adaptation using belief models.
+                        </p>
+                    </div>
+
+                    <!-- Competitive MARL -->
+                    <div class="group bg-slate-800/40 backdrop-blur-sm rounded-xl p-6 border border-slate-700/30 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+                        <h4 class="text-xl font-bold text-white mb-4 flex items-center group-hover:text-primary transition-colors duration-300">
+                            <span class="text-2xl mr-3">🎭</span>
+                            Competitive MARL and Targeted Deception
+                        </h4>
+                        <p class="text-secondary leading-relaxed">
+                            Developing <span class="text-primary font-semibold">targeted deception strategies</span> by leveraging 
+                            <span class="text-primary font-semibold">higher-order opponent belief models</span> and analyzing 
+                            <span class="text-primary font-semibold">historical response patterns</span> to identify and exploit individual behavioral vulnerabilities.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Previous Research Experience -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
+                        <span class="text-3xl mr-3">📚</span>
+                        Previous Research Experience
+                    </h3>
                     
-                    <div class="experience-item">
-                        <p class="experience-title"><strong>Pre-doctoral Research Fellow</strong> — <a href="https://www.tcs.com/research-and-innovation" target="_blank" class="accent-link"><strong>TCS Research</strong></a></p>
-                        <p class="experience-advisor"><em>Advisor: <a href="https://scholar.google.co.in/citations?user=Eqf8NrEAAAAJ&hl=en" target="_blank" class="accent-link">Dr. Brojeshwar Bhowmick</a></em></p>
-                        <p class="experience-description">Explored <strong>Task Planning for Indoor Object Rearrangement</strong> under <strong>partial observability (POMDP)</strong>. Developed scalable <strong>graph-based scene representations</strong>, utilized <strong>Large Language Models (LLMs)</strong> for semantic object search, and applied <strong>Deep RL</strong> for efficient single and multi-room planning.</p>
-                    </div>
-                    
-                    <div class="experience-item">
-                        <h3 class="section-subtitle">🎓 B.Tech (Honors) in Electronics and Communication Engineering (ECE)</h3>
-                        <p class="experience-title"><strong>IIIT Hyderabad</strong> — <a href="https://www.iiit.ac.in/" target="_blank" class="accent-link">IIIT Hyderabad</a></p>
-                        <p class="experience-advisor"><em>Research Assistant, <a href="https://robotics.iiit.ac.in/" target="_blank" class="accent-link">Robotics Research Center</a></em></p>
-                        <p class="experience-advisor"><em>Advisor: <a href="https://scholar.google.co.in/citations?user=5i1t_QgAAAAJ&hl=en" target="_blank" class="accent-link">Dr. Harikumar Kandath</a></em></p>
-                        <p class="experience-description">Worked on <strong>aerial manipulator control</strong> using <strong>Control Barrier Lyapunov constraints</strong> within a <strong>Model Predictive Controller</strong> for safe and stable operation.</p>
+                    <div class="space-y-8">
+                        <!-- TCS Research -->
+                        <div class="bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700/20 hover:border-slate-600/50 transition-all duration-300">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h4 class="text-xl font-bold text-white mb-2 md:mb-0">
+                                    Pre-doctoral Research Fellow
+                                </h4>
+                                <a href="https://www.tcs.com/research-and-innovation" target="_blank" class="text-primary hover:text-white transition-colors duration-300 font-semibold text-lg">
+                                    TCS Research
+                                </a>
+                            </div>
+                            <p class="text-secondary mb-3">
+                                <em>Advisor: <a href="https://scholar.google.co.in/citations?user=Eqf8NrEAAAAJ&hl=en" target="_blank" class="text-primary hover:text-white transition-colors duration-300">Dr. Brojeshwar Bhowmick</a></em>
+                            </p>
+                            <p class="text-secondary leading-relaxed">
+                                Explored <span class="text-primary font-semibold">Task Planning for Indoor Object Rearrangement</span> under 
+                                <span class="text-primary font-semibold">partial observability (POMDP)</span>. Developed scalable 
+                                <span class="text-primary font-semibold">graph-based scene representations</span>, utilized 
+                                <span class="text-primary font-semibold">Large Language Models (LLMs)</span> for semantic object search, and applied 
+                                <span class="text-primary font-semibold">Deep RL</span> for efficient single and multi-room planning.
+                            </p>
+                        </div>
+
+                        <!-- IIIT Hyderabad -->
+                        <div class="bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700/20 hover:border-slate-600/50 transition-all duration-300">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h4 class="text-xl font-bold text-white mb-2 md:mb-0">
+                                    B.Tech (Honors) in Electronics and Communication Engineering (ECE)
+                                </h4>
+                                <a href="https://www.iiit.ac.in/" target="_blank" class="text-primary hover:text-white transition-colors duration-300 font-semibold text-lg">
+                                    IIIT Hyderabad
+                                </a>
+                            </div>
+                            <div class="space-y-2 mb-4">
+                                <p class="text-secondary">
+                                    <em>Research Assistant, <a href="https://robotics.iiit.ac.in/" target="_blank" class="text-primary hover:text-white transition-colors duration-300">Robotics Research Center</a></em>
+                                </p>
+                                <p class="text-secondary">
+                                    <em>Advisor: <a href="https://scholar.google.co.in/citations?user=5i1t_QgAAAAJ&hl=en" target="_blank" class="text-primary hover:text-white transition-colors duration-300">Dr. Harikumar Kandath</a></em>
+                                </p>
+                            </div>
+                            <p class="text-secondary leading-relaxed">
+                                Worked on <span class="text-primary font-semibold">aerial manipulator control</span> using 
+                                <span class="text-primary font-semibold">Control Barrier Lyapunov constraints</span> within a 
+                                <span class="text-primary font-semibold">Model Predictive Controller</span> for safe and stable operation.
+                            </p>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="vision-section">
-                    <h3 class="section-subtitle">🔭 Future Vision</h3>
-                    <p>I am fascinated by how <strong>intelligent agents</strong> can learn <strong>structured, transferable policies</strong> that generalize across <strong>tasks, embodiments, and environments</strong>, moving toward autonomous systems capable of <strong>learning and reasoning like humans</strong>.</p>
-                    <p>My long-term goal is to develop <strong>generalist robot policies</strong> that <strong>unify learning, reasoning, and control</strong>, advancing adaptable embodied agents for diverse real-world tasks.</p>
-                </div>
-                
-                <div class="personal-section">
-                    <h3 class="section-subtitle">☕ Beyond Research</h3>
-                    <p>Outside the lab, I enjoy ♟️ <strong>Chess</strong>, 🏸 <strong>Squash</strong>, and 🏓 <strong>Table Tennis</strong>. I'm a dedicated ☕ <strong>coffee enthusiast</strong> who enjoys strategy both on and off the board.</p>
-                </div>
-                
-                <div class="stats">
-                    <div class="stat">
-                        <div class="stat-number">5+</div>
-                        <div class="stat-label">Years Research Experience</div>
+
+                <!-- Future Vision -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+                        <span class="text-3xl mr-3">🔭</span>
+                        Future Vision
+                    </h3>
+                    <div class="bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700/20">
+                        <p class="text-secondary leading-relaxed mb-4">
+                            I am fascinated by how <span class="text-primary font-semibold">intelligent agents</span> can learn 
+                            <span class="text-primary font-semibold">structured, transferable policies</span> that generalize across 
+                            <span class="text-primary font-semibold">tasks, embodiments, and environments</span>, moving toward autonomous systems capable of 
+                            <span class="text-primary font-semibold">learning and reasoning like humans</span>.
+                        </p>
+                        <p class="text-secondary leading-relaxed">
+                            My long-term goal is to develop <span class="text-primary font-semibold">generalist robot policies</span> that 
+                            <span class="text-primary font-semibold">unify learning, reasoning, and control</span>, advancing adaptable embodied agents for diverse real-world tasks.
+                        </p>
                     </div>
-                    <div class="stat">
-                        <div class="stat-number">2+</div>
-                        <div class="stat-label">Years Job Experience</div>
+                </div>
+
+                <!-- Beyond Research -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+                        <span class="text-3xl mr-3">☕</span>
+                        Beyond Research
+                    </h3>
+                    <div class="bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700/20">
+                        <p class="text-secondary leading-relaxed">
+                            Outside the lab, I enjoy 
+                            <span class="inline-flex items-center mx-1"><span class="text-2xl mr-1">♟️</span><span class="text-primary font-semibold">Chess</span></span>, 
+                            <span class="inline-flex items-center mx-1"><span class="text-2xl mr-1">🏸</span><span class="text-primary font-semibold">Squash</span></span>, and 
+                            <span class="inline-flex items-center mx-1"><span class="text-2xl mr-1">🏓</span><span class="text-primary font-semibold">Table Tennis</span></span>. 
+                            I'm a dedicated <span class="inline-flex items-center mx-1"><span class="text-2xl mr-1">☕</span><span class="text-primary font-semibold">coffee enthusiast</span></span> who enjoys strategy both on and off the board.
+                        </p>
                     </div>
-                    <div class="stat">
-                        <div class="stat-number">3+</div>
-                        <div class="stat-label">Publications & Patents</div>
+                </div>
+
+                <!-- Stats Section -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-sm rounded-xl p-6 border border-primary/20 text-center hover:border-primary/40 transition-all duration-300">
+                        <div class="text-4xl font-bold text-primary mb-2">5+</div>
+                        <div class="text-secondary font-medium">Years Research Experience</div>
+                    </div>
+                    <div class="bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-sm rounded-xl p-6 border border-primary/20 text-center hover:border-primary/40 transition-all duration-300">
+                        <div class="text-4xl font-bold text-primary mb-2">2+</div>
+                        <div class="text-secondary font-medium">Years Job Experience</div>
+                    </div>
+                    <div class="bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-sm rounded-xl p-6 border border-primary/20 text-center hover:border-primary/40 transition-all duration-300">
+                        <div class="text-4xl font-bold text-primary mb-2">3+</div>
+                        <div class="text-secondary font-medium">Publications & Patents</div>
                     </div>
                 </div>
             </div>
