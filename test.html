@@ -15,6 +15,9 @@
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <!-- Custom Tailwind Configuration -->
     <script>
         tailwind.config = {
@@ -59,6 +62,152 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+        
+        /* Particle Animation Background */
+        #particles-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(100, 255, 218, 0.8) 0%, rgba(100, 255, 218, 0.2) 70%, transparent 100%);
+            box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .particle.highlighted {
+            background: radial-gradient(circle, rgba(100, 255, 218, 1) 0%, rgba(100, 255, 218, 0.4) 70%, transparent 100%);
+            box-shadow: 0 0 30px rgba(100, 255, 218, 0.6);
+            transform: scale(1.5);
+        }
+        
+        .connection-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent 0%, rgba(100, 255, 218, 0.3) 50%, transparent 100%);
+            height: 1px;
+            transform-origin: left center;
+            transition: all 0.3s ease;
+        }
+        
+        .connection-line.highlighted {
+            background: linear-gradient(90deg, transparent 0%, rgba(100, 255, 218, 0.8) 50%, transparent 100%);
+            box-shadow: 0 0 10px rgba(100, 255, 218, 0.4);
+        }
+        
+        /* Mobile Menu Styles */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #4f46e5;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: absolute;
+            right: 0;
+            z-index: 1003;
+            min-width: 44px;
+            min-height: 44px;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+        
+        .mobile-menu-toggle:hover {
+            color: #3730a3;
+            background: rgba(79, 70, 229, 0.1);
+        }
+        
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            border-top: 1px solid rgba(79, 70, 229, 0.1);
+            padding: 0.5rem 0;
+            z-index: 1002;
+            pointer-events: auto;
+        }
+        
+        .mobile-nav.active {
+            display: block;
+        }
+        
+        .mobile-nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0 1rem;
+        }
+        
+        .mobile-nav-links a {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            display: block;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            position: relative;
+            z-index: 1001;
+            pointer-events: auto;
+        }
+        
+        .mobile-nav-links a:hover {
+            color: #4f46e5;
+            background: rgba(79, 70, 229, 0.1);
+        }
+        
+        .mobile-nav-links a.active {
+            color: #4f46e5;
+            background: rgba(79, 70, 229, 0.15);
+            pointer-events: auto;
+        }
+        
+        /* Navigation active states */
+        .nav-links a.active {
+            color: #4f46e5;
+            background: rgba(79, 70, 229, 0.15);
+            box-shadow: 0 2px 8px rgba(79, 70, 229, 0.2);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-nav-links a {
+                font-size: 1.1rem;
+                padding: 0.8rem 1rem;
+                touch-action: manipulation;
+                -webkit-tap-highlight-color: transparent;
+            }
+            
+            .mobile-nav {
+                padding: 0.25rem 0;
+            }
+        }
     </style>
 </head>
 
@@ -76,26 +225,27 @@
                 <li><a href="#contact" class="hover:text-indigo-600 transition-colors duration-300 font-medium">Contact</a></li>
             </ul>
             <!-- Mobile menu button -->
-            <button class="md:hidden" onclick="toggleMobileMenu()">
-                <i data-lucide="menu" class="w-6 h-6"></i>
+            <button id="mobile-menu-toggle" class="md:hidden" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars"></i>
             </button>
         </div>
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-6 py-4 space-y-4">
-                <a href="#about" class="block hover:text-indigo-600 transition-colors">About</a>
-                <a href="#research" class="block hover:text-indigo-600 transition-colors">Research</a>
-                <a href="#publications" class="block hover:text-indigo-600 transition-colors">Publications</a>
-                <a href="#projects" class="block hover:text-indigo-600 transition-colors">Projects</a>
-                <a href="#awards" class="block hover:text-indigo-600 transition-colors">Awards</a>
-                <a href="#contact" class="block hover:text-indigo-600 transition-colors">Contact</a>
-            </div>
+        <div id="mobile-nav" class="hidden md:hidden bg-white border-t">
+            <ul class="mobile-nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="pt-32 pb-20 text-center bg-gradient-to-br from-indigo-50 to-purple-50">
-        <div class="max-w-4xl mx-auto px-6">
+    <section id="hero" class="pt-32 pb-20 text-center bg-gradient-to-br from-indigo-50 to-purple-50 relative overflow-hidden">
+        <div id="particles-canvas" class="absolute top-0 left-0 w-full h-full z-0 pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
             <h2 class="text-4xl md:text-5xl font-semibold text-indigo-600 mb-4 fade-in">
                 Hello!!
             </h2>
@@ -667,8 +817,8 @@
         
         // Mobile menu toggle
         function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
+            const mobileNav = document.getElementById('mobile-nav');
+            mobileNav.classList.toggle('active');
         }
         
         // Smooth scrolling for navigation links
@@ -683,9 +833,9 @@
                     });
                 }
                 // Close mobile menu if open
-                const mobileMenu = document.getElementById('mobile-menu');
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
+                const mobileNav = document.getElementById('mobile-nav');
+                if (mobileNav.classList.contains('active')) {
+                    mobileNav.classList.remove('active');
                 }
             });
         });
@@ -717,6 +867,377 @@
         // Observe all sections
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
+        });
+
+        // Dynamic greeting rotation
+        function initGreetingRotation() {
+            const greetings = [
+                'Hello!!',
+                'Hi!',
+                'Hola!',
+                'Bonjour!',
+                'Guten Tag!',
+                'Ciao!',
+                'こんにちは!',
+                '안녕하세요!',
+                '你好!',
+                'Привет!',
+                'Namaste!',
+                'Salam!',
+                'Shalom!',
+                'Olá!',
+                'Hej!'
+            ];
+            
+            let currentIndex = 0;
+            const greetingElement = document.querySelector('#hero h2');
+            
+            if (greetingElement) {
+                const animateGreeting = () => {
+                    // Fade out and move up
+                    greetingElement.style.opacity = '0';
+                    greetingElement.style.transform = 'translateY(-15px)';
+                    
+                    setTimeout(() => {
+                        // Change text
+                        currentIndex = (currentIndex + 1) % greetings.length;
+                        greetingElement.textContent = greetings[currentIndex];
+                        
+                        // Fade in and move to position
+                        greetingElement.style.opacity = '1';
+                        greetingElement.style.transform = 'translateY(0)';
+                    }, 400);
+                };
+                
+                setInterval(animateGreeting, 3000);
+            }
+        }
+
+        // Particle Animation System
+        class ParticleAnimation {
+            constructor() {
+                this.canvas = document.getElementById('particles-canvas');
+                this.particles = [];
+                this.connections = [];
+                this.mouse = { x: 0, y: 0 };
+                this.animationId = null;
+                
+                // Configuration
+                this.config = {
+                    particleCount: window.innerWidth < 768 ? 15 : 25,
+                    maxDistance: 150,
+                    particleSize: { min: 2, max: 6 },
+                    speed: 0.5,
+                    connectionOpacity: 0.3,
+                    highlightDistance: 100
+                };
+                
+                this.init();
+            }
+            
+            init() {
+                this.createParticles();
+                this.bindEvents();
+                this.animate();
+            }
+            
+            createParticles() {
+                for (let i = 0; i < this.config.particleCount; i++) {
+                    this.particles.push({
+                        x: Math.random() * window.innerWidth,
+                        y: Math.random() * window.innerHeight,
+                        vx: (Math.random() - 0.5) * this.config.speed,
+                        vy: (Math.random() - 0.5) * this.config.speed,
+                        size: Math.random() * (this.config.particleSize.max - this.config.particleSize.min) + this.config.particleSize.min,
+                        originalSize: 0,
+                        highlighted: false
+                    });
+                }
+            }
+            
+            bindEvents() {
+                // Mouse movement
+                document.addEventListener('mousemove', (e) => {
+                    this.mouse.x = e.clientX;
+                    this.mouse.y = e.clientY;
+                });
+                
+                // Window resize
+                window.addEventListener('resize', () => {
+                    this.resize();
+                });
+                
+                // Pause animation when tab is not visible
+                document.addEventListener('visibilitychange', () => {
+                    if (document.hidden) {
+                        cancelAnimationFrame(this.animationId);
+                    } else {
+                        this.animate();
+                    }
+                });
+            }
+            
+            resize() {
+                // Adjust particle count for mobile
+                this.config.particleCount = window.innerWidth < 768 ? 15 : 25;
+                
+                // Remove excess particles on mobile
+                if (this.particles.length > this.config.particleCount) {
+                    this.particles = this.particles.slice(0, this.config.particleCount);
+                }
+                
+                // Add particles if needed
+                while (this.particles.length < this.config.particleCount) {
+                    this.particles.push({
+                        x: Math.random() * window.innerWidth,
+                        y: Math.random() * window.innerHeight,
+                        vx: (Math.random() - 0.5) * this.config.speed,
+                        vy: (Math.random() - 0.5) * this.config.speed,
+                        size: Math.random() * (this.config.particleSize.max - this.config.particleSize.min) + this.config.particleSize.min,
+                        originalSize: 0,
+                        highlighted: false
+                    });
+                }
+            }
+            
+            updateParticles() {
+                this.particles.forEach(particle => {
+                    // Update position
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
+                    
+                    // Bounce off edges
+                    if (particle.x < 0 || particle.x > window.innerWidth) {
+                        particle.vx *= -1;
+                    }
+                    if (particle.y < 0 || particle.y > window.innerHeight) {
+                        particle.vy *= -1;
+                    }
+                    
+                    // Keep particles in bounds
+                    particle.x = Math.max(0, Math.min(window.innerWidth, particle.x));
+                    particle.y = Math.max(0, Math.min(window.innerHeight, particle.y));
+                    
+                    // Check mouse proximity
+                    const distance = Math.sqrt(
+                        Math.pow(particle.x - this.mouse.x, 2) + 
+                        Math.pow(particle.y - this.mouse.y, 2)
+                    );
+                    
+                    particle.highlighted = distance < this.config.highlightDistance;
+                });
+            }
+            
+            createConnections() {
+                this.connections = [];
+                
+                for (let i = 0; i < this.particles.length; i++) {
+                    for (let j = i + 1; j < this.particles.length; j++) {
+                        const particle1 = this.particles[i];
+                        const particle2 = this.particles[j];
+                        
+                        const distance = Math.sqrt(
+                            Math.pow(particle1.x - particle2.x, 2) + 
+                            Math.pow(particle1.y - particle2.y, 2)
+                        );
+                        
+                        if (distance < this.config.maxDistance) {
+                            const angle = Math.atan2(particle2.y - particle1.y, particle2.x - particle1.x);
+                            const opacity = (1 - distance / this.config.maxDistance) * this.config.connectionOpacity;
+                            
+                            this.connections.push({
+                                x1: particle1.x,
+                                y1: particle1.y,
+                                x2: particle2.x,
+                                y2: particle2.y,
+                                distance: distance,
+                                angle: angle,
+                                opacity: opacity,
+                                highlighted: particle1.highlighted || particle2.highlighted
+                            });
+                        }
+                    }
+                }
+            }
+            
+            render() {
+                // Clear canvas
+                this.canvas.innerHTML = '';
+                
+                // Render connections
+                this.connections.forEach(connection => {
+                    const line = document.createElement('div');
+                    line.className = `connection-line ${connection.highlighted ? 'highlighted' : ''}`;
+                    
+                    const length = connection.distance;
+                    const centerX = (connection.x1 + connection.x2) / 2;
+                    const centerY = (connection.y1 + connection.y2) / 2;
+                    
+                    line.style.left = centerX - length / 2 + 'px';
+                    line.style.top = centerY + 'px';
+                    line.style.width = length + 'px';
+                    line.style.opacity = connection.opacity;
+                    line.style.transform = `rotate(${connection.angle}rad)`;
+                    
+                    this.canvas.appendChild(line);
+                });
+                
+                // Render particles
+                this.particles.forEach(particle => {
+                    const particleEl = document.createElement('div');
+                    particleEl.className = `particle ${particle.highlighted ? 'highlighted' : ''}`;
+                    
+                    particleEl.style.left = particle.x - particle.size / 2 + 'px';
+                    particleEl.style.top = particle.y - particle.size / 2 + 'px';
+                    particleEl.style.width = particle.size + 'px';
+                    particleEl.style.height = particle.size + 'px';
+                    
+                    this.canvas.appendChild(particleEl);
+                });
+            }
+            
+            animate() {
+                this.updateParticles();
+                this.createConnections();
+                this.render();
+                
+                this.animationId = requestAnimationFrame(() => this.animate());
+            }
+        }
+
+        // Active navigation highlighting
+        function updateActiveNav() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            // Update desktop navigation
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Update mobile navigation
+            mobileNavLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', updateActiveNav);
+        updateActiveNav(); // Run on page load
+
+        // Mobile menu functionality
+        function initMobileMenu() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileNav = document.getElementById('mobile-nav');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+            
+            if (mobileMenuToggle && mobileNav) {
+                // Prevent event conflicts
+                let isMenuOpen = false;
+                
+                const toggleMenu = (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    isMenuOpen = !isMenuOpen;
+                    mobileNav.classList.toggle('active', isMenuOpen);
+                    
+                    const icon = mobileMenuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars', !isMenuOpen);
+                        icon.classList.toggle('fa-times', isMenuOpen);
+                    }
+                };
+                
+                const closeMenu = () => {
+                    isMenuOpen = false;
+                    mobileNav.classList.remove('active');
+                    const icon = mobileMenuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.add('fa-bars');
+                        icon.classList.remove('fa-times');
+                    }
+                };
+                
+                // Use both click and touch events for better mobile support
+                mobileMenuToggle.addEventListener('click', toggleMenu, { passive: false });
+                mobileMenuToggle.addEventListener('touchend', toggleMenu, { passive: false });
+                
+                // Close mobile menu when clicking on a link
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        closeMenu();
+                        
+                        // Navigate to the section
+                        const href = link.getAttribute('href');
+                        if (href && href.startsWith('#')) {
+                            const target = document.querySelector(href);
+                            if (target) {
+                                target.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }
+                        }
+                    });
+                    
+                    link.addEventListener('touchend', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        closeMenu();
+                        
+                        // Navigate to the section
+                        const href = link.getAttribute('href');
+                        if (href && href.startsWith('#')) {
+                            const target = document.querySelector(href);
+                            if (target) {
+                                target.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }
+                        }
+                    });
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (isMenuOpen && !mobileMenuToggle.contains(e.target) && !mobileNav.contains(e.target)) {
+                        closeMenu();
+                    }
+                });
+                
+                // Close menu on window resize
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth > 768 && isMenuOpen) {
+                        closeMenu();
+                    }
+                });
+            }
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new ParticleAnimation();
+            initGreetingRotation();
+            initMobileMenu();
         });
     </script>
 </body>
