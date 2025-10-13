@@ -433,7 +433,8 @@
             transition: all 0.6s ease;
             font-weight: 700;
             font-size: 1rem;
-            min-width: 140px;
+            min-width: 160px;
+            width: 160px;
             justify-content: center;
         }
         
@@ -1197,15 +1198,18 @@
             
             
             .social-links {
-                flex-direction: column;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
                 gap: 1rem;
-                align-items: center;
+                max-width: 400px;
+                margin: 0 auto 2rem auto;
             }
             
             .social-links a {
-                min-width: 200px;
-                padding: 1rem 1.5rem;
-                font-size: 1rem;
+                min-width: unset;
+                width: 100%;
+                padding: 0.875rem 1rem;
+                font-size: 0.9rem;
             }
             
             .section-content p {
@@ -1295,9 +1299,10 @@
         /* Medium screens - social links */
         @media (max-width: 1024px) and (min-width: 769px) {
             .social-links a {
-                min-width: 120px;
-                padding: 0.75rem 1rem;
-                font-size: 0.875rem;
+                min-width: 160px;
+                width: 160px;
+                padding: 0.875rem 1.25rem;
+                font-size: 0.9rem;
             }
         }
 
@@ -1562,7 +1567,7 @@
                 <!-- Research Areas Grid -->
                 <div class="grid md:grid-cols-2 gap-8 mb-16">
                     <!-- Zero-shot Coordination -->
-                    <div class="group backdrop-blur-sm rounded-xl p-6 border transition-all duration-300 hover:shadow-lg" style="background: var(--bg-card); border-color: var(--border-color);" onmouseover="this.style.borderColor='var(--accent-primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
+                    <div class="group backdrop-blur-sm rounded-xl p-6 border transition-all duration-300 hover:shadow-xl hover:transform hover:-translate-y-2" style="background: var(--bg-card); border-color: var(--border-color); box-shadow: 0 4px 12px -2px var(--shadow-color), 0 2px 6px -1px var(--shadow-color);" onmouseover="this.style.borderColor='var(--accent-primary)'; this.style.boxShadow='0 8px 25px -5px var(--particle-glow), 0 4px 12px -2px var(--shadow-color)'" onmouseout="this.style.borderColor='var(--border-color)'; this.style.boxShadow='0 4px 12px -2px var(--shadow-color), 0 2px 6px -1px var(--shadow-color)'">
                         <h4 class="text-lg font-bold mb-4 flex items-center transition-colors duration-300" style="color: var(--text-primary);" onmouseover="this.style.color='var(--accent-primary)'" onmouseout="this.style.color='var(--text-primary)'">
                             <span class="text-2xl mr-3">🧠</span>
                             Zero-shot Coordination in Cooperative MARL
@@ -1575,7 +1580,7 @@
                     </div>
 
                     <!-- Competitive MARL -->
-                    <div class="group backdrop-blur-sm rounded-xl p-6 border transition-all duration-300 hover:shadow-lg" style="background: var(--bg-card); border-color: var(--border-color);" onmouseover="this.style.borderColor='var(--accent-primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
+                    <div class="group backdrop-blur-sm rounded-xl p-6 border transition-all duration-300 hover:shadow-xl hover:transform hover:-translate-y-2" style="background: var(--bg-card); border-color: var(--border-color); box-shadow: 0 4px 12px -2px var(--shadow-color), 0 2px 6px -1px var(--shadow-color);" onmouseover="this.style.borderColor='var(--accent-primary)'; this.style.boxShadow='0 8px 25px -5px var(--particle-glow), 0 4px 12px -2px var(--shadow-color)'" onmouseout="this.style.borderColor='var(--border-color)'; this.style.boxShadow='0 4px 12px -2px var(--shadow-color), 0 2px 6px -1px var(--shadow-color)'">
                         <h4 class="text-lg font-bold mb-4 flex items-center transition-colors duration-300" style="color: var(--text-primary);" onmouseover="this.style.color='var(--accent-primary)'" onmouseout="this.style.color='var(--text-primary)'">
                             <span class="text-2xl mr-3">🎭</span>
                             Targeted Deception in Competitive MARL
