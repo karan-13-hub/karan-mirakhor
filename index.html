@@ -662,6 +662,7 @@
             gap: 1.25rem;
             transition: all 0.3s ease;
             position: relative;
+            overflow: hidden; /* ensure inner content doesn't spill outside */
         }
 
         .project-tile:hover {
@@ -681,9 +682,12 @@
             color: #a8b2d1;
             font-size: 1rem;
             line-height: 1.5;
-            white-space: nowrap; /* single line */
+            display: -webkit-box; /* clamp to 1 line across widths */
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            line-clamp: 1;
             overflow: hidden;
-            text-overflow: ellipsis;
+            max-width: 100%;
         }
 
         .project-details {
@@ -1408,14 +1412,7 @@
                             <h3>ReMov3r: Real-Time Monocular Video to 3D Reconstruction</h3>
                             <p class="project-summary">Designed a transformer-based architecture with cross-attentional fusion, hierarchical spatio-temporal representation, and confidence-guided depth refinement for improved 3D reconstruction.</p>
                             <div class="project-details">
-                                <p>Enhanced trajectory estimation via adaptive keyframe selection and state representation learning, outperforming CUT3R and SLAM3R on ScanNetV2 and 7-Scenes benchmarks.</p>
-                                <p class="project-links">
-                                    <a href="https://drive.google.com/file/d/1SCU6ewW7yld8Vf9UZZhS0eCzKZog-N4J/view?usp=sharing" target="_blank">Report</a>
-                                    · <a href="https://cvpr.thecvf.com/virtual/2025/poster/34897" target="_blank">CUT3R</a>
-                                    · <a href="https://cvpr.thecvf.com/virtual/2025/poster/34485" target="_blank">SLAM3R</a>
-                                    · <a href="http://www.scan-net.org/" target="_blank">ScanNetV2</a>
-                                    · <a href="https://www.microsoft.com/en-us/research/project/rgb-d-dataset-7-scenes/" target="_blank">7-Scenes</a>
-                                </p>
+                                <p>Enhanced trajectory estimation via adaptive keyframe selection and state representation learning, outperforming <a href="https://cvpr.thecvf.com/virtual/2025/poster/34897" target="_blank">CUT3R</a> and <a href="https://cvpr.thecvf.com/virtual/2025/poster/34485" target="_blank">SLAM3R</a> on <a href="http://www.scan-net.org/" target="_blank">ScanNetV2</a> and <a href="https://www.microsoft.com/en-us/research/project/rgb-d-dataset-7-scenes/" target="_blank">7-Scenes</a> benchmarks. See <a href="https://drive.google.com/file/d/1SCU6ewW7yld8Vf9UZZhS0eCzKZog-N4J/view?usp=sharing" target="_blank">report</a>.</p>
                             </div>
                         </div>
                         <div class="project-toggle">
