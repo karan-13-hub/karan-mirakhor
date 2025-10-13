@@ -222,33 +222,71 @@
         /* Cards */
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-top: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .card {
-            background: rgba(30, 41, 59, 0.5);
-            padding: 2rem;
-            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(17, 34, 64, 0.8) 0%, rgba(15, 27, 46, 0.8) 100%);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
             border: 1px solid rgba(100, 255, 218, 0.2);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #64ffda, #00d4ff);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover::before {
+            transform: scaleX(1);
         }
         
         .card:hover {
             border-color: #64ffda;
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(100, 255, 218, 0.1);
         }
         
         .card h3 {
             color: white;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1.3;
+            transition: color 0.3s ease;
+        }
+        
+        .card:hover h3 {
+            color: #64ffda;
         }
         
         .card p {
-            color: #94a3b8;
+            color: #a8b2d1;
             margin-bottom: 1rem;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+        
+        .card:hover p {
+            color: #e6f1ff;
         }
         
         .card a {
@@ -304,6 +342,44 @@
             .social-links {
                 flex-direction: column;
                 gap: 1rem;
+            }
+            
+            .cards {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                max-width: 100%;
+            }
+            
+            .card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .card h3 {
+                font-size: 1.2rem;
+            }
+            
+            .card p {
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Tablet responsive design */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.8rem;
+            }
+            
+            .card {
+                padding: 2.2rem 1.8rem;
+            }
+            
+            .card h3 {
+                font-size: 1.3rem;
+            }
+            
+            .card p {
+                font-size: 0.92rem;
             }
         }
     </style>
@@ -540,24 +616,28 @@
                 
                 <div class="cards">
                     <div class="card">
-                        <h3>🤖 Multi-Agent Reinforcement Learning</h3>
-                        <p>Cooperative and competitive learning in multi-agent systems</p>
+                        <h3>🤖 Reinforcement Learning</h3>
+                        <p>Develop algorithms that enable agents to learn close-to-optimal planning and control strategies in robotics, leveraging human demonstrations, fixed datasets, or interactions with dynamic environments.</p>
                     </div>
                     <div class="card">
-                        <h3>🦾 Robotics</h3>
-                        <p>Autonomous systems and robotic manipulation</p>
-                    </div>
-                    <div class="card">
-                        <h3>👥 Imitation Learning</h3>
-                        <p>Learning from human demonstrations and expert behavior</p>
+                        <h3>📈 Sequence Modelling</h3>
+                        <p>Design models that predict and understand sequential data, including temporal patterns, trajectories, and planning sequences.</p>
                     </div>
                     <div class="card">
                         <h3>🎯 Decision Making under Uncertainty</h3>
-                        <p>Robust decision-making in partially observable environments</p>
+                        <p>Develop methods for robust and adaptive decision-making in partially observable or stochastic environments.</p>
                     </div>
                     <div class="card">
-                        <h3>🎭 Deception in AI</h3>
-                        <p>Strategic deception and adversarial behavior in AI systems</p>
+                        <h3>👥 Multi-Agent Reinforcement Learning (MARL)</h3>
+                        <p>Study interactions of multiple agents learning together, including cooperation, competition, and strategic reasoning.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🛡️ Safe and Robust Control</h3>
+                        <p>Design control strategies for autonomous systems that ensure safety, reliability, and robustness under uncertainty.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🗺️ Planning</h3>
+                        <p>Develop algorithms for efficient and adaptive planning in robotics and AI systems, including long-horizon decision-making.</p>
                     </div>
                 </div>
             </div>
