@@ -480,7 +480,7 @@
         /* Research Grid */
         .research-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
             max-width: 1200px;
@@ -496,6 +496,10 @@
             text-align: center;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
         .research-card:hover {
@@ -505,27 +509,28 @@
         }
 
         .research-icon {
-            width: 64px;
-            height: 64px;
-            background: var(--border-color);
+            width: 80px;
+            height: 80px;
+            background: var(--accent-primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem auto;
+            margin: 0 auto 2rem auto;
             transition: all 0.3s ease;
+            opacity: 0.1;
         }
 
         .research-card:hover .research-icon {
-            background: var(--accent-primary);
+            opacity: 1;
             transform: scale(1.1);
         }
 
         .research-card h3 {
             color: var(--text-primary);
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             transition: color 0.3s ease;
         }
 
@@ -536,7 +541,13 @@
         .research-card p {
             color: var(--text-secondary);
             line-height: 1.6;
-            font-size: 1rem;
+            font-size: 1.1rem;
+            flex-grow: 1;
+        }
+
+        .research-icon span {
+            color: white;
+            font-size: 2rem;
         }
         
         .card {
@@ -1191,6 +1202,26 @@
                 max-width: 100%;
             }
             
+            .research-card {
+                min-height: 250px;
+                padding: 1.5rem;
+            }
+            
+            .research-icon {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 1.5rem;
+            }
+            
+            .research-card h3 {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+            
+            .research-card p {
+                font-size: 1rem;
+            }
+            
             .card {
                 padding: 1.8rem 2.5rem;
                 min-height: 180px;
@@ -1292,6 +1323,10 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 1.5rem;
                 max-width: 1200px;
+            }
+            
+            .research-card {
+                min-height: 260px;
             }
             
             .card {
@@ -1628,42 +1663,42 @@
                 <div class="research-grid">
                     <div class="research-card">
                         <div class="research-icon">
-                            <span class="text-3xl">🤖</span>
+                            <span>🤖</span>
                         </div>
                         <h3>Reinforcement Learning</h3>
                         <p>Develop algorithms that enable agents to learn close-to-optimal planning and control strategies in robotics, leveraging human demonstrations, fixed datasets, or interactions with dynamic environments.</p>
                     </div>
                     <div class="research-card">
                         <div class="research-icon">
-                            <span class="text-3xl">📈</span>
+                            <span>📈</span>
                         </div>
                         <h3>Sequence Modelling</h3>
                         <p>Design models that predict and understand sequential data, including temporal patterns, trajectories, and planning sequences.</p>
                     </div>
                     <div class="research-card">
                         <div class="research-icon">
-                            <span class="text-3xl">🎯</span>
+                            <span>🎯</span>
                         </div>
                         <h3>Decision Making under Uncertainty</h3>
                         <p>Develop methods for robust and adaptive decision-making in partially observable or stochastic environments.</p>
                     </div>
                     <div class="research-card">
                         <div class="research-icon">
-                            <span class="text-3xl">👥</span>
+                            <span>👥</span>
                         </div>
                         <h3>Multi-Agent Reinforcement Learning (MARL)</h3>
                         <p>Study interactions of multiple agents learning together, including cooperation, competition, and strategic reasoning.</p>
                     </div>
                     <div class="research-card">
                         <div class="research-icon">
-                            <span class="text-3xl">🛡️</span>
+                            <span>🛡️</span>
                         </div>
                         <h3>Safe and Robust Control</h3>
                         <p>Design control strategies for autonomous systems that ensure safety, reliability, and robustness under uncertainty.</p>
                     </div>
                     <div class="research-card">
                         <div class="research-icon">
-                            <span class="text-3xl">🗺️</span>
+                            <span>🗺️</span>
                         </div>
                         <h3>Planning</h3>
                         <p>Develop algorithms for efficient and adaptive planning in robotics and AI systems, including long-horizon decision-making.</p>
