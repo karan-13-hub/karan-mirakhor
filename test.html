@@ -1,324 +1,324 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Karan Mirakhor's professional portfolio showcasing research in Multi-Agent Reinforcement Learning, publications, projects, and contact information.">
-    <meta name="title" content="Karan Mirakhor - Portfolio">
-    <meta property="og:title" content="Karan Mirakhor - Portfolio">
-    <meta property="og:description" content="Explore the research and projects of Karan Mirakhor in the field of Multi-Agent Reinforcement Learning and Planning under Uncertainty.">
-    <title>Karan Mirakhor - Portfolio</title>
+    <title>Karan Mirakhor | MSR Student at Carnegie Mellon University</title>
+    <meta name="description" content="Karan Mirakhor | MSR Student at Carnegie Mellon University focusing on Multi-Agent Reinforcement Learning, Planning, and Safe Control.">
+    <meta name="keywords" content="AI, Machine Learning, Robotics, Multi-Agent Systems, Reinforcement Learning, CMU, Carnegie Mellon">
+    <meta name="author" content="Karan Mirakhor">
     
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Karan Mirakhor | MSR Student at Carnegie Mellon University">
+    <meta property="og:description" content="MSR Student at Carnegie Mellon University focusing on Multi-Agent Reinforcement Learning, Planning, and Safe Control.">
     
-    <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Karan Mirakhor | MSR Student at Carnegie Mellon University">
+    <meta name="twitter:description" content="MSR Student at Carnegie Mellon University focusing on Multi-Agent Reinforcement Learning, Planning, and Safe Control.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Custom Tailwind Configuration -->
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
-                        'sans': ['Inter', 'Poppins', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
                     },
                     colors: {
-                        'accent': '#4f46e5', // indigo-600
+                        'primary': {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
                     }
                 }
             }
         }
     </script>
     
-    <!-- Custom CSS for animations -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
         
-        .fade-in {
-            animation: fadeIn 0.8s ease-in-out;
+        ::-webkit-scrollbar-track {
+            @apply bg-gray-100 dark:bg-gray-800;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            @apply bg-gray-400 dark:bg-gray-500;
+        }
+        
+        /* Smooth transitions */
+        * {
+            transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        /* Custom animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
         }
         
-        .hover-lift:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out;
         }
         
+        /* Gradient text */
         .gradient-text {
-            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         
-        /* Particle Animation Background */
-        #particles-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
+        .dark .gradient-text {
+            background: linear-gradient(135deg, #64ffda 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(100, 255, 218, 0.8) 0%, rgba(100, 255, 218, 0.2) 70%, transparent 100%);
-            box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+        /* Card hover effects */
+        .card-hover {
             transition: all 0.3s ease;
         }
         
-        .particle.highlighted {
-            background: radial-gradient(circle, rgba(100, 255, 218, 1) 0%, rgba(100, 255, 218, 0.4) 70%, transparent 100%);
-            box-shadow: 0 0 30px rgba(100, 255, 218, 0.6);
-            transform: scale(1.5);
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
         
-        .connection-line {
-            position: absolute;
-            background: linear-gradient(90deg, transparent 0%, rgba(100, 255, 218, 0.3) 50%, transparent 100%);
-            height: 1px;
-            transform-origin: left center;
-            transition: all 0.3s ease;
+        .dark .card-hover:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
         }
         
-        .connection-line.highlighted {
-            background: linear-gradient(90deg, transparent 0%, rgba(100, 255, 218, 0.8) 50%, transparent 100%);
-            box-shadow: 0 0 10px rgba(100, 255, 218, 0.4);
+        /* Theme toggle animation */
+        .theme-toggle {
+            transition: transform 0.3s ease;
         }
         
-        /* Mobile Menu Styles */
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: #4f46e5;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            position: absolute;
-            right: 0;
-            z-index: 1003;
-            min-width: 44px;
-            min-height: 44px;
-            touch-action: manipulation;
-            -webkit-tap-highlight-color: transparent;
-            user-select: none;
+        .theme-toggle:hover {
+            transform: rotate(180deg);
         }
         
-        .mobile-menu-toggle:hover {
-            color: #3730a3;
-            background: rgba(79, 70, 229, 0.1);
+        /* Mobile menu animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
         }
         
-        .mobile-nav {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(15px);
-            border-top: 1px solid rgba(79, 70, 229, 0.1);
-            padding: 0.5rem 0;
-            z-index: 1002;
-            pointer-events: auto;
+        .mobile-menu.open {
+            transform: translateX(0);
         }
         
-        .mobile-nav.active {
-            display: block;
-        }
-        
-        .mobile-nav-links {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-            padding: 0 1rem;
-        }
-        
-        .mobile-nav-links a {
-            color: #374151;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            padding: 0.75rem 1rem;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            display: block;
-            touch-action: manipulation;
-            -webkit-tap-highlight-color: transparent;
+        /* Section highlight */
+        .section-highlight {
             position: relative;
-            z-index: 1001;
-            pointer-events: auto;
         }
         
-        .mobile-nav-links a:hover {
-            color: #4f46e5;
-            background: rgba(79, 70, 229, 0.1);
+        .section-highlight::before {
+            content: '';
+            position: absolute;
+            left: -1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+            transition: height 0.3s ease;
         }
         
-        .mobile-nav-links a.active {
-            color: #4f46e5;
-            background: rgba(79, 70, 229, 0.15);
-            pointer-events: auto;
+        .dark .section-highlight::before {
+            background: linear-gradient(135deg, #64ffda 0%, #00d4ff 100%);
         }
         
-        /* Navigation active states */
-        .nav-links a.active {
-            color: #4f46e5;
-            background: rgba(79, 70, 229, 0.15);
-            box-shadow: 0 2px 8px rgba(79, 70, 229, 0.2);
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-nav-links a {
-                font-size: 1.1rem;
-                padding: 0.8rem 1rem;
-                touch-action: manipulation;
-                -webkit-tap-highlight-color: transparent;
-            }
-            
-            .mobile-nav {
-                padding: 0.25rem 0;
-            }
+        .section-highlight.active::before {
+            height: 100%;
         }
     </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800 font-sans scroll-smooth">
+<body class="bg-white dark:bg-slate-900 text-gray-800 dark:text-gray-100 font-sans">
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-lg z-50 transition-all duration-300">
-        <div class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
-            <div class="text-xl font-bold gradient-text">Karan Mirakhor</div>
-            <ul class="hidden md:flex space-x-8">
-                <li><a href="#about" class="hover:text-indigo-600 transition-colors duration-300 font-medium">About</a></li>
-                <li><a href="#research" class="hover:text-indigo-600 transition-colors duration-300 font-medium">Research</a></li>
-                <li><a href="#publications" class="hover:text-indigo-600 transition-colors duration-300 font-medium">Publications</a></li>
-                <li><a href="#projects" class="hover:text-indigo-600 transition-colors duration-300 font-medium">Projects</a></li>
-                <li><a href="#awards" class="hover:text-indigo-600 transition-colors duration-300 font-medium">Awards</a></li>
-                <li><a href="#contact" class="hover:text-indigo-600 transition-colors duration-300 font-medium">Contact</a></li>
-            </ul>
-            <!-- Mobile menu button -->
-            <button id="mobile-menu-toggle" class="md:hidden" aria-label="Toggle mobile menu">
-                <i class="fas fa-bars"></i>
-            </button>
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">KM</span>
+                    </div>
+                    <span class="font-bold text-xl text-gray-800 dark:text-white">Karan Mirakhor</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link section-highlight text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium">About</a>
+                    <a href="#research" class="nav-link section-highlight text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium">Research</a>
+                    <a href="#publications" class="nav-link section-highlight text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium">Publications</a>
+                    <a href="#projects" class="nav-link section-highlight text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium">Projects</a>
+                    <a href="#awards" class="nav-link section-highlight text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium">Awards</a>
+                    <a href="#contact" class="nav-link section-highlight text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium">Contact</a>
+                </div>
+                
+                <!-- Theme Toggle & Mobile Menu -->
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="theme-toggle p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300" aria-label="Toggle theme">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    
+                    <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300" aria-label="Toggle mobile menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-        <!-- Mobile menu -->
-        <div id="mobile-nav" class="hidden md:hidden bg-white border-t">
-            <ul class="mobile-nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#awards">Awards</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu fixed top-16 right-0 w-64 h-screen bg-white dark:bg-slate-900 border-l border-gray-200 dark:border-gray-700 md:hidden">
+            <div class="p-6 space-y-4">
+                <a href="#about" class="block text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium py-2">About</a>
+                <a href="#research" class="block text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium py-2">Research</a>
+                <a href="#publications" class="block text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium py-2">Publications</a>
+                <a href="#projects" class="block text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium py-2">Projects</a>
+                <a href="#awards" class="block text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium py-2">Awards</a>
+                <a href="#contact" class="block text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium py-2">Contact</a>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="pt-32 pb-20 text-center bg-gradient-to-br from-indigo-50 to-purple-50 relative overflow-hidden">
-        <div id="particles-canvas" class="absolute top-0 left-0 w-full h-full z-0 pointer-events-none"></div>
-        <div class="max-w-4xl mx-auto px-6 relative z-10">
-            <h2 class="text-4xl md:text-5xl font-semibold text-indigo-600 mb-4 fade-in">
-                Hello!!
-            </h2>
-            <h1 class="text-6xl md:text-7xl font-bold text-gray-900 mb-6 fade-in">
-                Karan Mirakhor
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-600 mb-8 fade-in">
-                Graduate Researcher in Reinforcement Learning and Robotics at Carnegie Mellon University
-            </p>
-            <div class="flex justify-center space-x-6 fade-in">
-                <a href="https://scholar.google.com/citations?user=wpeFm64AAAAJ&hl=en" target="_blank" 
-                   class="flex items-center space-x-2 bg-white px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover-lift">
-                    <i data-lucide="graduation-cap" class="w-5 h-5 text-indigo-600"></i>
-                    <span class="font-medium">Google Scholar</span>
-                </a>
-                <a href="https://github.com/karan-13-hub" target="_blank" 
-                   class="flex items-center space-x-2 bg-white px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover-lift">
-                    <i data-lucide="github" class="w-5 h-5 text-indigo-600"></i>
-                    <span class="font-medium">GitHub</span>
-                </a>
-                <a href="https://www.linkedin.com/in/karan-mirakhor-b065b7142/" target="_blank" 
-                   class="flex items-center space-x-2 bg-white px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover-lift">
-                    <i data-lucide="linkedin" class="w-5 h-5 text-indigo-600"></i>
-                    <span class="font-medium">LinkedIn</span>
-                </a>
-                <a href="https://drive.google.com/file/d/1l_eqqx5Yj0VHMLLEFMwIw9SPhR8qlddx/view?usp=sharing" target="_blank" 
-                   class="flex items-center space-x-2 bg-white px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover-lift">
-                    <i data-lucide="file-text" class="w-5 h-5 text-indigo-600"></i>
-                    <span class="font-medium">Resume</span>
-                </a>
+    <section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-slate-900 dark:to-slate-800 pt-16">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="animate-fade-in-up">
+                <h2 class="text-lg text-gray-600 dark:text-gray-400 mb-4 font-medium">Hello! I'm</h2>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 gradient-text">Karan Mirakhor</h1>
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 font-medium">
+                    MSR Student at <span class="text-indigo-600 dark:text-indigo-400 font-semibold">Carnegie Mellon University</span>
+                </p>
+                <p class="text-lg text-gray-500 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
+                    Graduate Research Assistant focusing on Multi-Agent Reinforcement Learning, 
+                    Planning, and Safe Control in Robotics
+                </p>
+                
+                <!-- Social Links -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <a href="https://scholar.google.com/citations?user=wpeFm64AAAAJ&hl=en" target="_blank" 
+                       class="flex items-center space-x-2 px-6 py-3 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg card-hover text-gray-700 dark:text-gray-300">
+                        <i class="fas fa-graduation-cap text-indigo-600 dark:text-indigo-400"></i>
+                        <span>Google Scholar</span>
+                    </a>
+                    <a href="https://github.com/karan-13-hub" target="_blank" 
+                       class="flex items-center space-x-2 px-6 py-3 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg card-hover text-gray-700 dark:text-gray-300">
+                        <i class="fab fa-github text-indigo-600 dark:text-indigo-400"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/karan-mirakhor-b065b7142/" target="_blank" 
+                       class="flex items-center space-x-2 px-6 py-3 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg card-hover text-gray-700 dark:text-gray-300">
+                        <i class="fab fa-linkedin text-indigo-600 dark:text-indigo-400"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1l_eqqx5Yj0VHMLLEFMwIw9SPhR8qlddx/view?usp=sharing" target="_blank" 
+                       class="flex items-center space-x-2 px-6 py-3 bg-indigo-600 dark:bg-indigo-500 text-white rounded-lg shadow-md hover:shadow-lg card-hover">
+                        <i class="fas fa-file-lines"></i>
+                        <span>Resume</span>
+                    </a>
+                </div>
+                
+                <!-- Scroll indicator -->
+                <div class="animate-bounce">
+                    <i class="fas fa-chevron-down text-gray-400 dark:text-gray-500 text-2xl"></i>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <!-- Section Header -->
+    <section id="about" class="py-20 bg-white dark:bg-slate-900">
+        <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold text-gray-900 mb-4 tracking-wide">About Me</h2>
-                <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+                <h2 class="text-4xl font-bold mb-4 text-gray-800 dark:text-white">About Me</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mx-auto"></div>
             </div>
 
-            <!-- Main Content Container -->
             <div class="prose prose-lg max-w-none">
                 <!-- Introduction Card -->
-                <div class="bg-gray-50 rounded-2xl p-8 mb-12 border border-gray-200 shadow-lg">
+                <div class="card-hover bg-white dark:bg-slate-800 rounded-2xl p-8 mb-12 shadow-lg border border-gray-200 dark:border-gray-700">
                     <div class="text-center mb-8">
-                        <p class="text-xl text-gray-700 leading-relaxed">
-                            I am a 2<sup>nd</sup> year Master of Science in Robotics (MSR) student at <a href="https://www.ri.cmu.edu/" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition-colors duration-300 font-semibold">Robotics Institute, Carnegie Mellon University</a>
+                        <p class="text-xl leading-relaxed text-gray-600 dark:text-gray-300">
+                            I am a 2<sup>nd</sup> year Master of Science in Robotics (MSR) student at 
+                            <a href="https://www.ri.cmu.edu/" target="_blank" class="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">
+                                Robotics Institute, Carnegie Mellon University
+                            </a>
                         </p>
                     </div>
                     
                     <div class="text-center space-y-2">
-                        <p class="text-lg text-gray-700">
-                            <span class="text-indigo-600 font-semibold">Graduate Research Assistant,</span> 
-                            <a href="https://www.ri.cmu.edu/labs/advanced-agent-robotics-technology-lab/" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition-colors duration-300 font-medium">Advanced Agent Robotics Technology Lab</a>
+                        <p class="text-lg text-gray-600 dark:text-gray-300">
+                            <span class="font-semibold text-indigo-600 dark:text-indigo-400">Graduate Research Assistant,</span> 
+                            <a href="https://www.ri.cmu.edu/labs/advanced-agent-robotics-technology-lab/" target="_blank" class="text-indigo-600 dark:text-indigo-400 font-medium hover:underline">
+                                Advanced Agent Robotics Technology Lab
+                            </a>
                         </p>
-                        <p class="text-lg text-gray-700">
-                            <span class="text-indigo-600 font-semibold">Advisor:</span> 
-                            <a href="https://www.ri.cmu.edu/ri-people/katia-sycara/" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition-colors duration-300 font-medium">Prof. Katia Sycara</a>
+                        <p class="text-lg text-gray-600 dark:text-gray-300">
+                            <span class="font-semibold text-indigo-600 dark:text-indigo-400">Advisor:</span> 
+                            <a href="https://www.ri.cmu.edu/ri-people/katia-sycara/" target="_blank" class="text-indigo-600 dark:text-indigo-400 font-medium hover:underline">
+                                Prof. Katia Sycara
+                            </a>
                         </p>
                     </div>
                 </div>
 
                 <!-- Research Focus -->
                 <div class="mb-12">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center text-gray-800 dark:text-white">
                         <span class="text-3xl mr-3">🔬</span>
                         Research Focus
                     </h3>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-8">
-                        My research primarily focuses on <span class="text-indigo-600 font-semibold">Multi-Agent Reinforcement Learning (MARL)</span>. 
+                    <p class="text-lg leading-relaxed mb-8 text-gray-600 dark:text-gray-300">
+                        My research primarily focuses on <span class="font-semibold text-indigo-600 dark:text-indigo-400">Multi-Agent Reinforcement Learning (MARL)</span>. 
                         Specifically, my work encompasses two key areas:
                     </p>
                 </div>
@@ -326,12 +326,12 @@
                 <!-- Research Areas Grid -->
                 <div class="grid md:grid-cols-2 gap-8 mb-16">
                     <!-- Zero-shot Coordination -->
-                    <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-100">
-                        <h4 class="text-xl font-bold text-gray-900 mb-4 flex items-center group-hover:text-indigo-600 transition-colors duration-300">
+                    <div class="card-hover bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                        <h4 class="text-xl font-bold mb-4 flex items-center text-gray-800 dark:text-white">
                             <span class="text-2xl mr-3">🧠</span>
                             Zero-shot Coordination in Cooperative MARL
                         </h4>
-                        <p class="text-gray-600 leading-relaxed">
+                        <p class="leading-relaxed text-gray-600 dark:text-gray-300">
                             Developing agents that can seamlessly collaborate with previously unseen partners without additional training. 
                             Specifically, I focus on offline-to-online training frameworks that leverage 
                             behavioral diversity in offline datasets and enable efficient online adaptation.
@@ -339,12 +339,12 @@
                     </div>
 
                     <!-- Competitive MARL -->
-                    <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-100">
-                        <h4 class="text-xl font-bold text-gray-900 mb-4 flex items-center group-hover:text-indigo-600 transition-colors duration-300">
+                    <div class="card-hover bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                        <h4 class="text-xl font-bold mb-4 flex items-center text-gray-800 dark:text-white">
                             <span class="text-2xl mr-3">🎭</span>
                             Targeted Deception in Competitive MARL
                         </h4>
-                        <p class="text-gray-600 leading-relaxed">
+                        <p class="leading-relaxed text-gray-600 dark:text-gray-300">
                             Developing targeted deception strategies by leveraging higher-order opponent belief models and analyzing 
                             historical response patterns to identify and exploit individual vulnerabilities.
                         </p>
@@ -353,51 +353,51 @@
 
                 <!-- Previous Research Experience -->
                 <div class="mb-16">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-8 flex items-center">
+                    <h3 class="text-2xl font-bold mb-8 flex items-center text-gray-800 dark:text-white">
                         <span class="text-3xl mr-3">📚</span>
                         Previous Experience
                     </h3>
                     
                     <div class="space-y-8">
                         <!-- TCS Research -->
-                        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-gray-300 transition-all duration-300">
+                        <div class="card-hover bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
                             <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                                <h4 class="text-xl font-bold text-gray-900 mb-2 md:mb-0">
+                                <h4 class="text-xl font-bold mb-2 md:mb-0 text-gray-800 dark:text-white">
                                     Pre-doctoral Research Fellow
                                 </h4>
-                                <a href="https://www.tcs.com/what-we-do/research" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition-colors duration-300 font-semibold text-lg">
+                                <a href="https://www.tcs.com/what-we-do/research" target="_blank" class="text-indigo-600 dark:text-indigo-400 font-semibold text-lg hover:underline">
                                     TCS Research
                                 </a>
                             </div>
-                            <p class="text-gray-600 mb-3">
-                                <em>Advisor: <a href="https://scholar.google.co.in/citations?user=Eqf8NrEAAAAJ&hl=en" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition-colors duration-300">Dr. Brojeshwar Bhowmick</a></em>
+                            <p class="mb-3 text-gray-600 dark:text-gray-300">
+                                <em>Advisor: <a href="https://scholar.google.co.in/citations?user=Eqf8NrEAAAAJ&hl=en" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline">Dr. Brojeshwar Bhowmick</a></em>
                             </p>
-                            <p class="text-gray-600 leading-relaxed">
-                                Explored <span class="text-indigo-600 font-semibold">Task Planning for Indoor Object Rearrangement</span> under 
-                                <span class="text-indigo-600 font-semibold">partial observability (POMDP)</span>. Developed scalable graph-based scene representations, utilized <span class="text-indigo-600 font-semibold">Large Language Models (LLMs)</span> for semantic object search, and applied <span class="text-indigo-600 font-semibold">Deep RL</span> for efficient single and multi-room planning.
+                            <p class="leading-relaxed text-gray-600 dark:text-gray-300">
+                                Explored <span class="font-semibold text-indigo-600 dark:text-indigo-400">Task Planning for Indoor Object Rearrangement</span> under 
+                                <span class="font-semibold text-indigo-600 dark:text-indigo-400">partial observability (POMDP)</span>. Developed scalable graph-based scene representations, utilized <span class="font-semibold text-indigo-600 dark:text-indigo-400">Large Language Models (LLMs)</span> for semantic object search, and applied <span class="font-semibold text-indigo-600 dark:text-indigo-400">Deep RL</span> for efficient single and multi-room planning.
                             </p>
                         </div>
 
                         <!-- IIIT Hyderabad -->
-                        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-gray-300 transition-all duration-300">
+                        <div class="card-hover bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
                             <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                                <h4 class="text-xl font-bold text-gray-900 mb-2 md:mb-0">
+                                <h4 class="text-xl font-bold mb-2 md:mb-0 text-gray-800 dark:text-white">
                                     Research Assistant
                                 </h4>
                                 <span class="text-lg">
-                                    <a href="https://robotics.iiit.ac.in/" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition-colors duration-300 font-semibold">Robotics Research Center</a>, 
-                                    <a href="https://www.iiit.ac.in/" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition-colors duration-300 font-semibold">IIIT Hyderabad</a>
+                                    <a href="https://robotics.iiit.ac.in/" target="_blank" class="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">Robotics Research Center</a>, 
+                                    <a href="https://www.iiit.ac.in/" target="_blank" class="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">IIIT Hyderabad</a>
                                 </span>
                             </div>
                             <div class="space-y-2 mb-4">
-                                <p class="text-gray-600">
-                                    <em>Advisor: <a href="https://scholar.google.co.in/citations?user=5i1t_QgAAAAJ&hl=en" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition-colors duration-300">Dr. Harikumar Kandath</a></em>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    <em>Advisor: <a href="https://scholar.google.co.in/citations?user=5i1t_QgAAAAJ&hl=en" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline">Dr. Harikumar Kandath</a></em>
                                 </p>
                             </div>
-                            <p class="text-gray-600 leading-relaxed">
+                            <p class="leading-relaxed text-gray-600 dark:text-gray-300">
                                 Worked on Aerial Manipulator Control using 
-                                <span class="text-indigo-600 font-semibold">Control Barrier Lyapunov constraints</span> within a 
-                                <span class="text-indigo-600 font-semibold">Model Predictive Controller</span> for safe operation of the aerial manipulator in constrained environments.
+                                <span class="font-semibold text-indigo-600 dark:text-indigo-400">Control Barrier Lyapunov constraints</span> within a 
+                                <span class="font-semibold text-indigo-600 dark:text-indigo-400">Model Predictive Controller</span> for safe operation of the aerial manipulator in constrained environments.
                             </p>
                         </div>
                     </div>
@@ -405,12 +405,12 @@
 
                 <!-- Future Vision -->
                 <div class="mb-16">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center text-gray-800 dark:text-white">
                         <span class="text-3xl mr-3">🔭</span>
                         Future Vision
                     </h3>
-                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                        <p class="text-gray-600 leading-relaxed">
+                    <div class="card-hover bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                        <p class="leading-relaxed text-gray-600 dark:text-gray-300">
                             I am fascinated by how intelligent agents can learn structured, transferable policies that generalize across tasks embodiments, and environments, moving toward autonomous systems capable of learning and reasoning like humans. My long-term goal is to develop generalist robot policies that unify learning, reasoning, and control, advancing adaptable embodied agents for diverse real-world tasks.
                         </p>
                     </div>
@@ -418,12 +418,12 @@
 
                 <!-- Beyond Research -->
                 <div class="mb-16">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center text-gray-800 dark:text-white">
                         <span class="text-3xl mr-3">☕</span>
                         Beyond Research
                     </h3>
-                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                        <p class="text-gray-600 leading-relaxed">
+                    <div class="card-hover bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                        <p class="leading-relaxed text-gray-600 dark:text-gray-300">
                             Outside the lab, I enjoy 
                             <span class="inline-flex items-center mx-1"><span class="text-2xl mr-1">♟️</span>Chess</span>, 
                             <span class="inline-flex items-center mx-1"><span class="text-2xl mr-1">🏸</span>Squash</span>, and 
@@ -435,197 +435,227 @@
 
                 <!-- Stats Section -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-xl p-6 border border-indigo-200 text-center hover:border-indigo-300 transition-all duration-300">
-                        <div class="text-4xl font-bold text-indigo-600 mb-2">5+</div>
-                        <div class="text-gray-700 font-medium">Years Research Experience</div>
+                    <div class="card-hover bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 text-center">
+                        <div class="text-4xl font-bold mb-2 text-indigo-600 dark:text-indigo-400">5+</div>
+                        <div class="font-medium text-gray-600 dark:text-gray-300">Years Research Experience</div>
                     </div>
-                    <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-xl p-6 border border-indigo-200 text-center hover:border-indigo-300 transition-all duration-300">
-                        <div class="text-4xl font-bold text-indigo-600 mb-2">2+</div>
-                        <div class="text-gray-700 font-medium">Years Job Experience</div>
+                    <div class="card-hover bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 text-center">
+                        <div class="text-4xl font-bold mb-2 text-indigo-600 dark:text-indigo-400">2+</div>
+                        <div class="font-medium text-gray-600 dark:text-gray-300">Years Job Experience</div>
                     </div>
-                    <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-xl p-6 border border-indigo-200 text-center hover:border-indigo-300 transition-all duration-300">
-                        <div class="text-4xl font-bold text-indigo-600 mb-2">3+</div>
-                        <div class="text-gray-700 font-medium">Publications & Patents</div>
+                    <div class="card-hover bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 text-center">
+                        <div class="text-4xl font-bold mb-2 text-indigo-600 dark:text-indigo-400">3+</div>
+                        <div class="font-medium text-gray-600 dark:text-gray-300">Publications & Patents</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Research Interests Section -->
-    <section id="research" class="py-20 bg-gray-100">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-4xl font-semibold text-indigo-600 mb-12 text-center">
-                Research Interests
-            </h2>
-            <div class="text-center mb-12">
-                <p class="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                    My research focuses on advancing artificial intelligence through Long-Horizon Planning, Sequential Decision-Making, and Human-AI Collaboration. My objective is to engineer autonomous systems capable of exhibiting strategic planning, adaptive behavior, and safe, robust control when operating in complex, uncertain environments.
-                </p>
+    <!-- Research Section -->
+    <section id="research" class="py-20 bg-gray-50 dark:bg-slate-800">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-gray-800 dark:text-white">Research Interests</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mx-auto"></div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift text-center">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-3xl">🤖</span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-gray-900">Reinforcement Learning</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Develop algorithms that enable agents to learn close-to-optimal planning and control strategies in robotics, leveraging human demonstrations, fixed datasets, or interactions with dynamic environments.
-                    </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-white dark:bg-slate-900 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 text-center">
+                    <div class="text-4xl mb-4">🤖</div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">Multi-Agent RL</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Cooperative and competitive learning</p>
                 </div>
-                
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift text-center">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-3xl">📈</span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-gray-900">Sequence Modelling</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Design models that predict and understand sequential data, including temporal patterns, trajectories, and planning sequences.
-                    </p>
+                <div class="card-hover bg-white dark:bg-slate-900 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 text-center">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">Zero-shot Coordination</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Collaboration with unseen partners</p>
                 </div>
-                
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift text-center">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-3xl">🎯</span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-gray-900">Decision Making under Uncertainty</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Develop methods for robust and adaptive decision-making in partially observable or stochastic environments.
-                    </p>
+                <div class="card-hover bg-white dark:bg-slate-900 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 text-center">
+                    <div class="text-4xl mb-4">🎭</div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">Targeted Deception</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Strategic opponent modeling</p>
                 </div>
-                
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift text-center">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-3xl">👥</span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-gray-900">Multi-Agent Reinforcement Learning (MARL)</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Study interactions of multiple agents learning together, including cooperation, competition, and strategic reasoning.
-                    </p>
+                <div class="card-hover bg-white dark:bg-slate-900 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 text-center">
+                    <div class="text-4xl mb-4">📋</div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">Task Planning</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">POMDP and object rearrangement</p>
                 </div>
-                
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift text-center">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-3xl">🛡️</span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-gray-900">Safe and Robust Control</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Design control strategies for autonomous systems that ensure safety, reliability, and robustness under uncertainty.
-                    </p>
+                <div class="card-hover bg-white dark:bg-slate-900 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 text-center">
+                    <div class="text-4xl mb-4">🛡️</div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">Safe Control</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Barrier functions and MPC</p>
                 </div>
-                
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift text-center">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-3xl">🗺️</span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-gray-900">Planning</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Develop algorithms for efficient and adaptive planning in robotics and AI systems, including long-horizon decision-making.
-                    </p>
+                <div class="card-hover bg-white dark:bg-slate-900 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 text-center">
+                    <div class="text-4xl mb-4">🧠</div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">LLM Integration</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Language models in robotics</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Publications Section -->
-    <section id="publications" class="py-20">
+    <section id="publications" class="py-20 bg-white dark:bg-slate-900">
         <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-4xl font-semibold text-indigo-600 mb-12 text-center">
-                Publications & Patents
-            </h2>
-            <div class="space-y-8">
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="px-4 py-2 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium">Submission</span>
-                        <span class="text-gray-500 text-sm">Oct 2025</span>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-gray-800 dark:text-white">Publications & Patents</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mx-auto"></div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Publication 1 -->
+                <div class="card-hover bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                        <div class="flex items-center space-x-3 mb-2 md:mb-0">
+                            <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-sm font-medium rounded-full">Submission</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">Oct 2025</span>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-semibold mb-4">
-                        <a href="https://drive.google.com/file/d/1KMUiU1Ze_I2ZgC0N5dFkpX_ucFn5C_G5/view?usp=sharing" target="_blank" class="text-gray-900 hover:text-indigo-600 transition-colors duration-300">
-                            Efficient Zero-Shot Coordination via Offline Policy Diversity and Online Belief Reasoning
+                    <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Efficient Zero-Shot Coordination via Offline Policy Diversity and Online Belief Reasoning</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-2">Anonymous</p>
+                    <p class="text-gray-500 dark:text-gray-400 mb-4">ICLR 2026 Conference Submission</p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://drive.google.com/file/d/1KMUiU1Ze_I2ZgC0N5dFkpX_ucFn5C_G5/view?usp=sharing" target="_blank" 
+                           class="inline-flex items-center px-4 py-2 bg-indigo-600 dark:bg-indigo-500 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600">
+                            <i class="fas fa-file-pdf mr-2"></i>
+                            View Paper
                         </a>
-                    </h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        <strong>Anonymous</strong><br>
-                        <span class="text-indigo-600 font-semibold">ICLR 2026 Conference Submission</span>
-                    </p>
-                    <div class="flex items-center space-x-6 text-sm text-gray-500">
-                        <a href="https://drive.google.com/file/d/1KMUiU1Ze_I2ZgC0N5dFkpX_ucFn5C_G5/view?usp=sharing" target="_blank" class="text-indigo-600 hover:text-indigo-800 font-medium">View Paper →</a>
+                        <button onclick="toggleAbstract(this)" 
+                                class="inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600">
+                            <i class="fas fa-eye mr-2"></i>
+                            <span class="expand-text">Read Abstract</span>
+                            <i class="fas fa-chevron-down ml-2 expand-icon"></i>
+                        </button>
+                    </div>
+                    <div class="abstract-full mt-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hidden">
+                        <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                            A central challenge in multi-agent reinforcement learning is <strong>zero-shot coordination (ZSC)</strong>: the ability of agents to collaborate with previously unseen partners. Existing approaches, such as population-based training or convention-avoidance methods, improve ZSC but typically rely on extensive online interaction, leading to high sample complexity. A natural alternative is to leverage preexisting interaction datasets through offline learning. However, offline training alone is insufficient for effective ZSC, as agents tend to overfit to the conventions present in the dataset and struggle to adapt to novel partners. To address this limitation, we propose an <em>offline-to-online ZSC</em> framework that combines offline dataset diversity with efficient online adaptation. In the offline stage, trajectories are embedded and clustered into behavioral modes to train specialized agents and their belief models, from which a best-response agent is learned. In the online stage, this agent is refined through belief-guided counterfactual rollouts, where belief models simulate alternative successor states under different teammate behaviors, thereby expanding the training distribution beyond the dataset. Experiments on the ZSC benchmark <em>Hanabi</em> in 2-player settings, as well as in human-AI coordination, demonstrate that our approach achieves state-of-the-art performance with unseen partners while significantly reducing the amount of online interaction.
+                        </p>
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium">Publication</span>
-                        <span class="text-gray-500 text-sm">2024/03/24</span>
+                <!-- Publication 2 -->
+                <div class="card-hover bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                        <div class="flex items-center space-x-3 mb-2 md:mb-0">
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-sm font-medium rounded-full">Publication</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">2024/03/24</span>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-semibold mb-4">
-                        <a href="https://ojs.aaai.org/index.php/AAAI/article/view/28902" target="_blank" class="text-gray-900 hover:text-indigo-600 transition-colors duration-300">
-                            Task planning for object rearrangement in multi-room environments
+                    <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Task planning for object rearrangement in multi-room environments</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-2">Karan Mirakhor, Sourav Ghosh, Dipanjan Das, Brojeshwar Bhowmick</p>
+                    <p class="text-gray-500 dark:text-gray-400 mb-4">Proceedings of the AAAI Conference on Artificial Intelligence, 2024 (Oral)</p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://ojs.aaai.org/index.php/AAAI/article/view/28902" target="_blank" 
+                           class="inline-flex items-center px-4 py-2 bg-indigo-600 dark:bg-indigo-500 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600">
+                            <i class="fas fa-file-pdf mr-2"></i>
+                            View Paper
                         </a>
-                    </h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        <strong>Karan Mirakhor, Sourav Ghosh, Dipanjan Das, Brojeshwar Bhowmick</strong><br>
-                        <span class="text-indigo-600 font-semibold">Proceedings of the AAAI Conference on Artificial Intelligence, 2024 (Oral)</span>
-                    </p>
-                    <div class="flex items-center space-x-6 text-sm text-gray-500">
-                        <a href="https://ojs.aaai.org/index.php/AAAI/article/view/28902" target="_blank" class="text-indigo-600 hover:text-indigo-800 font-medium">View Paper →</a>
+                        <button onclick="toggleAbstract(this)" 
+                                class="inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600">
+                            <i class="fas fa-eye mr-2"></i>
+                            <span class="expand-text">Read Abstract</span>
+                            <i class="fas fa-chevron-down ml-2 expand-icon"></i>
+                        </button>
+                    </div>
+                    <div class="abstract-full mt-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hidden">
+                        <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                            Object rearrangement in a multi-room setup should produce a reasonable plan that reduces the agent's overall travel and the number of steps. Recent state-of-the-art methods fail to produce such plans because they rely on explicit exploration for discovering unseen objects due to partial observability and a heuristic planner to sequence the actions for rearrangement. This paper proposes a novel task planner to efficiently plan a sequence of actions to discover unseen objects and rearrange misplaced objects within an untidy house to achieve a desired tidy state. The proposed method introduces several innovative techniques, including (i) a method for discovering unseen objects using commonsense knowledge from large language models, (ii) a collision resolution and buffer prediction method based on Cross-Entropy Method to handle blocked goal and swap cases, (iii) a directed spatial graph-based state space for scalability, and (iv) deep reinforcement learning (RL) for producing an efficient plan to simultaneously discover unseen objects and rearrange the visible misplaced ones to minimize the overall traversal. The paper also presents new metrics and a benchmark dataset called MoPOR to evaluate the effectiveness of the rearrangement planning in a multi-room setting. The experimental results demonstrate that the proposed method effectively addresses the multi-room rearrangement problem.
+                        </p>
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium">Publication</span>
-                        <span class="text-gray-500 text-sm">2024</span>
+                <!-- Publication 3 -->
+                <div class="card-hover bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                        <div class="flex items-center space-x-3 mb-2 md:mb-0">
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-sm font-medium rounded-full">Publication</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">2024</span>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-semibold mb-4">
-                        <a href="https://proceedings.iclr.cc/paper_files/paper/2024/hash/13b28ea4105bf409ab6b8ac8184af812-Abstract-Conference.html" target="_blank" class="text-gray-900 hover:text-indigo-600 transition-colors duration-300">
-                            Task planning for visual room rearrangement under partial observability
+                    <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Task planning for visual room rearrangement under partial observability</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-2">Karan Mirakhor, Sourav Ghosh, Dipanjan Das, Brojeshwar Bhowmick</p>
+                    <p class="text-gray-500 dark:text-gray-400 mb-4">The Twelfth International Conference on Learning Representations (ICLR), 2024</p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://proceedings.iclr.cc/paper_files/paper/2024/hash/13b28ea4105bf409ab6b8ac8184af812-Abstract-Conference.html" target="_blank" 
+                           class="inline-flex items-center px-4 py-2 bg-indigo-600 dark:bg-indigo-500 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600">
+                            <i class="fas fa-file-pdf mr-2"></i>
+                            View Paper
                         </a>
-                    </h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        <strong>Karan Mirakhor, Sourav Ghosh, Dipanjan Das, Brojeshwar Bhowmick</strong><br>
-                        <span class="text-indigo-600 font-semibold">The Twelfth International Conference on Learning Representations (ICLR), 2024</span>
-                    </p>
-                    <div class="flex items-center space-x-6 text-sm text-gray-500">
-                        <a href="https://proceedings.iclr.cc/paper_files/paper/2024/hash/13b28ea4105bf409ab6b8ac8184af812-Abstract-Conference.html" target="_blank" class="text-indigo-600 hover:text-indigo-800 font-medium">View Paper →</a>
+                        <button onclick="toggleAbstract(this)" 
+                                class="inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600">
+                            <i class="fas fa-eye mr-2"></i>
+                            <span class="expand-text">Read Abstract</span>
+                            <i class="fas fa-chevron-down ml-2 expand-icon"></i>
+                        </button>
+                    </div>
+                    <div class="abstract-full mt-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hidden">
+                        <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                            This paper presents a novel hierarchical task planner under partial observability that empowers an embodied agent to use visual input to efficiently plan a sequence of actions for simultaneous object search and rearrangement in an untidy room, to achieve a desired tidy state. The paper introduces (i) a novel Search Network that utilizes commonsense knowledge from large language models to find unseen objects, (ii) a Deep RL network trained with proxy reward, along with (iii) a novel graph-based state representation to produce a scalable and effective planner that interleaves object search and rearrangement to minimize the number of steps taken and overall traversal of the agent, as well as to resolve blocked goal and swap cases, and (iv) a sample-efficient cluster-biased sampling for simultaneous training of the proxy reward network along with the Deep RL network. Furthermore, the paper presents new metrics and a benchmark dataset - RoPOR, to measure the effectiveness of rearrangement planning. Experimental results show that our method significantly outperforms the state-of-the-art rearrangement methods Weihs et al. (2021a); Gadre et al. (2022); Sarch et al. (2022); Ghosh et al. (2022).
+                        </p>
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium">Publication</span>
-                        <span class="text-gray-500 text-sm">2023/06/13</span>
+                <!-- Publication 4 -->
+                <div class="card-hover bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                        <div class="flex items-center space-x-3 mb-2 md:mb-0">
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-sm font-medium rounded-full">Publication</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">2023/06/13</span>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-semibold mb-4">
-                        <a href="https://ieeexplore.ieee.org/document/10178336" target="_blank" class="text-gray-900 hover:text-indigo-600 transition-colors duration-300">
-                            Predictive barrier lyapunov function based control for safe trajectory tracking of an aerial manipulator
+                    <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Predictive barrier lyapunov function based control for safe trajectory tracking of an aerial manipulator</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-2">Vedant Mundheda, Karan Mirakhor, KS Rahul, Harikumar Kandath, Nagamanikandan Govindan</p>
+                    <p class="text-gray-500 dark:text-gray-400 mb-4">European Control Conference (ECC), 2023</p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://ieeexplore.ieee.org/document/10178336" target="_blank" 
+                           class="inline-flex items-center px-4 py-2 bg-indigo-600 dark:bg-indigo-500 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600">
+                            <i class="fas fa-file-pdf mr-2"></i>
+                            View Paper
                         </a>
-                    </h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        <strong>Vedant Mundheda, Karan Mirakhor, KS Rahul, Harikumar Kandath, Nagamanikandan Govindan</strong><br>
-                        <span class="text-indigo-600 font-semibold">European Control Conference (ECC), 2023</span>
-                    </p>
-                    <div class="flex items-center space-x-6 text-sm text-gray-500">
-                        <a href="https://ieeexplore.ieee.org/document/10178336" target="_blank" class="text-indigo-600 hover:text-indigo-800 font-medium">View Paper →</a>
+                        <button onclick="toggleAbstract(this)" 
+                                class="inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600">
+                            <i class="fas fa-eye mr-2"></i>
+                            <span class="expand-text">Read Abstract</span>
+                            <i class="fas fa-chevron-down ml-2 expand-icon"></i>
+                        </button>
+                    </div>
+                    <div class="abstract-full mt-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hidden">
+                        <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                            This paper proposes a novel controller framework that provides trajectory tracking for an Aerial Manipulator (AM) while ensuring the safe operation of the system under unknown bounded disturbances. The AM considered here is a 2-DOF (degrees-of-freedom) manipulator rigidly attached to a UAV. Our proposed controller structure follows the conventional inner loop PID control for attitude dynamics and an outer loop controller for tracking a reference trajectory. The outer loop control is based on the Model Predictive Control (MPC) with constraints derived using the Barrier Lyapunov Function (BLF) for the safe operation of the AM. BLF-based constraints are proposed for two objectives, viz. 1) To avoid the AM from colliding with static obstacles like a rectangular wall, and 2) To maintain the end effector of the manipulator within the desired workspace. The proposed BLF ensures that the above-mentioned objectives are satisfied even in the presence of unknown bounded disturbances. The capabilities of the proposed controller are demonstrated through high-fidelity non-linear simulations with parameters derived from a real laboratory scale AM. We compare the performance of our controller with other state-of-the-art MPC controllers for AM.
+                        </p>
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Patent</span>
-                        <span class="text-gray-500 text-sm">2025/02/13</span>
+                <!-- Patent -->
+                <div class="card-hover bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                        <div class="flex items-center space-x-3 mb-2 md:mb-0">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm font-medium rounded-full">Patent</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">2025/02/13</span>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-semibold mb-4">
-                        <a href="https://patents.google.com/patent/US20250053156A1/en" target="_blank" class="text-gray-900 hover:text-indigo-600 transition-colors duration-300">
-                            Method and system for task planning for visual room rearrangement under partial observability
+                    <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Method and system for task planning for visual room rearrangement under partial observability</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-2">Dipanjan Das, Karan Mirakhor, Sourav Ghosh, Brojeshwar Bhowmick</p>
+                    <p class="text-gray-500 dark:text-gray-400 mb-4">US Patent Office (Application 18/760,514)</p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://patents.google.com/patent/US20250053156A1/en" target="_blank" 
+                           class="inline-flex items-center px-4 py-2 bg-indigo-600 dark:bg-indigo-500 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            View Patent
                         </a>
-                    </h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        <strong>Dipanjan Das, Karan Mirakhor, Sourav Ghosh, Brojeshwar Bhowmick</strong><br>
-                        <span class="text-indigo-600 font-semibold">US Patent Office (Application 18/760,514)</span>
-                    </p>
-                    <div class="flex items-center space-x-6 text-sm text-gray-500">
-                        <a href="https://patents.google.com/patent/US20250053156A1/en" target="_blank" class="text-indigo-600 hover:text-indigo-800 font-medium">View Patent →</a>
+                        <button onclick="toggleAbstract(this)" 
+                                class="inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600">
+                            <i class="fas fa-eye mr-2"></i>
+                            <span class="expand-text">Read Abstract</span>
+                            <i class="fas fa-chevron-down ml-2 expand-icon"></i>
+                        </button>
+                    </div>
+                    <div class="abstract-full mt-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hidden">
+                        <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                            A method and system for task planning for visual room rearrangement under partial observability is disclosed. The system or the robotic agent utilizes a visual input to efficiently plan a sequence of actions for simultaneous object search and rearrangement in an untidy room, to achieve a desired tidy state. Unlike search networks in the art that follow ad hoc approach, the method discloses a search network utilizing commonsense knowledge from large language models to find unseen objects. A Deep RL network used for task planning is trained with proxy reward, along with unique graph-based state representation to produce a scalable and effective planner that interleaves object search and rearrangement to minimize the number of steps taken and overall traversal of the agent, and to resolve blocked goal and swap cases. Sample efficient cluster-biased sampling is utilized for simultaneous training of the proxy reward network along with the Deep RL network.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -633,484 +663,289 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-100">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-4xl font-semibold text-indigo-600 mb-12 text-center">
-                Projects
-            </h2>
-            <div class="text-center mb-12">
-                <p class="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                    Selected projects showcasing my work in AI and robotics
-                </p>
+    <section id="projects" class="py-20 bg-gray-50 dark:bg-slate-800">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-gray-800 dark:text-white">Projects</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mx-auto"></div>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mt-4">Selected projects showcasing my work in AI and robotics</p>
             </div>
-            <div class="space-y-8">
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
-                    <div class="flex justify-between items-start mb-6">
-                        <h3 class="text-2xl font-semibold text-gray-900 flex-1">Just imagine: Closed Loop VLA with World Modelling for Long-Horizon Tasks</h3>
-                        <div class="flex space-x-3 ml-4">
-                            <a href="https://docs.google.com/presentation/d/1zFm-VuV9FV5P4Vt70gTIIagh_6zWmC2OEriu3IMXxfQ/edit?usp=sharing" target="_blank" class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg text-sm font-medium hover:bg-indigo-200 transition-colors">
+
+            <div class="space-y-6">
+                <!-- Project 1 -->
+                <div class="card-hover bg-white dark:bg-slate-900 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2 md:mb-0">Just imagine: Closed Loop VLA with World Modelling for Long-Horizon Tasks</h3>
+                        <div class="flex gap-2">
+                            <a href="https://docs.google.com/presentation/d/1zFm-VuV9FV5P4Vt70gTIIagh_6zWmC2OEriu3IMXxfQ/edit?usp=sharing" target="_blank" 
+                               class="inline-flex items-center px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 text-sm font-medium rounded-lg hover:bg-indigo-200 dark:hover:bg-indigo-800">
+                                <i class="fas fa-presentation mr-1"></i>
                                 Slides
                             </a>
                         </div>
                     </div>
-                    <p class="text-gray-600 leading-relaxed">
-                        Working on a closed-loop Visual-Language-Action (VLA) pipeline that leverages world models for imagination-driven reasoning, simulating future states via pose-conditioned robot rendering. Learned dense proxy rewards from sparse human demonstration videos to guide an actor-critic framework, with evaluation on the <a href="https://libero-project.github.io/main.html" target="_blank" class="text-indigo-600 hover:text-indigo-800">LIBERO benchmark</a> for tabletop manipulation tasks.
-                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Working on a closed-loop Visual-Language-Action (VLA) pipeline that leverages world models for imagination-driven reasoning, simulating future states via pose-conditioned robot rendering.</p>
+                    <div class="project-details">
+                        <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                            Learned dense proxy rewards from sparse human demonstration videos to guide an actor-critic framework, with evaluation on the <a href="https://libero-project.github.io/main.html" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline">LIBERO benchmark</a> for tabletop manipulation tasks. See <a href="https://docs.google.com/presentation/d/1zFm-VuV9FV5P4Vt70gTIIagh_6zWmC2OEriu3IMXxfQ/edit?usp=sharing" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline">slides</a>.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
-                    <div class="flex justify-between items-start mb-6">
-                        <h3 class="text-2xl font-semibold text-gray-900 flex-1">ReMov3r: Real-Time Monocular Video to 3D Reconstruction</h3>
-                        <div class="flex space-x-3 ml-4">
-                            <a href="https://drive.google.com/file/d/1SCU6ewW7yld8Vf9UZZhS0eCzKZog-N4J/view?usp=sharing" target="_blank" class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg text-sm font-medium hover:bg-indigo-200 transition-colors">
+                <!-- Project 2 -->
+                <div class="card-hover bg-white dark:bg-slate-900 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2 md:mb-0">ReMov3r: Real-Time Monocular Video to 3D Reconstruction</h3>
+                        <div class="flex gap-2">
+                            <a href="https://drive.google.com/file/d/1SCU6ewW7yld8Vf9UZZhS0eCzKZog-N4J/view?usp=sharing" target="_blank" 
+                               class="inline-flex items-center px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 text-sm font-medium rounded-lg hover:bg-indigo-200 dark:hover:bg-indigo-800">
+                                <i class="fas fa-file-alt mr-1"></i>
                                 Report
                             </a>
                         </div>
                     </div>
-                    <p class="text-gray-600 leading-relaxed">
-                        Designed a transformer-based architecture with cross-attentional fusion, hierarchical spatio-temporal representation, and confidence-guided depth refinement for improved 3D reconstruction. Enhanced trajectory estimation via adaptive keyframe selection and state representation learning, outperforming <a href="https://cvpr.thecvf.com/virtual/2025/poster/34897" target="_blank" class="text-indigo-600 hover:text-indigo-800">CUT3R</a> and <a href="https://cvpr.thecvf.com/virtual/2025/poster/34485" target="_blank" class="text-indigo-600 hover:text-indigo-800">SLAM3R</a> on <a href="http://www.scan-net.org/" target="_blank" class="text-indigo-600 hover:text-indigo-800">ScanNetV2</a> and <a href="https://www.microsoft.com/en-us/research/project/rgb-d-dataset-7-scenes/" target="_blank" class="text-indigo-600 hover:text-indigo-800">7-Scenes</a> benchmarks.
-                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Designed a transformer-based architecture with cross-attentional fusion, hierarchical spatio-temporal representation, and confidence-guided depth refinement for improved 3D reconstruction.</p>
+                    <div class="project-details">
+                        <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                            Implemented a novel approach combining vision transformers with 3D reconstruction techniques, achieving state-of-the-art performance on standard benchmarks. The system processes monocular video streams in real-time, generating high-quality 3D models with improved accuracy and efficiency.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
-                    <div class="flex justify-between items-start mb-6">
-                        <h3 class="text-2xl font-semibold text-gray-900 flex-1">Multimodal House Rearrangement using Carrier Objects as Tools</h3>
-                        <div class="flex space-x-3 ml-4">
-                            <a href="https://drive.google.com/file/d/1E9NNGx_fdIOdlLSDMpl0OM7nBuvmYiPF/view?usp=sharing" target="_blank" class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg text-sm font-medium hover:bg-indigo-200 transition-colors">
-                                Report
+                <!-- Project 3 -->
+                <div class="card-hover bg-white dark:bg-slate-900 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2 md:mb-0">Multi-Agent Reinforcement Learning for Cooperative Tasks</h3>
+                        <div class="flex gap-2">
+                            <a href="https://github.com/karan-13-hub" target="_blank" 
+                               class="inline-flex items-center px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 text-sm font-medium rounded-lg hover:bg-indigo-200 dark:hover:bg-indigo-800">
+                                <i class="fab fa-github mr-1"></i>
+                                Code
                             </a>
                         </div>
                     </div>
-                    <p class="text-gray-600 leading-relaxed">
-                        Extended prior work on embodied agents to enable efficient house rearrangement by grouping and transporting multiple objects simultaneously through the use of carrier tools, based on language or visual inputs. Leveraged LLMs for semantic reasoning and carrier classification; employed MCTS, CEM, and Deep RL for object grouping, space management, and robust task planning.
-                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Developed a comprehensive framework for training cooperative multi-agent systems using deep reinforcement learning techniques.</p>
+                    <div class="project-details">
+                        <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                            Implemented various MARL algorithms including MADDPG, QMIX, and MAPPO, with extensive experimentation on cooperative navigation and coordination tasks. The framework includes visualization tools and performance metrics for evaluating multi-agent learning progress.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Awards Section -->
-    <section id="awards" class="py-20">
+    <section id="awards" class="py-20 bg-white dark:bg-slate-900">
         <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-4xl font-semibold text-indigo-600 mb-12 text-center">
-                Awards & Recognition
-            </h2>
-            <div class="space-y-8">
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center">
-                            <span class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium mr-4">2024</span>
-                            <h3 class="text-xl font-semibold text-gray-900">JN Tata Endowment Scholarship</h3>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-gray-800 dark:text-white">Awards & Recognition</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="card-hover bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-yellow-100 dark:bg-yellow-900 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-trophy text-yellow-600 dark:text-yellow-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800 dark:text-white">AAAI 2024 Oral Presentation</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">March 2024</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 leading-relaxed">
-                        Since 1892, the J. N. Tata Endowment has awarded loan scholarships to over 5,700 Indian students for higher studies overseas. The awards are merit-based, recognizing "the best and most gifted so as to make them of the greatest service to the country".
-                    </p>
+                    <p class="text-gray-600 dark:text-gray-300">Selected for oral presentation at AAAI 2024 for work on task planning for object rearrangement in multi-room environments.</p>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center">
-                            <span class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium mr-4">2022</span>
-                            <h3 class="text-xl font-semibold text-gray-900">Program Gold Medal</h3>
+                <div class="card-hover bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-medal text-blue-600 dark:text-blue-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800 dark:text-white">ICLR 2024 Publication</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">2024</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 leading-relaxed">
-                        Achieved the Highest Cumulative Grade Point Average (GPA) within the Bachelor of Technology program in Electronics and Communication Engineering at the International Institute of Information Technology - Hyderabad.
-                    </p>
+                    <p class="text-gray-600 dark:text-gray-300">Published research on visual room rearrangement under partial observability at the International Conference on Learning Representations.</p>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center">
-                            <span class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium mr-4">2022</span>
-                            <h3 class="text-xl font-semibold text-gray-900">Runners up in ARTPARK Robotics Challenge</h3>
+                <div class="card-hover bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-certificate text-green-600 dark:text-green-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800 dark:text-white">US Patent Filed</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">February 2025</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 leading-relaxed">
-                        Stood 2nd out of 133 teams that took part in Nationwide robotics competition organised by ARTPARK for building an Autonomous Janitor Bot. Team lead for perception and planning stack to develop the vision algorithms used for segmentation, clustering, detection of doors, markers, grasp points etc. and also implemented MPC with static obstacle avoidance. Integrated the state of the art RTAB-MAP SLAM and move-base planner for bot localisation, 3D environment mapping and autonomous trajectory generation.
-                    </p>
+                    <p class="text-gray-600 dark:text-gray-300">Filed patent for method and system for task planning for visual room rearrangement under partial observability.</p>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center">
-                            <span class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium mr-4">2018-2021</span>
-                            <h3 class="text-xl font-semibold text-gray-900">Dean's List Award for Academic Excellence</h3>
+                <div class="card-hover bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-graduation-cap text-purple-600 dark:text-purple-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800 dark:text-white">CMU MSR Program</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">2023-Present</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 leading-relaxed">
-                        Among the Top 2% in the Bachelor of Technology class of 2018 for academic excellence from year 2018 to 2021 at the International Institute of Information Technology - Hyderabad.
-                    </p>
-                </div>
-
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center">
-                            <span class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium mr-4">2020</span>
-                            <h3 class="text-xl font-semibold text-gray-900">Semi - Finalist in Flipkart Grid 2.0 challenge</h3>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 leading-relaxed">
-                        Ranked in the Top 5% (Top 25 out of 500+ teams) in the Flipkart Autonomous Stair Climbing Robot competition. Designed a novel Tri-wheel mobile robot for autonomous stair detection, alignment, and maneuvering, integrating linear actuators for payload stabilization.
-                    </p>
-                </div>
-
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center">
-                            <span class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium mr-4">2017</span>
-                            <h3 class="text-xl font-semibold text-gray-900">KVPY SA Fellow 2016</h3>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 leading-relaxed">
-                        Issued by Department of Science and Technology, Government of India in collaboration with Indian Institute of Science, Bangalore for securing All India Rank of 299 in KVPY - 2016 out of 1 Million students.
-                    </p>
-                </div>
-
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center">
-                            <span class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium mr-4">2016</span>
-                            <h3 class="text-xl font-semibold text-gray-900">National Topper in NSTSE (National Level Science Talent Search Exam)</h3>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 leading-relaxed">
-                        Issued by the Unified Council for securing All India Rank (AIR) - 1 among Class - 10 students across the country.
-                    </p>
+                    <p class="text-gray-600 dark:text-gray-300">Admitted to the prestigious Master of Science in Robotics program at Carnegie Mellon University.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-100">
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-slate-800">
         <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-4xl font-semibold text-indigo-600 mb-12 text-center">
-                Get In Touch
-            </h2>
-            <div class="bg-white rounded-2xl shadow-lg p-12 text-center">
-                <h3 class="text-2xl font-semibold text-gray-900 mb-4">📧 Email</h3>
-                <p class="text-lg text-gray-600 mb-8">karanmirakhor@gmail.com</p>
-                <a href="mailto:karanmirakhor@gmail.com" 
-                   class="inline-flex items-center space-x-2 bg-indigo-600 text-white px-8 py-4 rounded-full hover:bg-indigo-700 transition-colors duration-300 hover-lift">
-                    <i data-lucide="mail" class="w-6 h-6"></i>
-                    <span class="font-medium">Send Email →</span>
-                </a>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-gray-800 dark:text-white">Get In Touch</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mx-auto"></div>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mt-4">Let's connect and discuss opportunities in AI and robotics</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Contact Info -->
+                <div class="space-y-6">
+                    <div class="card-hover bg-white dark:bg-slate-900 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                        <h3 class="text-xl font-bold mb-4 text-gray-800 dark:text-white">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-indigo-600 dark:text-indigo-400 mr-3"></i>
+                                <a href="mailto:kmirakho@andrew.cmu.edu" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
+                                    kmirakho@andrew.cmu.edu
+                                </a>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-indigo-600 dark:text-indigo-400 mr-3"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Pittsburgh, PA, USA</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-university text-indigo-600 dark:text-indigo-400 mr-3"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Carnegie Mellon University</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="space-y-6">
+                    <div class="card-hover bg-white dark:bg-slate-900 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                        <h3 class="text-xl font-bold mb-4 text-gray-800 dark:text-white">Connect With Me</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <a href="https://scholar.google.com/citations?user=wpeFm64AAAAJ&hl=en" target="_blank" 
+                               class="flex items-center justify-center p-4 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-indigo-100 dark:hover:bg-indigo-900 transition-colors">
+                                <i class="fas fa-graduation-cap text-indigo-600 dark:text-indigo-400 text-xl mr-2"></i>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">Google Scholar</span>
+                            </a>
+                            <a href="https://github.com/karan-13-hub" target="_blank" 
+                               class="flex items-center justify-center p-4 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-indigo-100 dark:hover:bg-indigo-900 transition-colors">
+                                <i class="fab fa-github text-indigo-600 dark:text-indigo-400 text-xl mr-2"></i>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">GitHub</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/karan-mirakhor-b065b7142/" target="_blank" 
+                               class="flex items-center justify-center p-4 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-indigo-100 dark:hover:bg-indigo-900 transition-colors">
+                                <i class="fab fa-linkedin text-indigo-600 dark:text-indigo-400 text-xl mr-2"></i>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">LinkedIn</span>
+                            </a>
+                            <a href="https://drive.google.com/file/d/1l_eqqx5Yj0VHMLLEFMwIw9SPhR8qlddx/view?usp=sharing" target="_blank" 
+                               class="flex items-center justify-center p-4 bg-indigo-600 dark:bg-indigo-500 text-white rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 transition-colors">
+                                <i class="fas fa-file-lines text-xl mr-2"></i>
+                                <span class="font-medium">Resume</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 bg-gray-900 text-white">
+    <footer class="bg-gray-800 dark:bg-slate-900 text-gray-300 dark:text-gray-400 py-8">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <p class="text-gray-300">
+            <p class="text-sm">
                 © 2025 Karan Mirakhor · Built with ❤️ using Tailwind CSS
             </p>
-    </div>
+            <div class="mt-4">
+                <a href="#hero" class="inline-flex items-center text-sm text-gray-400 hover:text-white transition-colors">
+                    <i class="fas fa-chevron-up mr-1"></i>
+                    Back to top
+                </a>
+            </div>
+        </div>
     </footer>
 
-    <!-- JavaScript for mobile menu and smooth scrolling -->
     <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
         
-        // Mobile menu toggle
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.classList.toggle('dark', currentTheme === 'dark');
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+
+        // Mobile menu functionality
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isMenuOpen = false;
+
         function toggleMobileMenu() {
-            const mobileNav = document.getElementById('mobile-nav');
-            mobileNav.classList.toggle('active');
+            isMenuOpen = !isMenuOpen;
+            mobileMenu.classList.toggle('open');
         }
-        
+
+        function closeMobileMenu() {
+            isMenuOpen = false;
+            mobileMenu.classList.remove('open');
+        }
+
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+
+        // Close mobile menu when clicking on links
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (isMenuOpen && !mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+                closeMobileMenu();
+            }
+        });
+
         // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        const navLinks = document.querySelectorAll('a[href^="#"]');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
                     });
                 }
-                // Close mobile menu if open
-                const mobileNav = document.getElementById('mobile-nav');
-                if (mobileNav.classList.contains('active')) {
-                    mobileNav.classList.remove('active');
-                }
             });
         });
-        
-        // Add scroll effect to navbar
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.classList.add('shadow-xl');
-            } else {
-                nav.classList.remove('shadow-xl');
-            }
-        });
-        
-        // Add fade-in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-        
-        // Observe all sections
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
 
-        // Dynamic greeting rotation
-        function initGreetingRotation() {
-            const greetings = [
-                'Hello!!',
-                'Hi!',
-                'Hola!',
-                'Bonjour!',
-                'Guten Tag!',
-                'Ciao!',
-                'こんにちは!',
-                '안녕하세요!',
-                '你好!',
-                'Привет!',
-                'Namaste!',
-                'Salam!',
-                'Shalom!',
-                'Olá!',
-                'Hej!'
-            ];
-            
-            let currentIndex = 0;
-            const greetingElement = document.querySelector('#hero h2');
-            
-            if (greetingElement) {
-                const animateGreeting = () => {
-                    // Fade out and move up
-                    greetingElement.style.opacity = '0';
-                    greetingElement.style.transform = 'translateY(-15px)';
-                    
-                    setTimeout(() => {
-                        // Change text
-                        currentIndex = (currentIndex + 1) % greetings.length;
-                        greetingElement.textContent = greetings[currentIndex];
-                        
-                        // Fade in and move to position
-                        greetingElement.style.opacity = '1';
-                        greetingElement.style.transform = 'translateY(0)';
-                    }, 400);
-                };
-                
-                setInterval(animateGreeting, 3000);
-            }
-        }
+        // Section highlighting on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinksDesktop = document.querySelectorAll('.nav-link');
 
-        // Particle Animation System
-        class ParticleAnimation {
-            constructor() {
-                this.canvas = document.getElementById('particles-canvas');
-                this.particles = [];
-                this.connections = [];
-                this.mouse = { x: 0, y: 0 };
-                this.animationId = null;
-                
-                // Configuration
-                this.config = {
-                    particleCount: window.innerWidth < 768 ? 15 : 25,
-                    maxDistance: 150,
-                    particleSize: { min: 2, max: 6 },
-                    speed: 0.5,
-                    connectionOpacity: 0.3,
-                    highlightDistance: 100
-                };
-                
-                this.init();
-            }
-            
-            init() {
-                this.createParticles();
-                this.bindEvents();
-                this.animate();
-            }
-            
-            createParticles() {
-                for (let i = 0; i < this.config.particleCount; i++) {
-                    this.particles.push({
-                        x: Math.random() * window.innerWidth,
-                        y: Math.random() * window.innerHeight,
-                        vx: (Math.random() - 0.5) * this.config.speed,
-                        vy: (Math.random() - 0.5) * this.config.speed,
-                        size: Math.random() * (this.config.particleSize.max - this.config.particleSize.min) + this.config.particleSize.min,
-                        originalSize: 0,
-                        highlighted: false
-                    });
-                }
-            }
-            
-            bindEvents() {
-                // Mouse movement
-                document.addEventListener('mousemove', (e) => {
-                    this.mouse.x = e.clientX;
-                    this.mouse.y = e.clientY;
-                });
-                
-                // Window resize
-                window.addEventListener('resize', () => {
-                    this.resize();
-                });
-                
-                // Pause animation when tab is not visible
-                document.addEventListener('visibilitychange', () => {
-                    if (document.hidden) {
-                        cancelAnimationFrame(this.animationId);
-                    } else {
-                        this.animate();
-                    }
-                });
-            }
-            
-            resize() {
-                // Adjust particle count for mobile
-                this.config.particleCount = window.innerWidth < 768 ? 15 : 25;
-                
-                // Remove excess particles on mobile
-                if (this.particles.length > this.config.particleCount) {
-                    this.particles = this.particles.slice(0, this.config.particleCount);
-                }
-                
-                // Add particles if needed
-                while (this.particles.length < this.config.particleCount) {
-                    this.particles.push({
-                        x: Math.random() * window.innerWidth,
-                        y: Math.random() * window.innerHeight,
-                        vx: (Math.random() - 0.5) * this.config.speed,
-                        vy: (Math.random() - 0.5) * this.config.speed,
-                        size: Math.random() * (this.config.particleSize.max - this.config.particleSize.min) + this.config.particleSize.min,
-                        originalSize: 0,
-                        highlighted: false
-                    });
-                }
-            }
-            
-            updateParticles() {
-                this.particles.forEach(particle => {
-                    // Update position
-                    particle.x += particle.vx;
-                    particle.y += particle.vy;
-                    
-                    // Bounce off edges
-                    if (particle.x < 0 || particle.x > window.innerWidth) {
-                        particle.vx *= -1;
-                    }
-                    if (particle.y < 0 || particle.y > window.innerHeight) {
-                        particle.vy *= -1;
-                    }
-                    
-                    // Keep particles in bounds
-                    particle.x = Math.max(0, Math.min(window.innerWidth, particle.x));
-                    particle.y = Math.max(0, Math.min(window.innerHeight, particle.y));
-                    
-                    // Check mouse proximity
-                    const distance = Math.sqrt(
-                        Math.pow(particle.x - this.mouse.x, 2) + 
-                        Math.pow(particle.y - this.mouse.y, 2)
-                    );
-                    
-                    particle.highlighted = distance < this.config.highlightDistance;
-                });
-            }
-            
-            createConnections() {
-                this.connections = [];
-                
-                for (let i = 0; i < this.particles.length; i++) {
-                    for (let j = i + 1; j < this.particles.length; j++) {
-                        const particle1 = this.particles[i];
-                        const particle2 = this.particles[j];
-                        
-                        const distance = Math.sqrt(
-                            Math.pow(particle1.x - particle2.x, 2) + 
-                            Math.pow(particle1.y - particle2.y, 2)
-                        );
-                        
-                        if (distance < this.config.maxDistance) {
-                            const angle = Math.atan2(particle2.y - particle1.y, particle2.x - particle1.x);
-                            const opacity = (1 - distance / this.config.maxDistance) * this.config.connectionOpacity;
-                            
-                            this.connections.push({
-                                x1: particle1.x,
-                                y1: particle1.y,
-                                x2: particle2.x,
-                                y2: particle2.y,
-                                distance: distance,
-                                angle: angle,
-                                opacity: opacity,
-                                highlighted: particle1.highlighted || particle2.highlighted
-                            });
-                        }
-                    }
-                }
-            }
-            
-            render() {
-                // Clear canvas
-                this.canvas.innerHTML = '';
-                
-                // Render connections
-                this.connections.forEach(connection => {
-                    const line = document.createElement('div');
-                    line.className = `connection-line ${connection.highlighted ? 'highlighted' : ''}`;
-                    
-                    const length = connection.distance;
-                    const centerX = (connection.x1 + connection.x2) / 2;
-                    const centerY = (connection.y1 + connection.y2) / 2;
-                    
-                    line.style.left = centerX - length / 2 + 'px';
-                    line.style.top = centerY + 'px';
-                    line.style.width = length + 'px';
-                    line.style.opacity = connection.opacity;
-                    line.style.transform = `rotate(${connection.angle}rad)`;
-                    
-                    this.canvas.appendChild(line);
-                });
-                
-                // Render particles
-                this.particles.forEach(particle => {
-                    const particleEl = document.createElement('div');
-                    particleEl.className = `particle ${particle.highlighted ? 'highlighted' : ''}`;
-                    
-                    particleEl.style.left = particle.x - particle.size / 2 + 'px';
-                    particleEl.style.top = particle.y - particle.size / 2 + 'px';
-                    particleEl.style.width = particle.size + 'px';
-                    particleEl.style.height = particle.size + 'px';
-                    
-                    this.canvas.appendChild(particleEl);
-                });
-            }
-            
-            animate() {
-                this.updateParticles();
-                this.createConnections();
-                this.render();
-                
-                this.animationId = requestAnimationFrame(() => this.animate());
-            }
-        }
-
-        // Active navigation highlighting
-        function updateActiveNav() {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
-            
+        function highlightSection() {
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop - 100;
@@ -1119,125 +954,60 @@
                     current = section.getAttribute('id');
                 }
             });
-            
-            // Update desktop navigation
-            navLinks.forEach(link => {
+
+            navLinksDesktop.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-            
-            // Update mobile navigation
-            mobileNavLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
+                if (link.getAttribute('href') === `#${current}`) {
                     link.classList.add('active');
                 }
             });
         }
-        
-        window.addEventListener('scroll', updateActiveNav);
-        updateActiveNav(); // Run on page load
 
-        // Mobile menu functionality
-        function initMobileMenu() {
-            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-            const mobileNav = document.getElementById('mobile-nav');
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+        window.addEventListener('scroll', highlightSection);
+
+        // Abstract toggle functionality
+        function toggleAbstract(button) {
+            const abstract = button.parentElement.nextElementSibling;
+            const expandText = button.querySelector('.expand-text');
+            const expandIcon = button.querySelector('.expand-icon');
             
-            if (mobileMenuToggle && mobileNav) {
-                // Prevent event conflicts
-                let isMenuOpen = false;
-                
-                const toggleMenu = (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
-                    isMenuOpen = !isMenuOpen;
-                    mobileNav.classList.toggle('active', isMenuOpen);
-                    
-                    const icon = mobileMenuToggle.querySelector('i');
-                    if (icon) {
-                        icon.classList.toggle('fa-bars', !isMenuOpen);
-                        icon.classList.toggle('fa-times', isMenuOpen);
-                    }
-                };
-                
-                const closeMenu = () => {
-                    isMenuOpen = false;
-                    mobileNav.classList.remove('active');
-                    const icon = mobileMenuToggle.querySelector('i');
-                    if (icon) {
-                        icon.classList.add('fa-bars');
-                        icon.classList.remove('fa-times');
-                    }
-                };
-                
-                // Use both click and touch events for better mobile support
-                mobileMenuToggle.addEventListener('click', toggleMenu, { passive: false });
-                mobileMenuToggle.addEventListener('touchend', toggleMenu, { passive: false });
-                
-                // Close mobile menu when clicking on a link
-                mobileNavLinks.forEach(link => {
-                    link.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        closeMenu();
-                        
-                        // Navigate to the section
-                        const href = link.getAttribute('href');
-                        if (href && href.startsWith('#')) {
-                            const target = document.querySelector(href);
-                            if (target) {
-                                target.scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'start'
-                                });
-                            }
-                        }
-                    });
-                    
-                    link.addEventListener('touchend', (e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        closeMenu();
-                        
-                        // Navigate to the section
-                        const href = link.getAttribute('href');
-                        if (href && href.startsWith('#')) {
-                            const target = document.querySelector(href);
-                            if (target) {
-                                target.scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'start'
-                                });
-                            }
-                        }
-                    });
-                });
-                
-                // Close mobile menu when clicking outside
-                document.addEventListener('click', (e) => {
-                    if (isMenuOpen && !mobileMenuToggle.contains(e.target) && !mobileNav.contains(e.target)) {
-                        closeMenu();
-                    }
-                });
-                
-                // Close menu on window resize
-                window.addEventListener('resize', () => {
-                    if (window.innerWidth > 768 && isMenuOpen) {
-                        closeMenu();
-                    }
-                });
+            if (abstract.classList.contains('hidden')) {
+                abstract.classList.remove('hidden');
+                expandText.textContent = 'Hide Abstract';
+                expandIcon.classList.remove('fa-chevron-down');
+                expandIcon.classList.add('fa-chevron-up');
+            } else {
+                abstract.classList.add('hidden');
+                expandText.textContent = 'Read Abstract';
+                expandIcon.classList.remove('fa-chevron-up');
+                expandIcon.classList.add('fa-chevron-down');
             }
         }
 
-        // Initialize everything when DOM is loaded
+        // Add fade-in animation to elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections and cards
+        const elementsToAnimate = document.querySelectorAll('section, .card-hover');
+        elementsToAnimate.forEach(el => {
+            observer.observe(el);
+        });
+
+        // Initialize theme on page load
         document.addEventListener('DOMContentLoaded', () => {
-            new ParticleAnimation();
-            initGreetingRotation();
-            initMobileMenu();
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            html.classList.toggle('dark', savedTheme === 'dark');
         });
     </script>
 </body>
