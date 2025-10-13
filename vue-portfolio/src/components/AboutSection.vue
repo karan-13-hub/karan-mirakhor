@@ -12,10 +12,10 @@
         <div class="w-24 h-1 bg-accent mx-auto mb-8"></div>
         
         <div class="about-content text-lg text-gray-200 leading-relaxed">
-          <p>Hello! I'm <strong>Karan Mirakhor</strong>, a <strong>second-year Master of Science (Research) student in Robotics (MSR) at the <a href="https://www.ri.cmu.edu/" target="_blank" class="accent-link text-cyan-400 hover:text-cyan-300">Robotics Institute</a>, <a href="https://www.cmu.edu/" target="_blank" class="accent-link text-cyan-400 hover:text-cyan-300">Carnegie Mellon University</a></strong>.</p>
+          <p>Hello! I'm <strong>Karan Mirakhor</strong>, a <strong>second-year Master of Science (Research) student in Robotics (MSR) at the <a href="https://www.ri.cmu.edu/" target="_blank" class="accent-link text-cyan-400 hover:text-cyan-400">Robotics Institute</a>, <a href="https://www.cmu.edu/" target="_blank" class="accent-link text-cyan-400 hover:text-cyan-400">Carnegie Mellon University</a></strong>.</p>
           
-          <p><strong>Graduate Research Assistant</strong> - <a href="https://www.ri.cmu.edu/robotics-groups/advanced-agent-robotics-technology-lab/" target="_blank" class="accent-link text-cyan-400 hover:text-cyan-300">Advanced Agent Robotics Technology Lab</a><br>
-          <strong>Advisor:</strong> <a href="https://www.cs.cmu.edu/~sycara/" target="_blank" class="accent-link text-cyan-400 hover:text-cyan-300">Prof. Katia Sycara</a></p>
+          <p><strong>Graduate Research Assistant</strong> - <a href="https://www.ri.cmu.edu/robotics-groups/advanced-agent-robotics-technology-lab/" target="_blank" class="accent-link text-cyan-400 hover:text-cyan-400">Advanced Agent Robotics Technology Lab</a><br>
+          <strong>Advisor:</strong> <a href="https://www.cs.cmu.edu/~sycara/" target="_blank" class="accent-link text-cyan-400 hover:text-cyan-400">Prof. Katia Sycara</a></p>
           
           <p>My research primarily focuses on <strong>Multi-Agent Reinforcement Learning (MARL)</strong>. Specifically, my work is on:</p>
           
@@ -42,10 +42,10 @@
             
             <div class="experience-item bg-slate-900/10 p-6 rounded-lg mb-6 border-l-3 border-cyan-400">
               <p class="experience-title text-white text-lg font-semibold mb-2">
-                <strong>Pre-doctoral Research Fellow</strong> — <a href="https://www.tcs.com/research-and-innovation" target="_blank" class="accent-link text-cyan-400 hover:text-cyan-300"><strong>TCS Research</strong></a>
+                <strong>Pre-doctoral Research Fellow</strong> — <a href="https://www.tcs.com/research-and-innovation" target="_blank" class="accent-link text-cyan-400 hover:text-cyan-400"><strong>TCS Research</strong></a>
               </p>
               <p class="experience-advisor text-gray-400 mb-4 italic">
-                <em>Advisor: <a href="https://scholar.google.co.in/citations?user=Eqf8NrEAAAAJ&hl=en" target="_blank" class="accent-link text-cyan-400 hover:text-cyan-300">Dr. Brojeshwar Bhowmick</a></em>
+                <em>Advisor: <a href="https://scholar.google.co.in/citations?user=Eqf8NrEAAAAJ&hl=en" target="_blank" class="accent-link text-cyan-400 hover:text-cyan-400">Dr. Brojeshwar Bhowmick</a></em>
               </p>
               <p class="experience-description text-gray-200 leading-relaxed">
                 Explored <strong>Task Planning for Indoor Object Rearrangement</strong> under <strong>partial observability (POMDP)</strong>. Developed scalable <strong>graph-based scene representations</strong>, utilized <strong>Large Language Models (LLMs)</strong> for semantic object search, and applied <strong>Deep RL</strong> for efficient single and multi-room planning.
@@ -57,13 +57,13 @@
                 🎓 B.Tech (Honors) in Electronics and Communication Engineering (ECE)
               </h3>
               <p class="experience-title text-white text-lg font-semibold mb-2">
-                <strong>IIIT Hyderabad</strong> — <a href="https://www.iiit.ac.in/" target="_blank" class="accent-link text-cyan-400 hover:text-cyan-300">IIIT Hyderabad</a>
+                <strong>IIIT Hyderabad</strong> — <a href="https://www.iiit.ac.in/" target="_blank" class="accent-link text-cyan-400 hover:text-cyan-400">IIIT Hyderabad</a>
               </p>
               <p class="experience-advisor text-gray-400 mb-2 italic">
-                <em>Research Assistant, <a href="https://robotics.iiit.ac.in/" target="_blank" class="accent-link text-cyan-400 hover:text-cyan-300">Robotics Research Center</a></em>
+                <em>Research Assistant, <a href="https://robotics.iiit.ac.in/" target="_blank" class="accent-link text-cyan-400 hover:text-cyan-400">Robotics Research Center</a></em>
               </p>
               <p class="experience-advisor text-gray-400 mb-4 italic">
-                <em>Advisor: <a href="https://scholar.google.co.in/citations?user=5i1t_QgAAAAJ&hl=en" target="_blank" class="accent-link text-cyan-400 hover:text-cyan-300">Dr. Harikumar Kandath</a></em>
+                <em>Advisor: <a href="https://scholar.google.co.in/citations?user=5i1t_QgAAAAJ&hl=en" target="_blank" class="accent-link text-cyan-400 hover:text-cyan-400">Dr. Harikumar Kandath</a></em>
               </p>
               <p class="experience-description text-gray-200 leading-relaxed">
                 Worked on <strong>aerial manipulator control</strong> using <strong>Control Barrier Lyapunov constraints</strong> within a <strong>Model Predictive Controller</strong> for safe and stable operation.
