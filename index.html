@@ -1092,8 +1092,17 @@
             }
         }
         
-        /* Tablet responsive design */
+        /* iPad and medium device navigation */
         @media (max-width: 1024px) and (min-width: 769px) {
+            .nav-links {
+                gap: 1.2rem;
+            }
+            
+            .nav-links a {
+                font-size: 0.95rem;
+                padding: 0.4rem 0.7rem;
+            }
+            
             .hero-content .description {
                 font-size: 1.3rem;
             }
@@ -1168,6 +1177,18 @@
                 font-size: 0.85rem;
                 padding: 0.4rem 0.8rem;
                 text-align: center;
+            }
+        }
+        
+        /* Large tablet responsive design */
+        @media (max-width: 1200px) and (min-width: 1025px) {
+            .nav-links {
+                gap: 1.5rem;
+            }
+            
+            .nav-links a {
+                font-size: 1rem;
+                padding: 0.4rem 0.8rem;
             }
         }
     </style>
