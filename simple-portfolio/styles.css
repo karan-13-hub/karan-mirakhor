@@ -312,6 +312,99 @@ section {
     text-underline-offset: 2px;
 }
 
+/* Research Areas */
+.research-areas {
+    margin: 2rem 0;
+}
+
+.research-area {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(10, 25, 47, 0.2);
+    border-radius: 8px;
+    border-left: 4px solid #64ffda;
+}
+
+.area-title {
+    color: #64ffda;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.area-title::before {
+    font-size: 1.1rem;
+}
+
+/* Experience Section */
+.experience-section {
+    margin: 2rem 0;
+}
+
+.section-subtitle {
+    color: #64ffda;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section-subtitle::before {
+    font-size: 1.2rem;
+}
+
+.experience-item {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(10, 25, 47, 0.1);
+    border-radius: 8px;
+    border-left: 3px solid #64ffda;
+}
+
+.experience-title {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.experience-advisor {
+    color: #a8b2d1;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.experience-description {
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Vision and Personal Sections */
+.vision-section,
+.personal-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(10, 25, 47, 0.1);
+    border-radius: 8px;
+    border-left: 3px solid #64ffda;
+}
+
+.vision-section p,
+.personal-section p {
+    margin-bottom: 1rem;
+}
+
+.vision-section p:last-child,
+.personal-section p:last-child {
+    margin-bottom: 0;
+}
+
 .stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
