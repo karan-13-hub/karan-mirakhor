@@ -395,21 +395,14 @@
             left: 50%;
             bottom: 20px;
             transform: translateX(-50%);
-            color: var(--accent-primary);
+            color: var(--text-muted);
             text-decoration: none;
-            font-size: 1.5rem;
-            width: 36px;
-            height: 36px;
-            border: 1px solid var(--accent-primary);
-            border-radius: 9999px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 8px -2px var(--shadow-color);
+            font-size: 2rem;
+            display: inline-block;
             animation: heroBounce 1.4s infinite ease-in-out;
         }
         @keyframes heroBounce {
-            0%, 100% { transform: translate(-50%, 0); opacity: 0.85; }
+            0%, 100% { transform: translate(-50%, 0); opacity: 0.6; }
             50% { transform: translate(-50%, 8px); opacity: 1; }
         }
         
@@ -1062,9 +1055,14 @@
             line-height: 1;
             color: var(--accent-primary);
         }
+        /* Show minus when tile expanded */
+        .project-tile.expanded .project-toggle button::before { content: "−"; }
 
         .project-toggle button:hover {
             background: var(--accent-primary);
+            color: var(--bg-primary);
+        }
+        .project-toggle button:hover::before {
             color: var(--bg-primary);
         }
 
