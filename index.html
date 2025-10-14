@@ -393,12 +393,12 @@
         .hero-scroll {
             position: absolute;
             left: 50%;
-            bottom: 56px; /* nudged up a bit */
+            top: 50%; /* will be set precisely via JS */
             width: 22px;
             height: 22px;
             border-right: 3px solid var(--text-muted);
             border-bottom: 3px solid var(--text-muted);
-            transform: translateX(-50%) rotate(45deg);
+            transform: translate(-50%, 0) rotate(45deg);
             border-radius: 2px;
             display: inline-block;
             animation: heroBounce 1.4s infinite ease-in-out;
@@ -2441,6 +2441,8 @@
             initMobileMenu();
             initAwardTiles();
             initThemeToggle();
+            // Position hero arrow midway between social links and bottom
+            positionHeroArrow();
         });
 
         // Dynamic greeting rotation
@@ -2486,6 +2488,21 @@
                 setInterval(animateGreeting, 3000);
             }
         }
+
+        function positionHeroArrow() {
+            const hero = document.querySelector('.hero');
+            const social = document.querySelector('.hero .social-links');
+            const arrow = document.querySelector('.hero-scroll');
+            if (!hero || !social || !arrow) return;
+            const heroRect = hero.getBoundingClientRect();
+            const socialRect = social.getBoundingClientRect();
+            // Distance from bottom of social links to bottom of hero
+            const spaceBelow = heroRect.height - (socialRect.bottom - heroRect.top);
+            // Set arrow top to halfway point below social
+            const offsetTop = (socialRect.bottom - heroRect.top) + spaceBelow / 2;
+            arrow.style.top = offsetTop + 'px';
+        }
+        window.addEventListener('resize', positionHeroArrow);
 
         // Toggle abstract expansion
         function toggleAbstract(button) {
