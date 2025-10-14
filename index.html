@@ -964,6 +964,26 @@
             overflow: visible;
         }
 
+        /* Improve text hierarchy specifically in dark theme */
+        [data-theme="dark"] .project-summary {
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+        [data-theme="dark"] .card p {
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+        [data-theme="dark"] .publication-tile .authors,
+        [data-theme="dark"] .publication-tile .venue,
+        [data-theme="dark"] .publication-tile .abstract-full p {
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+        [data-theme="dark"] .publication-tile h3 {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
         .project-links a { color: var(--accent-primary); text-decoration: none; font-weight: 700; }
         .project-links a:hover { text-decoration: underline; }
 
