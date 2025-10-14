@@ -988,6 +988,15 @@
             font-weight: 700;
         }
 
+        /* Light theme: align body text color across sections */
+        :root:not([data-theme="dark"]) #about p,
+        :root:not([data-theme="dark"]) #about .leading-relaxed,
+        :root:not([data-theme="dark"]) #research p,
+        :root:not([data-theme="dark"]) #research .leading-relaxed,
+        :root:not([data-theme="dark"]) #research .text-base {
+            color: var(--text-primary) !important;
+        }
+
         .project-links a { color: var(--accent-primary); text-decoration: none; font-weight: 700; }
         .project-links a:hover { text-decoration: underline; }
 
