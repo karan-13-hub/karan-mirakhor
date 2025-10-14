@@ -506,6 +506,16 @@
             font-weight: 700;
             line-height: 1.2;
         }
+        /* Underline for all section titles (matches About section style) */
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 6rem; /* similar to w-24 */
+            height: 4px; /* similar to h-1 */
+            background: var(--accent-primary);
+            border-radius: 9999px;
+            margin: 0.75rem auto 0; /* spacing under title */
+        }
         
         .section-content {
             max-width: 800px;
@@ -1003,19 +1013,19 @@
         .project-toggle {
             position: absolute;
             left: 50%;
-            bottom: 0.8rem;
-            transform: translateX(-50%);
+            bottom: 1rem;
+            transform: translate(-50%, 0);
         }
 
         .project-toggle button {
-            width: 36px;
-            height: 36px;
+            width: 48px;
+            height: 48px;
             border-radius: 9999px;
             border: 1px solid var(--accent-primary);
             background: transparent;
             color: var(--accent-primary);
-            font-size: 1rem;
-            line-height: 1;
+            font-size: 1.5rem;
+            line-height: 48px; /* perfect centering of the plus */
             cursor: pointer;
             transition: all 0.2s ease;
         }
@@ -2058,12 +2068,20 @@
     <section id="contact" class="section">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
+            <p class="text-center" style="color: var(--text-secondary); margin-top: -1rem; margin-bottom: 1.5rem; font-size: 1.125rem;">
+                I’m always open to collaborations or thoughtful discussions - whether about AI, research, or anything beyond.
+            </p>
             <div class="contact-container">
                 <div class="contact-tile">
                         <h3>📧 Email</h3>
                         <p>karanmirakhor@gmail.com</p>
                         <a href="mailto:karanmirakhor@gmail.com">Send Email →</a>
                 </div>
+            </div>
+            <div style="text-align: center; margin-top: 1rem;">
+                <a href="mailto:karanmirakhor@gmail.com" class="transition-colors duration-300" style="display: inline-block; padding: 0.75rem 1.25rem; border: 2px solid var(--accent-primary); color: var(--accent-primary); border-radius: 9999px; text-decoration: none; font-weight: 700;">
+                    Send an email
+                </a>
             </div>
         </div>
     </section>
