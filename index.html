@@ -790,17 +790,17 @@
         }
         
         .authors {
-            color: var(--text-primary);
+            color: var(--text-secondary);
             font-size: 1rem;
             margin-bottom: 0.5rem;
             font-style: italic;
-            font-weight: 500;
+            font-weight: 400;
         }
         
         .venue {
-            color: var(--accent-primary);
+            color: var(--text-secondary);
             font-size: 1rem;
-            font-weight: 700;
+            font-weight: 400;
             margin-bottom: 1.2rem;
         }
         
@@ -966,6 +966,10 @@
 
         /* Improve text hierarchy specifically in dark theme */
         [data-theme="dark"] .project-summary {
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+        [data-theme="dark"] .project-details p {
             color: var(--text-secondary);
             font-weight: 400;
         }
