@@ -388,6 +388,30 @@
             line-height: 1.6;
             font-weight: 500;
         }
+
+        /* Bouncing down arrow in hero */
+        .hero-scroll {
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            transform: translateX(-50%);
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-size: 1.5rem;
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--accent-primary);
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px -2px var(--shadow-color);
+            animation: heroBounce 1.4s infinite ease-in-out;
+        }
+        @keyframes heroBounce {
+            0%, 100% { transform: translate(-50%, 0); opacity: 0.85; }
+            50% { transform: translate(-50%, 8px); opacity: 1; }
+        }
         
         .profile-image {
             width: 200px;
@@ -1013,20 +1037,30 @@
         }
 
         .project-toggle button {
-            width: 48px;
-            height: 48px;
+            width: 40px;
+            height: 40px;
             border-radius: 9999px;
             border: 1px solid var(--accent-primary);
             background: transparent;
             color: var(--accent-primary);
-            font-size: 1.6rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            line-height: 1; /* avoid vertical offset */
+            position: relative;
+            font-size: 0; /* prevent font metrics from shifting center */
             padding: 0;
             cursor: pointer;
             transition: all 0.2s ease;
+        }
+        .project-toggle button::before {
+            content: "+";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.35rem;
+            line-height: 1;
+            color: var(--accent-primary);
         }
 
         .project-toggle button:hover {
@@ -1575,6 +1609,7 @@
                 </div>
             </div>
         </div>
+        <a href="#about" class="hero-scroll" aria-label="Scroll to About">↓</a>
     </section>
 
     <!-- About Section -->
