@@ -271,15 +271,10 @@
         
         .nav-links a:hover {
             color: var(--accent-primary);
-            background: var(--border-color);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px var(--particle-glow);
         }
         
         .nav-links a.active {
             color: var(--accent-primary);
-            background: var(--border-color);
-            box-shadow: 0 4px 12px var(--particle-glow);
             font-weight: 800;
         }
         
@@ -1024,8 +1019,12 @@
             border: 1px solid var(--accent-primary);
             background: transparent;
             color: var(--accent-primary);
-            font-size: 1.5rem;
-            line-height: 48px; /* perfect centering of the plus */
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1; /* avoid vertical offset */
+            padding: 0;
             cursor: pointer;
             transition: all 0.2s ease;
         }
@@ -1060,6 +1059,23 @@
             font-size: 0.75rem;
         }
         .project-links-top a:hover { background: var(--accent-primary); color: var(--bg-primary); transform: translateY(-1px); }
+
+        /* Contact: interactive send email button (match project link hover) */
+        .send-email-btn {
+            display: inline-block;
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: 700;
+            padding: 0.5rem 0.9rem;
+            border: 1px solid var(--accent-primary);
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        .send-email-btn:hover {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            transform: translateY(-1px);
+        }
 
         /* Awards Section */
         .awards-container {
@@ -2072,9 +2088,7 @@
                 I’m always open to collaborations or thoughtful discussions - whether about AI, research, or anything beyond.
             </p>
             <div style="text-align: center; margin-top: 0.5rem;">
-                <a href="mailto:karanmirakhor@gmail.com" class="transition-colors duration-300" style="display: inline-block; padding: 0.85rem 1.5rem; border: 2px solid var(--accent-primary); color: var(--accent-primary); border-radius: 9999px; text-decoration: none; font-weight: 700;">
-                    Send an email
-                </a>
+                <a href="mailto:karanmirakhor@gmail.com" class="send-email-btn">Send an email →</a>
             </div>
             
         </div>
