@@ -1191,6 +1191,15 @@
             cursor: pointer;
         }
 
+        /* Ensure uniform font sizes for research tiles across all screen sizes */
+        #research .card h3 {
+            font-size: 1.5rem !important;
+        }
+        
+        #research .card p {
+            font-size: 1.125rem !important;
+        }
+
         @media (max-width: 768px) {
             .award-tile {
                 flex-direction: row;
@@ -1363,6 +1372,15 @@
                 font-size: 0.875rem;
             }
             
+            /* Override for research tiles to maintain uniform font sizes */
+            #research .card h3 {
+                font-size: 1.5rem !important;
+            }
+            
+            #research .card p {
+                font-size: 1.125rem !important;
+            }
+            
             .contact-tile {
                 padding: 2rem 2rem;
                 max-width: 350px;
@@ -1481,6 +1499,15 @@
             .award-content {
                 grid-column: 2;
                 min-width: 0;
+            }
+            
+            /* Override for research tiles to maintain uniform font sizes on tablets */
+            #research .card h3 {
+                font-size: 1.5rem !important;
+            }
+            
+            #research .card p {
+                font-size: 1.125rem !important;
             }
             
             .hero-content .description {
