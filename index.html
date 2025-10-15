@@ -1186,15 +1186,21 @@
 
         @media (max-width: 768px) {
             .award-tile {
-                flex-direction: column;
-                gap: 0.75rem;
+                flex-direction: row;
+                gap: 1rem;
                 padding: 1.25rem 1.25rem;
+                align-items: flex-start;
             }
             .award-meta {
-                min-width: auto;
-                max-width: none;
-                flex-direction: row;
-                gap: 0.75rem;
+                min-width: 80px;
+                max-width: 80px;
+                flex-shrink: 0;
+                display: flex;
+                justify-content: flex-start;
+            }
+            .award-content {
+                flex: 1;
+                min-width: 0;
             }
         }
 
