@@ -1,1 +1,24 @@
-{"type": "commonjs"}
+{
+  "type": "commonjs",
+  "name": "mirakhor_karan_portfolio",
+  "description": "A dual-framework personal research portfolio built with React (Next.js) and Vue (Vite), featuring dynamic Markdown content support for publications, projects, and awards.",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karan-13-hub/karan-mirakhor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karan-13-hub/karan-mirakhor/issues"
+  },
+  "homepage": "https://github.com/karan-13-hub/karan-mirakhor#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.3.1"
+  }
+}
