@@ -811,6 +811,38 @@
             margin-top: 2rem;
         }
 
+        .publications-container.collapsed .publication-tile:nth-child(n+4) {
+            display: none;
+        }
+
+        .show-more-publications {
+            background: transparent;
+            border: 2px solid var(--accent-primary);
+            color: var(--accent-primary);
+            padding: 0.65rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 1.75rem auto 0;
+        }
+
+        .show-more-publications:hover {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--particle-glow);
+        }
+
+        .show-more-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
         .publication-tile {
             background: var(--bg-card);
             border: 2px solid var(--border-color);
@@ -2247,7 +2279,7 @@
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="section-title">Publications & Patents</h2>
             <div class="section-content">
-                <div class="publications-container">
+                <div class="publications-container collapsed">
                     <div class="publication-tile">
                         <div class="publication-header">
                             <div class="publication-type submission">Submission</div>
@@ -2458,6 +2490,12 @@
                                 the Deep RL network.</p>
                         </div>
                     </div>
+                </div>
+                <div class="show-more-wrapper">
+                    <button class="show-more-publications" onclick="togglePublications(this)" aria-expanded="false">
+                        <span class="show-more-text">Show More Publications</span>
+                        <i class="fas fa-chevron-down show-more-icon"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -3041,6 +3079,18 @@
                 expandIcon.className = 'fas fa-eye expand-icon';
                 button.classList.remove('expanded');
             }
+        }
+
+        // Toggle publications list collapse / expand
+        function togglePublications(btn) {
+            const container = document.querySelector('.publications-container');
+            if (!container) return;
+            const collapsed = container.classList.toggle('collapsed');
+            const text = btn.querySelector('.show-more-text');
+            const icon = btn.querySelector('.show-more-icon');
+            if (text) text.textContent = collapsed ? 'Show More Publications' : 'Show Fewer Publications';
+            if (icon) icon.className = collapsed ? 'fas fa-chevron-down show-more-icon' : 'fas fa-chevron-up show-more-icon';
+            btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
         }
 
         // Toggle project expansion
